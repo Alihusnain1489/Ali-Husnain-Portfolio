@@ -20,10 +20,7 @@ const Hero = () => {
               Front-end Developer
             </p>
             <p className="text-lg text-gray-300 mb-8 max-w-2xl">
-              Passionate front-end developer with 6 months of remote work
-              experience, specializing in React, TypeScript, and modern web
-              technologies. I create beautiful, responsive, and user-friendly
-              web applications.
+            Creative and detail-oriented front-end developer with 6 months of remote experience building responsive, user-friendly web applications. Skilled in React, JavaScript, and modern web technologies to deliver clean, high-performance interfaces.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">

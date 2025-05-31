@@ -37,15 +37,6 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen">
-      {/* Background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-15"
-        style={{
-          backgroundImage: "url('/lovable-uploads/364fefa7-ccda-43ab-acab-bd6bcb0c7b22.png')"
-        }}
-      ></div>
-      <div className="absolute inset-0 bg-black/90"></div>
-      
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">

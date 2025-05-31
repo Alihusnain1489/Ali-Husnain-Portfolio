@@ -5,15 +5,6 @@ import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <section id="home" className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen flex items-center">
-      {/* Background image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: "url('/lovable-uploads/f1fc6b74-a80c-449c-b59b-db02b8eec7d2.png')"
-        }}
-      ></div>
-      <div className="absolute inset-0 bg-black/70"></div>
-      
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="flex-1 text-center lg:text-left">

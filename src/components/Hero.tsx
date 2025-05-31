@@ -1,10 +1,12 @@
-
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen flex items-center">
+    <section
+      id="home"
+      className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen flex items-center"
+    >
       <div className="max-w-7xl mx-auto relative z-10 w-full">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="flex-1 text-center lg:text-left">
@@ -18,48 +20,53 @@ const Hero = () => {
               Front-end Developer
             </p>
             <p className="text-lg text-gray-300 mb-8 max-w-2xl">
-              Passionate front-end developer with 6 months of remote work experience, 
-              specializing in React, TypeScript, and modern web technologies. 
-              I create beautiful, responsive, and user-friendly web applications.
+              Passionate front-end developer with 6 months of remote work
+              experience, specializing in React, TypeScript, and modern web
+              technologies. I create beautiful, responsive, and user-friendly
+              web applications.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                onClick={() => window.open('#', '_blank')}
+                onClick={() => window.open("/Ali-cv.pdf", "_blank")}
               >
                 <Download className="mr-2 h-4 w-4" />
                 Download CV
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
-                className="border-cyan-400 text-cyan-400 hover:bg-cyan-400/10"
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="border-cyan-400 text-sky-500 hover:bg-cyan-400/10 hover:text-white"
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 Get In Touch
               </Button>
             </div>
 
             <div className="flex gap-4 justify-center lg:justify-start">
-              <a 
-                href="https://github.com/Alihusnain1489" 
-                target="_blank" 
+              <a
+                href="https://github.com/Alihusnain1489"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-cyan-500/20 hover:bg-cyan-500/30 rounded-full transition-colors duration-200"
               >
                 <Github className="h-6 w-6 text-cyan-400" />
               </a>
-              <a 
-                href="https://www.linkedin.com/in/ali-husnain-790929252/" 
-                target="_blank" 
+              <a
+                href="https://www.linkedin.com/in/ali-husnain-790929252/"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 bg-blue-500/20 hover:bg-blue-500/30 rounded-full transition-colors duration-200"
               >
                 <Linkedin className="h-6 w-6 text-blue-400" />
               </a>
-              <a 
+              <a
                 href="mailto:mr.alihusnain11@gmail.com"
                 className="p-3 bg-cyan-500/20 hover:bg-cyan-500/30 rounded-full transition-colors duration-200"
               >
@@ -71,8 +78,8 @@ const Hero = () => {
           <div className="flex-1 flex justify-center lg:justify-end">
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-cyan-400/30 shadow-2xl shadow-cyan-500/20">
-                <img 
-                  src="/lovable-uploads/2ecd07b9-c5c3-48c1-bf61-c2a3cbad2309.png" 
+                <img
+                  src="/lovable-uploads/2ecd07b9-c5c3-48c1-bf61-c2a3cbad2309.png"
                   alt="Ali Husnain - Front-end Developer"
                   className="w-full h-full object-cover"
                 />

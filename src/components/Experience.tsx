@@ -1,5 +1,5 @@
 
-import { Briefcase, Code, Users, Clock } from "lucide-react";
+import { Briefcase, Code, Users, Clock, Trophy } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Experience = () => {
@@ -22,9 +22,18 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section id="experience" className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-50 to-cyan-50 relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute top-10 left-20 w-40 h-40 bg-gradient-to-br from-cyan-200 to-blue-200 rounded-full opacity-10 blur-2xl"></div>
+      <div className="absolute bottom-20 right-10 w-56 h-56 bg-gradient-to-br from-blue-200 to-cyan-200 rounded-full opacity-10 blur-2xl"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <div className="p-4 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-full">
+              <Trophy className="h-8 w-8 text-cyan-600" />
+            </div>
+          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             Experience & Achievements
           </h2>
@@ -35,11 +44,11 @@ const Experience = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
+            <Card className="p-6 hover:shadow-xl transition-all duration-300 border-cyan-200 bg-gradient-to-r from-cyan-50 to-blue-50">
               <CardContent className="p-0">
                 <div className="flex items-start gap-4 mb-6">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    <Briefcase className="h-6 w-6 text-blue-600" />
+                  <div className="p-3 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-lg">
+                    <Briefcase className="h-6 w-6 text-cyan-600" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900">Front-end Developer</h3>
@@ -71,11 +80,11 @@ const Experience = () => {
 
           <div className="space-y-6">
             {highlights.map((highlight, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 border-cyan-200 bg-white/80 backdrop-blur-sm">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg">
-                      <highlight.icon className="h-6 w-6 text-blue-600" />
+                    <div className="p-3 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-lg">
+                      <highlight.icon className="h-6 w-6 text-cyan-600" />
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-2">

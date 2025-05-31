@@ -4,13 +4,18 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section id="home" className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section id="home" className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-blue-50 to-cyan-100"></div>
+      <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-br from-cyan-300 to-blue-300 rounded-full opacity-10 blur-3xl"></div>
+      <div className="absolute bottom-10 left-10 w-96 h-96 bg-gradient-to-br from-blue-300 to-cyan-300 rounded-full opacity-10 blur-3xl"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
               Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-cyan-600 to-blue-600 bg-clip-text text-transparent">
                 Ali Husnain
               </span>
             </h1>
@@ -26,7 +31,7 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white"
                 onClick={() => window.open('#', '_blank')}
               >
                 <Download className="mr-2 h-4 w-4" />
@@ -35,6 +40,7 @@ const Hero = () => {
               <Button 
                 variant="outline" 
                 size="lg"
+                className="border-cyan-300 text-cyan-700 hover:bg-cyan-50"
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Get In Touch
@@ -46,23 +52,23 @@ const Hero = () => {
                 href="https://github.com/Alihusnain1489" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors duration-200"
+                className="p-3 bg-cyan-100 hover:bg-cyan-200 rounded-full transition-colors duration-200"
               >
-                <Github className="h-6 w-6 text-gray-700" />
+                <Github className="h-6 w-6 text-cyan-700" />
               </a>
               <a 
                 href="https://www.linkedin.com/in/ali-husnain-790929252/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="p-3 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors duration-200"
+                className="p-3 bg-cyan-100 hover:bg-cyan-200 rounded-full transition-colors duration-200"
               >
-                <Linkedin className="h-6 w-6 text-gray-700" />
+                <Linkedin className="h-6 w-6 text-cyan-700" />
               </a>
               <a 
                 href="mailto:mr.alihusnain11@gmail.com"
-                className="p-3 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors duration-200"
+                className="p-3 bg-cyan-100 hover:bg-cyan-200 rounded-full transition-colors duration-200"
               >
-                <Mail className="h-6 w-6 text-gray-700" />
+                <Mail className="h-6 w-6 text-cyan-700" />
               </a>
             </div>
           </div>
@@ -76,8 +82,8 @@ const Hero = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full opacity-20 animate-pulse"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full opacity-20 animate-pulse delay-1000"></div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-full opacity-30 animate-pulse delay-1000"></div>
             </div>
           </div>
         </div>

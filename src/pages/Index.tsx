@@ -8,7 +8,7 @@ import Navbar from "@/components/Navbar";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-50 to-blue-100">
       <Navbar />
       <Hero />
       <About />

@@ -1,12 +1,21 @@
 
-import { GraduationCap, MapPin, Calendar } from "lucide-react";
+import { GraduationCap, MapPin, Calendar, Award } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   return (
-    <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section id="about" className="py-16 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-cyan-100 to-transparent rounded-full opacity-30"></div>
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-blue-100 to-transparent rounded-full opacity-30"></div>
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
+          <div className="flex justify-center mb-4">
+            <div className="p-4 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-full">
+              <Award className="h-8 w-8 text-cyan-600" />
+            </div>
+          </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             About Me
           </h2>
@@ -34,11 +43,11 @@ const About = () => {
           </div>
 
           <div className="space-y-6">
-            <Card className="hover:shadow-lg transition-shadow duration-300">
+            <Card className="hover:shadow-xl transition-all duration-300 border-cyan-200 bg-gradient-to-r from-cyan-50 to-blue-50">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    <GraduationCap className="h-6 w-6 text-blue-600" />
+                  <div className="p-3 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-lg">
+                    <GraduationCap className="h-6 w-6 text-cyan-600" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Education</h3>
@@ -49,11 +58,11 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow duration-300">
+            <Card className="hover:shadow-xl transition-all duration-300 border-cyan-200 bg-gradient-to-r from-cyan-50 to-blue-50">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-green-100 rounded-lg">
-                    <Calendar className="h-6 w-6 text-green-600" />
+                  <div className="p-3 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-lg">
+                    <Calendar className="h-6 w-6 text-blue-600" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Experience</h3>
@@ -64,11 +73,11 @@ const About = () => {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow duration-300">
+            <Card className="hover:shadow-xl transition-all duration-300 border-cyan-200 bg-gradient-to-r from-cyan-50 to-blue-50">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <div className="p-3 bg-purple-100 rounded-lg">
-                    <MapPin className="h-6 w-6 text-purple-600" />
+                  <div className="p-3 bg-gradient-to-r from-cyan-100 to-blue-100 rounded-lg">
+                    <MapPin className="h-6 w-6 text-cyan-600" />
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Location</h3>

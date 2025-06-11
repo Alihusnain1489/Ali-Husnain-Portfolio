@@ -7,12 +7,12 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Zaheer Sons Deals Shop",
-      description: "E-commerce platform for deals and shopping with modern UI design and responsive layout.",
-      image: "/zsh.png",
-      liveUrl: "https://zaheer-sons-deals-shop.vercel.app/",
+      title: "Loopholedefender",
+      description: "Cybersecurity package purchasing platform.",
+      image: "/loopholedefender.png",
+      liveUrl: "https://lovable.dev/projects/1d42e610-404d-4c8c-9d4c-05f38eca317a",
       githubUrl: "#",
-      technologies: ["React", "Tailwind CSS", "Vercel"]
+      technologies: ["React", "Django", "JavaScript"]
     },
     {
       id: 2,
@@ -27,11 +27,20 @@ const Projects = () => {
       id: 3,
       title: "Alif Technologies",
       description: "Corporate technology website showcasing services and solutions with professional design.",
-      image: "zsh.png",
+      image: "alif.png",
       liveUrl: "https://alihusnain1489.github.io/Alif-Technologies/",
       githubUrl: "https://github.com/Alihusnain1489/Alif-Technologies",
       technologies: ["HTML5", "CSS3", "JavaScript"]
-    }
+    },
+    {
+      id: 4,
+      title: "Zaheer Sons Deals Shop",
+      description: "E-commerce platform for deals and shopping with modern UI design and responsive layout.",
+      image: "/zsh.png",
+      liveUrl: "https://zaheer-sons-deals-shop.vercel.app/",
+      githubUrl: "#",
+      technologies: ["React", "Tailwind CSS", "Vercel"]
+    },
   ];
 
   return (

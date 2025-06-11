@@ -27,7 +27,7 @@ const Projects = () => {
       id: 3,
       title: "Alif Technologies",
       description: "Corporate technology website showcasing services and solutions with professional design.",
-      image: "alif.png",
+      image: "/alif.png",
       liveUrl: "https://alihusnain1489.github.io/Alif-Technologies/",
       githubUrl: "https://github.com/Alihusnain1489/Alif-Technologies",
       technologies: ["HTML5", "CSS3", "JavaScript"]

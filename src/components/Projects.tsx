@@ -9,7 +9,7 @@ const Projects = () => {
       id: 1,
       title: "Zaheer Sons Deals Shop",
       description: "E-commerce platform for deals and shopping with modern UI design and responsive layout.",
-      image: "/lovable-uploads/f1fc6b74-a80c-449c-b59b-db02b8eec7d2.png",
+      image: "/zsh.png",
       liveUrl: "https://zaheer-sons-deals-shop.vercel.app/",
       githubUrl: "#",
       technologies: ["React", "Tailwind CSS", "Vercel"]
@@ -27,7 +27,7 @@ const Projects = () => {
       id: 3,
       title: "Alif Technologies",
       description: "Corporate technology website showcasing services and solutions with professional design.",
-      image: "/lovable-uploads/eeee430f-ed7f-4af6-9613-846053800aee.png",
+      image: "zsh.png",
       liveUrl: "https://alihusnain1489.github.io/Alif-Technologies/",
       githubUrl: "https://github.com/Alihusnain1489/Alif-Technologies",
       technologies: ["HTML5", "CSS3", "JavaScript"]

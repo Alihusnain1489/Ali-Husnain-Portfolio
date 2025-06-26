@@ -27,7 +27,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white"
-                onClick={() => window.open("/Ali-cv.pdf", "_blank")}
+                onClick={() => window.open("/Ali CV.pdf", "_blank")}
               >
                 <Download className="mr-2 h-4 w-4" />
                 Download CV

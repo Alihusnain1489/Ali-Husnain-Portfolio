@@ -16,10 +16,10 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Wholesale Threads Bazaar",
+      title: "Wholesale Threads",
       description: "Wholesale clothing marketplace with advanced filtering and product management features.",
-      image: "/abid.png",
-      liveUrl: "https://wholesale-threads-bazaar.vercel.app/",
+      image: "/my.png",
+      liveUrl: "https://wholesale-threads.vercel.app/",
       githubUrl: "#",
       technologies: ["React", "JavaScript", "CSS3"]
     },

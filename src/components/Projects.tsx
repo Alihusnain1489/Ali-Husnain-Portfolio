@@ -52,7 +52,7 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 animate-fade-in">
-            Recent <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">Projects</span>
+            Recent <span className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
             Rapid solutions to the most complex business challenges with cooperative process-driven development.
@@ -75,14 +75,14 @@ const Projects = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 text-xs bg-yellow-500/90 text-slate-900 rounded-full font-medium">
+                    <span className="px-3 py-1 text-xs bg-gradient-to-r from-emerald-400 to-green-400 text-slate-900 rounded-full font-medium">
                       {project.category}
                     </span>
                   </div>
                 </div>
               </CardHeader>
               <CardContent className="p-6">
-                <CardTitle className="text-xl font-semibold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+                <CardTitle className="text-xl font-semibold text-white mb-2 group-hover:gradient-to-r from-emerald-400 to-green-400 transition-colors duration-300">
                   {project.title}
                 </CardTitle>
                 <CardDescription className="text-gray-300 mb-4 leading-relaxed">
@@ -93,7 +93,7 @@ const Projects = () => {
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 text-xs bg-yellow-500/20 text-yellow-300 rounded-full border border-yellow-500/30 hover:bg-yellow-500/30 transition-colors duration-300"
+                      className="px-3 py-1 text-xs bg-gradient-to-r from-emerald-500 to-green-500 text-white rounded-full border border-yellow-500/30 hover:bg-yellow-500/30 transition-colors duration-300"
                     >
                       {tech}
                     </span>
@@ -103,7 +103,7 @@ const Projects = () => {
                 <div className="flex gap-3">
                   <Button
                     size="sm"
-                    className="flex-1 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white transform hover:scale-105 transition-all duration-300"
+                    className="flex-1 bg-gradient-to-r from-emerald-400 to-green-400 hover:gradient-to-r from-emerald-400 to-green-400 text-white transform hover:scale-105 transition-all duration-300"
                     onClick={() => window.open(project.liveUrl, "_blank")}
                   >
                     <ExternalLink className="mr-2 h-4 w-4" />

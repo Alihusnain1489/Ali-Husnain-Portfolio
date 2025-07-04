@@ -142,7 +142,7 @@ const Skills = () => {
             "url('/lovable-uploads/cf6a0912-aa6b-49a7-9aaa-3ec73ca99ac7.png')",
         }}
       ></div>
-      <div className="absolute inset-0 bg-black/90"></div>
+      <div className="absolute inset-0 bg-slate-900"></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
@@ -152,7 +152,7 @@ const Skills = () => {
             </div>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Skills & Technologies
+            Skills & <span className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">Technologies</span>
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
             A comprehensive toolkit for building modern web applications

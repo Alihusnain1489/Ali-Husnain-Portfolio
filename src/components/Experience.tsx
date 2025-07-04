@@ -1,5 +1,5 @@
 
-import { Briefcase, Code, Users, Clock, Trophy, TrendingUp, Calendar, MapPin } from "lucide-react";
+import { Briefcase, Code, Users, Clock, Trophy, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Experience = () => {
@@ -10,58 +10,53 @@ const Experience = () => {
     { number: "100%", label: "Client Satisfaction", icon: TrendingUp },
   ];
 
-  const experiences = [
+  const highlights = [
     {
-      title: "Front-end Developer",
-      company: "Remote Position",
-      period: "2024 - Present",
-      type: "Full-time",
-      description: "Developing modern web applications using React, TypeScript, and various CSS frameworks. Collaborating with cross-functional teams to deliver high-quality user experiences.",
-      skills: ["React", "TypeScript", "Tailwind CSS", "Redux Toolkit", "REST APIs"]
+      icon: Code,
+      title: "Modern Development",
+      description: "Built responsive web applications using React, TypeScript, and modern CSS frameworks with industry best practices."
     },
     {
-      title: "Web Developer",
-      company: "Freelance",
-      period: "2023 - 2024",
-      type: "Contract",
-      description: "Built responsive websites and web applications for various clients. Focused on performance optimization and user-friendly interfaces.",
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Node.js"]
+      icon: Users,
+      title: "Remote Collaboration", 
+      description: "Successfully collaborated with distributed teams across different time zones and cultural backgrounds."
+    },
+    {
+      icon: Clock,
+      title: "Project Delivery",
+      description: "Consistently delivered high-quality code within project deadlines while maintaining code quality standards."
     }
   ];
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen bg-gray-800">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-green-400/5 to-emerald-400/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-emerald-400/5 to-green-400/5 rounded-full blur-3xl"></div>
-      </div>
-
+    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen bg-slate-800">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-green-400/10 text-green-400 rounded-full text-sm font-medium border border-green-400/20 mb-4 animate-scale-in">
-            MY JOURNEY
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 animate-fade-in">
-            Experience & <span className="text-green-400">Achievements</span>
+          <div className="flex justify-center mb-4">
+            <div className="p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full border border-yellow-500/30 animate-scale-in">
+              <Trophy className="h-8 w-8 text-yellow-400" />
+            </div>
+          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 animate-fade-in">
+            Experience & <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">Achievements</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto animate-fade-in delay-200">
-            My professional journey in web development and the milestones I've achieved.
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
+            Rapid solutions to the most complex development challenges with cooperative process-driven approach.
           </p>
         </div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
             <Card 
               key={index} 
-              className="text-center p-6 bg-gray-900/60 border-green-400/30 hover:border-green-400/60 transition-all duration-500 transform hover:scale-105 animate-fade-in"
+              className="text-center p-6 bg-slate-900/60 border-yellow-500/30 hover:border-yellow-400/60 transition-all duration-500 transform hover:scale-105 animate-fade-in"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <CardContent className="p-0">
-                <div className="flex justify-center mb-4">
-                  <div className="p-3 bg-gradient-to-r from-green-400/20 to-emerald-400/20 rounded-xl">
-                    <stat.icon className="h-6 w-6 text-green-400" />
+                <div className="flex justify-center mb-3">
+                  <div className="p-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg">
+                    <stat.icon className="h-6 w-6 text-yellow-400" />
                   </div>
                 </div>
                 <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
@@ -71,79 +66,72 @@ const Experience = () => {
           ))}
         </div>
 
-        {/* Experience Timeline */}
-        <div className="mb-20">
-          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-12 text-center">Work Experience</h3>
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="animate-fade-in delay-300">
+            <Card className="p-8 hover:shadow-xl hover:shadow-yellow-500/10 transition-all duration-500 border-yellow-500/30 bg-slate-900/60 backdrop-blur-sm transform hover:scale-105">
+              <CardContent className="p-0">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg">
+                    <Briefcase className="h-8 w-8 text-yellow-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-semibold text-white mb-2">Front-end Developer</h3>
+                    <p className="text-yellow-400 font-medium">Remote Position</p>
+                    <p className="text-sm text-gray-400">6 Months Experience</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3 text-gray-300">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Developed responsive web applications using React and TypeScript</p>
+                  </div>
+                  <div className="flex items-start gap-3 text-gray-300">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Implemented state management solutions with Redux Toolkit</p>
+                  </div>
+                  <div className="flex items-start gap-3 text-gray-300">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Created modern UI components with Tailwind CSS</p>
+                  </div>
+                  <div className="flex items-start gap-3 text-gray-300">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Collaborated effectively in remote team environments</p>
+                  </div>
+                  <div className="flex items-start gap-3 text-gray-300">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Maintained clean, well-documented, and scalable code</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="space-y-6 animate-fade-in delay-500">
+            {highlights.map((highlight, index) => (
               <Card 
-                key={index}
-                className="bg-gray-900/60 border-green-400/30 hover:border-green-400/60 transition-all duration-500 transform hover:scale-105 animate-fade-in"
+                key={index} 
+                className="hover:shadow-xl hover:shadow-yellow-500/10 transition-all duration-500 border-yellow-500/30 bg-slate-900/60 backdrop-blur-sm transform hover:scale-105"
                 style={{ animationDelay: `${600 + index * 200}ms` }}
               >
-                <CardContent className="p-8">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
-                    <div className="flex-1">
-                      <h4 className="text-2xl font-bold text-white mb-2">{exp.title}</h4>
-                      <div className="flex items-center gap-4 text-green-400 mb-2">
-                        <div className="flex items-center gap-2">
-                          <Briefcase className="h-4 w-4" />
-                          <span>{exp.company}</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Calendar className="h-4 w-4" />
-                          <span>{exp.period}</span>
-                        </div>
-                      </div>
-                      <span className="inline-block px-3 py-1 bg-green-400/10 text-green-400 rounded-full text-sm font-medium border border-green-400/20">
-                        {exp.type}
-                      </span>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg flex-shrink-0">
+                      <highlight.icon className="h-6 w-6 text-yellow-400" />
                     </div>
-                  </div>
-                  
-                  <p className="text-gray-300 mb-6 leading-relaxed">
-                    {exp.description}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {exp.skills.map((skill, skillIndex) => (
-                      <span
-                        key={skillIndex}
-                        className="px-3 py-1 text-xs bg-gray-800 text-gray-300 rounded-full border border-gray-700"
-                      >
-                        {skill}
-                      </span>
-                    ))}
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">
+                        {highlight.title}
+                      </h4>
+                      <p className="text-gray-300 leading-relaxed">
+                        {highlight.description}
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
-        </div>
-
-        {/* Education Section */}
-        <div>
-          <h3 className="text-2xl sm:text-3xl font-bold text-white mb-12 text-center">Education</h3>
-          <Card className="bg-gray-900/60 border-green-400/30 hover:border-green-400/60 transition-all duration-500 transform hover:scale-105 animate-fade-in delay-1000">
-            <CardContent className="p-8">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                <div className="flex-1">
-                  <h4 className="text-2xl font-bold text-white mb-2">BS - Information Technology</h4>
-                  <div className="flex items-center gap-4 text-green-400 mb-4">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="h-4 w-4" />
-                      <span>Virtual University of Pakistan</span>
-                    </div>
-                  </div>
-                  <p className="text-gray-300 leading-relaxed">
-                    Comprehensive study of computer science fundamentals, software development, 
-                    database management, and web technologies. Developed strong problem-solving 
-                    skills and learned industry best practices.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
         </div>
       </div>
     </section>

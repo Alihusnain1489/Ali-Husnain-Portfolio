@@ -3,19 +3,22 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gray-900 relative">
-      {/* Background decorative elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-green-500/5 to-cyan-500/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-green-400/5 to-emerald-400/5 rounded-full blur-3xl"></div>
-      </div>
+    <div className="min-h-screen bg-slate-900 relative">
+      {/* Main background image */}
+      <div 
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat opacity-5 z-0"
+        style={{
+          backgroundImage: "url('/lovable-uploads/d10debca-e79e-4cc0-af3b-5dadf28dc25b.png')"
+        }}
+      ></div>
+      <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 z-0"></div>
       
       <div className="relative z-10">
         <Navbar />
@@ -23,6 +26,7 @@ const Index = () => {
         <About />
         <Skills />
         <Projects />
+        <Experience />
         <Contact />
         <ScrollToTop />
       </div>

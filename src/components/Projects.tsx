@@ -1,6 +1,6 @@
 
 import { ExternalLink, Github } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 const Projects = () => {
@@ -13,7 +13,7 @@ const Projects = () => {
       liveUrl: "https://lovable.dev/projects/1d42e610-404d-4c8c-9d4c-05f38eca317a",
       githubUrl: "#",
       technologies: ["React", "Django", "JavaScript"],
-      category: "UI & UX Design"
+      category: "Security Platform"
     },
     {
       id: 2,
@@ -23,7 +23,7 @@ const Projects = () => {
       liveUrl: "https://wholesale-threads-bazaar.vercel.app/",
       githubUrl: "#",
       technologies: ["React", "JavaScript", "CSS3"],
-      category: "Branding"
+      category: "E-commerce Platform"
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const Projects = () => {
       liveUrl: "https://zaheer-sons-deals-shop.vercel.app/",
       githubUrl: "#",
       technologies: ["React", "Tailwind CSS", "Vercel"],
-      category: "Graphic Design"
+      category: "Online Store"
     },
     {
       id: 4,
@@ -43,116 +43,86 @@ const Projects = () => {
       liveUrl: "https://alihusnain1489.github.io/Alif-Technologies/",
       githubUrl: "https://github.com/Alihusnain1489/Alif-Technologies",
       technologies: ["HTML5", "CSS3", "JavaScript"],
-      category: "Web Design"
+      category: "Corporate Website"
     },
   ];
 
-  const categories = ["All", "UI & UX Design", "Branding", "Graphic Design", "Web Design"];
-
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-2 bg-green-400/10 text-green-400 rounded-full text-sm font-medium border border-green-400/20 mb-4 animate-scale-in">
-            SHOWCASE
-          </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 animate-fade-in">
-            <span className="text-green-400">Portfolio</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 animate-fade-in">
+            Recent <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">Projects</span>
           </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto animate-fade-in delay-200">
-            A collection of projects that demonstrate my skills and passion for creating exceptional digital experiences.
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
+            Rapid solutions to the most complex business challenges with cooperative process-driven development.
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16">
-          {categories.map((category, index) => (
-            <button
-              key={category}
-              className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                index === 0 
-                  ? 'bg-green-400 text-gray-900' 
-                  : 'bg-gray-800 text-gray-300 hover:bg-green-400/10 hover:text-green-400 border border-gray-700 hover:border-green-400/30'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <Card 
               key={project.id} 
-              className="bg-gray-800/50 border-gray-700 hover:border-green-400/30 transition-all duration-500 group overflow-hidden transform hover:scale-105 animate-fade-in"
+              className="bg-slate-800/50 border-yellow-500/20 hover:border-yellow-400/40 transition-all duration-500 group overflow-hidden transform hover:scale-105 animate-fade-in"
               style={{ animationDelay: `${index * 200}ms` }}
             >
-              <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 text-xs bg-green-400/90 text-gray-900 rounded-full font-medium">
-                    {project.category}
-                  </span>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="flex gap-4">
-                    <Button
-                      size="sm"
-                      className="bg-green-400 hover:bg-green-500 text-gray-900"
-                      onClick={() => window.open(project.liveUrl, "_blank")}
-                    >
-                      <ExternalLink className="h-4 w-4" />
-                    </Button>
-                    {project.githubUrl !== "#" && (
-                      <Button
-                        size="sm"
-                        variant="outline"
-                        className="border-green-400 text-green-400 hover:bg-green-400/10"
-                        onClick={() => window.open(project.githubUrl, "_blank")}
-                      >
-                        <Github className="h-4 w-4" />
-                      </Button>
-                    )}
+              <CardHeader className="p-0">
+                <div className="relative overflow-hidden">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 text-xs bg-yellow-500/90 text-slate-900 rounded-full font-medium">
+                      {project.category}
+                    </span>
                   </div>
                 </div>
-              </div>
-              
+              </CardHeader>
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-green-400 transition-colors duration-300">
+                <CardTitle className="text-xl font-semibold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
                   {project.title}
-                </h3>
-                <p className="text-gray-400 mb-4 leading-relaxed">
+                </CardTitle>
+                <CardDescription className="text-gray-300 mb-4 leading-relaxed">
                   {project.description}
-                </p>
+                </CardDescription>
                 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 text-xs bg-green-400/10 text-green-400 rounded-full border border-green-400/20"
+                      className="px-3 py-1 text-xs bg-yellow-500/20 text-yellow-300 rounded-full border border-yellow-500/30 hover:bg-yellow-500/30 transition-colors duration-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
+
+                <div className="flex gap-3">
+                  <Button
+                    size="sm"
+                    className="flex-1 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white transform hover:scale-105 transition-all duration-300"
+                    onClick={() => window.open(project.liveUrl, "_blank")}
+                  >
+                    <ExternalLink className="mr-2 h-4 w-4" />
+                    Live Demo
+                  </Button>
+                  {project.githubUrl !== "#" && (
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      className="border-yellow-400 text-yellow-400 hover:bg-yellow-400/10 transform hover:scale-105 transition-all duration-300"
+                      onClick={() => window.open(project.githubUrl, "_blank")}
+                    >
+                      <Github className="h-4 w-4" />
+                    </Button>
+                  )}
+                </div>
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* View More Button */}
-        <div className="text-center mt-12">
-          <Button
-            size="lg"
-            className="bg-gradient-to-r from-green-400 to-emerald-400 hover:from-green-500 hover:to-emerald-500 text-gray-900 font-semibold transform hover:scale-105 transition-all duration-300 px-8 py-3"
-          >
-            VIEW MORE PROJECTS
-          </Button>
         </div>
       </div>
     </section>

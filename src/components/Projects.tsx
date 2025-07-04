@@ -63,7 +63,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <Card 
               key={project.id} 
-              className="bg-slate-800/50 border-yellow-500/20 hover:border-yellow-400/40 transition-all duration-500 group overflow-hidden transform hover:scale-105 animate-fade-in"
+              className="bg-slate-800/50 border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-500 group overflow-hidden transform hover:scale-105 animate-fade-in"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <CardHeader className="p-0">
@@ -93,7 +93,7 @@ const Projects = () => {
                   {project.technologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-3 py-1 text-xs bg-gradient-to-r from-emerald-500 to-green-500 text-white rounded-full border border-yellow-500/30 hover:bg-yellow-500/30 transition-colors duration-300"
+                      className="px-3 py-1 text-xs  text-white rounded-full border border-emerald-500/90 hover:bg-emerald-500 transition-colors duration-300"
                     >
                       {tech}
                     </span>

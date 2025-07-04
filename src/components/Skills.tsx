@@ -147,8 +147,8 @@ const Skills = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-4">
-            <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30">
-              <Zap className="h-8 w-8 text-cyan-400" />
+            <div className="p-4 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full border border-emerald-500/30">
+              <Zap className="h-8 w-8 text-white" />
             </div>
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -164,7 +164,7 @@ const Skills = () => {
           {Object.entries(categories).map(([categoryName, categorySkills]) => (
             <Card
               key={categoryName}
-              className="hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 border-cyan-500/30 bg-black/60 backdrop-blur-sm"
+              className="hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 border-cyan-500/30 bg-slate-800/60 backdrop-blur-sm"
             >
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold text-white mb-8 text-center flex items-center justify-center gap-2">
@@ -215,7 +215,7 @@ const Skills = () => {
                               </p>
 
                               {/* Progress Bar */}
-                              <div className="w-full bg-gray-700 rounded-full h-2">
+                              <div className="w-full bg-slate-800/60 rounded-full h-2">
                                 <div
                                   className={`h-2 rounded-full ${skill.color} transition-all duration-1000 ease-out relative overflow-hidden`}
                                   style={{ width: `${skill.level}%` }}
@@ -236,7 +236,7 @@ const Skills = () => {
         </div>
 
         {/* Additional Skills Overview */}
-        <Card className="border-cyan-500/30 bg-black/60 backdrop-blur-sm">
+        <Card className="border-cyan-500/30 bg-slate-800/60 backdrop-blur-sm">
           <CardContent className="p-8">
             <h3 className="text-2xl font-semibold text-white mb-6 text-center">
               Technical Proficiency Overview

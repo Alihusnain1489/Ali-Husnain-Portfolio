@@ -90,7 +90,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-slate-900 text-foreground;
   }
 }
 
@@ -128,6 +128,15 @@
   }
 }
 
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
 .animate-fade-in {
   animation: fade-in 0.8s ease-out forwards;
   opacity: 0;
@@ -141,6 +150,10 @@
 .animate-slide-up {
   animation: slide-up 0.7s ease-out forwards;
   opacity: 0;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
 
 .delay-200 {
@@ -174,10 +187,19 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #eab308;
+  background: #10b981;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f59e0b;
+  background: #059669;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-green {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.bg-gradient-dark-green {
+  background: linear-gradient(135deg, #064e3b, #065f46);
 }

@@ -1,3 +1,4 @@
+
 import { Send, MessageCircle, Phone, MapPin, Clock } from "lucide-react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
@@ -72,60 +73,158 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen">
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-yellow-400/10 to-orange-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-blue-400/10 to-cyan-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        
+        {/* Floating elements */}
+        <div className="absolute top-20 left-20 w-4 h-4 bg-yellow-400/30 rounded-full animate-bounce delay-300"></div>
+        <div className="absolute top-40 right-32 w-6 h-6 bg-orange-400/20 rounded-full animate-bounce delay-700"></div>
+        <div className="absolute bottom-32 left-40 w-3 h-3 bg-cyan-400/40 rounded-full animate-bounce delay-500"></div>
+        <div className="absolute bottom-20 right-20 w-5 h-5 bg-blue-400/30 rounded-full animate-bounce delay-900"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-12">
-          <div className="flex justify-center mb-4">
-            <div className="p-4 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full border border-cyan-500/30">
-              <MessageCircle className="h-8 w-8 text-cyan-400" />
+        {/* Header Section */}
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="flex justify-center mb-6">
+            <div className="p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full border border-yellow-500/30 transform hover:scale-110 transition-all duration-300 animate-scale-in">
+              <MessageCircle className="h-10 w-10 text-yellow-400" />
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
             Contact Me
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Fill out the form below and I'll get back to you as soon as possible.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Let's collaborate and bring your ideas to life. I'm always excited to work on new projects.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
-          <div className="space-y-8">
-            {/* Contact Details Card */}
-            <Card className="hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 border-cyan-500/30 bg-black/60 backdrop-blur-sm">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left Side - Contact Form */}
+          <div className="animate-slide-up">
+            <Card className="hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-500 border-slate-700 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm transform hover:-translate-y-2">
               <CardContent className="p-8">
-                <div className="space-y-8">
-                  {/* Email */}
-                  <div className="flex items-start gap-4">
-                    <div className="p-4 bg-cyan-500/20 rounded-lg">
-                      <FaEnvelope className="h-6 w-6 text-cyan-400" />
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Send Message</h3>
+                  <p className="text-gray-400">Get in touch and let me know how I can help</p>
+                </div>
+                
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-6">
+                    <div className="relative group">
+                      <Input
+                        type="text"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        required
+                        disabled={isSubmitting}
+                        className="w-full border-slate-600 focus:border-yellow-400 focus:ring-yellow-400 bg-slate-700/50 text-white placeholder-gray-400 h-14 text-lg transition-all duration-300 group-hover:border-yellow-500/50"
+                        placeholder="Your Full Name"
+                      />
+                    </div>
+                    
+                    <div className="relative group">
+                      <Input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        disabled={isSubmitting}
+                        className="w-full border-slate-600 focus:border-yellow-400 focus:ring-yellow-400 bg-slate-700/50 text-white placeholder-gray-400 h-14 text-lg transition-all duration-300 group-hover:border-yellow-500/50"
+                        placeholder="Your Email Address"
+                      />
+                    </div>
+                    
+                    <div className="relative group">
+                      <Input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        disabled={isSubmitting}
+                        className="w-full border-slate-600 focus:border-yellow-400 focus:ring-yellow-400 bg-slate-700/50 text-white placeholder-gray-400 h-14 text-lg transition-all duration-300 group-hover:border-yellow-500/50"
+                        placeholder="Your Phone Number"
+                      />
+                    </div>
+                    
+                    <div className="relative group">
+                      <Input
+                        type="text"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        disabled={isSubmitting}
+                        className="w-full border-slate-600 focus:border-yellow-400 focus:ring-yellow-400 bg-slate-700/50 text-white placeholder-gray-400 h-14 text-lg transition-all duration-300 group-hover:border-yellow-500/50"
+                        placeholder="Subject"
+                      />
+                    </div>
+                    
+                    <div className="relative group">
+                      <Textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        required
+                        rows={6}
+                        disabled={isSubmitting}
+                        className="w-full border-slate-600 focus:border-yellow-400 focus:ring-yellow-400 bg-slate-700/50 text-white placeholder-gray-400 resize-none text-lg transition-all duration-300 group-hover:border-yellow-500/50"
+                        placeholder="Tell me about your project..."
+                      />
+                    </div>
+                  </div>
+                  
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white shadow-xl hover:shadow-yellow-500/30 transition-all duration-300 h-14 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
+                  >
+                    <Send className="mr-3 h-5 w-5" />
+                    {isSubmitting ? "Sending Message..." : "Send Message"}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Right Side - Contact Info & Illustration */}
+          <div className="space-y-8 animate-slide-up delay-300">
+            {/* Contact Information */}
+            <Card className="hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-500 border-slate-700 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm transform hover:-translate-y-2">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
+                <div className="space-y-6">
+                  <div className="flex items-center gap-4 group hover:bg-slate-700/30 p-4 rounded-lg transition-all duration-300">
+                    <div className="p-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <FaEnvelope className="h-6 w-6 text-yellow-400" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Email</h3>
+                      <h4 className="text-lg font-semibold text-white">Email</h4>
                       <p className="text-gray-300">mr.alihusnain11@gmail.com</p>
-                      <p className="text-gray-400 text-sm">support@alihusnain.com</p>
                     </div>
                   </div>
 
-                  {/* Phone */}
-                  <div className="flex items-start gap-4">
-                    <div className="p-4 bg-blue-500/20 rounded-lg">
+                  <div className="flex items-center gap-4 group hover:bg-slate-700/30 p-4 rounded-lg transition-all duration-300">
+                    <div className="p-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full group-hover:scale-110 transition-transform duration-300">
                       <FaPhone className="h-6 w-6 text-blue-400" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Phone</h3>
+                      <h4 className="text-lg font-semibold text-white">Phone</h4>
                       <p className="text-gray-300">+92 349 0470871</p>
-                      <p className="text-gray-400 text-sm">Available for calls</p>
                     </div>
                   </div>
 
-                  {/* Address */}
-                  <div className="flex items-start gap-4">
-                    <div className="p-4 bg-green-500/20 rounded-lg">
+                  <div className="flex items-center gap-4 group hover:bg-slate-700/30 p-4 rounded-lg transition-all duration-300">
+                    <div className="p-3 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full group-hover:scale-110 transition-transform duration-300">
                       <FaMapMarkerAlt className="h-6 w-6 text-green-400" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold text-white mb-2">Address</h3>
+                      <h4 className="text-lg font-semibold text-white">Location</h4>
                       <p className="text-gray-300">Lahore, Pakistan</p>
                     </div>
                   </div>
@@ -134,9 +233,9 @@ const Contact = () => {
             </Card>
 
             {/* Social Media */}
-            <Card className="hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 border-cyan-500/30 bg-black/60 backdrop-blur-sm">
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-4 text-center">
+            <Card className="hover:shadow-2xl hover:shadow-yellow-500/10 transition-all duration-500 border-slate-700 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm transform hover:-translate-y-2">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold text-white mb-6 text-center">
                   Connect With Me
                 </h3>
                 <div className="flex justify-center gap-6">
@@ -144,103 +243,40 @@ const Contact = () => {
                     href="https://github.com/Alihusnain1489"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 bg-gray-500/20 hover:bg-gray-500/30 rounded-full transition-all duration-300 hover:scale-110"
+                    className="p-4 bg-gradient-to-r from-gray-500/20 to-slate-500/20 hover:from-gray-500/30 hover:to-slate-500/30 rounded-full transition-all duration-300 hover:scale-125 transform hover:-translate-y-2 shadow-lg hover:shadow-gray-500/20"
                   >
-                    <FaGithub className="h-8 w-8 text-gray-300" />
+                    <FaGithub className="h-8 w-8 text-gray-300 hover:text-white transition-colors duration-300" />
                   </a>
                   <a 
                     href="https://www.linkedin.com/in/ali-husnain-790929252/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-4 bg-blue-500/20 hover:bg-blue-500/30 rounded-full transition-all duration-300 hover:scale-110"
+                    className="p-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 hover:from-blue-500/30 hover:to-cyan-500/30 rounded-full transition-all duration-300 hover:scale-125 transform hover:-translate-y-2 shadow-lg hover:shadow-blue-500/20"
                   >
-                    <FaLinkedin className="h-8 w-8 text-blue-400" />
+                    <FaLinkedin className="h-8 w-8 text-blue-400 hover:text-blue-300 transition-colors duration-300" />
                   </a>
                   <a 
                     href="mailto:mr.alihusnain11@gmail.com"
-                    className="p-4 bg-cyan-500/20 hover:bg-cyan-500/30 rounded-full transition-all duration-300 hover:scale-110"
+                    className="p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 hover:from-yellow-500/30 hover:to-orange-500/30 rounded-full transition-all duration-300 hover:scale-125 transform hover:-translate-y-2 shadow-lg hover:shadow-yellow-500/20"
                   >
-                    <SiGmail className="h-8 w-8 text-cyan-400" />
+                    <SiGmail className="h-8 w-8 text-yellow-400 hover:text-yellow-300 transition-colors duration-300" />
                   </a>
                 </div>
               </CardContent>
             </Card>
-          </div>
 
-          {/* Contact Form */}
-          <Card className="hover:shadow-xl hover:shadow-cyan-500/10 transition-all duration-300 border-cyan-500/30 bg-black/60 backdrop-blur-sm">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Input
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    required
-                    disabled={isSubmitting}
-                    className="w-full border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400 bg-black/50 text-white placeholder-gray-400 h-12"
-                    placeholder="Full Name"
-                  />
+            {/* Illustration Area */}
+            <div className="hidden lg:block">
+              <div className="relative">
+                <div className="w-full h-64 bg-gradient-to-br from-slate-700/30 to-slate-800/30 rounded-2xl border border-slate-600 flex items-center justify-center group hover:from-slate-600/30 hover:to-slate-700/30 transition-all duration-500">
+                  <div className="text-center transform group-hover:scale-105 transition-transform duration-300">
+                    <MessageCircle className="h-16 w-16 text-yellow-400 mx-auto mb-4 animate-pulse" />
+                    <p className="text-gray-300 text-lg">Let's start a conversation</p>
+                  </div>
                 </div>
-                <div>
-                  <Input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    disabled={isSubmitting}
-                    className="w-full border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400 bg-black/50 text-white placeholder-gray-400 h-12"
-                    placeholder="Email Address"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    disabled={isSubmitting}
-                    className="w-full border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400 bg-black/50 text-white placeholder-gray-400 h-12"
-                    placeholder="Phone Number"
-                  />
-                </div>
-                <div>
-                  <Input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    disabled={isSubmitting}
-                    className="w-full border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400 bg-black/50 text-white placeholder-gray-400 h-12"
-                    placeholder="Subject"
-                  />
-                </div>
-                <div>
-                  <Textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    disabled={isSubmitting}
-                    className="w-full border-cyan-500/30 focus:border-cyan-400 focus:ring-cyan-400 bg-black/50 text-white placeholder-gray-400 resize-none"
-                    placeholder="Your message..."
-                  />
-                </div>
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 h-12 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <Send className="mr-2 h-5 w-5" />
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

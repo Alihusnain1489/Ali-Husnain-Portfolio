@@ -8,11 +8,10 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
-    { href: "home", label: "Hello" },
+    { href: "home", label: "Home" },
     { href: "about", label: "About" },
-    { href: "skills", label: "Portfolio" },
-    { href: "projects", label: "Work" },
-    { href: "experience", label: "Blog" },
+    { href: "skills", label: "Skills" },
+    { href: "projects", label: "Projects" },
     { href: "contact", label: "Contact" },
   ];
 
@@ -63,7 +62,7 @@ const Navbar = () => {
                 <span className="text-gray-900 font-bold text-xl">A</span>
               </div>
               <h1 className="text-xl font-bold text-white group-hover:text-green-400 transition-colors duration-300">
-                Alex
+                Ali Husnain
               </h1>
             </button>
           </div>

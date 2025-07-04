@@ -12,13 +12,13 @@ const Skills = () => {
     },
     {
       icon: Layers,
-      title: "Graphic Design",
-      description: "Creating visual content for digital and print media. Logo design, branding, marketing materials, and visual identity development.",
+      title: "Front-end Development",
+      description: "Building responsive and interactive web applications using modern frameworks like React, Vue, and Angular with clean, maintainable code.",
       featured: false
     },
     {
       icon: Monitor,
-      title: "Web Design",
+      title: "Web Development",
       description: "Developing modern, responsive websites with clean code. Frontend development using React, TypeScript, and modern CSS frameworks.",
       featured: false
     }
@@ -72,10 +72,10 @@ const Skills = () => {
         {/* Services Section */}
         <div className="text-center mb-20">
           <span className="inline-block px-4 py-2 bg-green-400/10 text-green-400 rounded-full text-sm font-medium border border-green-400/20 mb-4 animate-scale-in">
-            WHAT I WILL DO FOR YOU
+            WHAT I DO
           </span>
           <h2 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-white mb-4 animate-fade-in">
-            <span className="text-green-400">Services</span>
+            My <span className="text-green-400">Skills</span>
           </h2>
         </div>
 

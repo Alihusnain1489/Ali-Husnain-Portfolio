@@ -4,9 +4,9 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   const stats = [
-    { number: "16+", label: "Years of Experience", icon: Award },
-    { number: "215+", label: "Project Completed", icon: Trophy },
-    { number: "97+", label: "Happy Clients", icon: Users },
+    { number: "2+", label: "Years of Experience", icon: Award },
+    { number: "15+", label: "Projects Completed", icon: Trophy },
+    { number: "12+", label: "Happy Clients", icon: Users },
     { number: "100%", label: "Client Satisfaction", icon: Target },
   ];
 
@@ -27,7 +27,7 @@ const About = () => {
             About me
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto animate-fade-in delay-200">
-            A story of hardwork and perseverance.
+            A passionate front-end developer creating amazing digital experiences.
           </p>
         </div>
 
@@ -45,21 +45,21 @@ const About = () => {
                 {/* Floating stats */}
                 <div className="absolute -top-8 -left-8 bg-gray-800 rounded-2xl p-6 border border-green-400/30 transform hover:scale-105 transition-all duration-300">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-green-400 mb-1">16+</div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wide">Years of Experience</div>
+                    <div className="text-3xl font-bold text-green-400 mb-1">2+</div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wide">Years Experience</div>
                   </div>
                 </div>
                 
                 <div className="absolute -bottom-8 -right-8 bg-gray-800 rounded-2xl p-6 border border-green-400/30 transform hover:scale-105 transition-all duration-300">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-green-400 mb-1">215+</div>
-                    <div className="text-xs text-gray-400 uppercase tracking-wide">Project Completed</div>
+                    <div className="text-3xl font-bold text-green-400 mb-1">15+</div>
+                    <div className="text-xs text-gray-400 uppercase tracking-wide">Projects Done</div>
                   </div>
                 </div>
                 
                 <div className="absolute top-1/2 -right-12 transform -translate-y-1/2 bg-gray-800 rounded-2xl p-6 border border-green-400/30 hover:scale-105 transition-all duration-300">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-green-400 mb-1">97+</div>
+                    <div className="text-3xl font-bold text-green-400 mb-1">12+</div>
                     <div className="text-xs text-gray-400 uppercase tracking-wide">Happy Clients</div>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ const About = () => {
           <div className="space-y-8 animate-fade-in delay-500">
             <div>
               <p className="text-lg text-gray-300 leading-relaxed mb-6">
-                I'm a passionate front-end developer with expertise in creating 
+                I'm Ali Husnain, a passionate front-end developer with expertise in creating 
                 beautiful and functional user interfaces. My journey in web development 
                 started during my studies at Virtual University of Pakistan, where I 
                 developed a deep appreciation for user-centered design.

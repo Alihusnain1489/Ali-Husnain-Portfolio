@@ -221,7 +221,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         disabled={isSubmitting}
-                        className="w-full border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 bg-slate-700/50 text-white placeholder-gray-400 h-12 transition-all duration-300 group-hover:border-emerald-500/50 rounded-xl"
+                        className="w-full border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 bg-slate-800/50 text-white placeholder-gray-400 h-12 transition-all duration-300 group-hover:border-emerald-500/50 rounded-xl"
                         placeholder="Enter your full name"
                       />
                     </div>
@@ -235,7 +235,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         disabled={isSubmitting}
-                        className="w-full border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 bg-slate-700/50 text-white placeholder-gray-400 h-12 transition-all duration-300 group-hover:border-emerald-500/50 rounded-xl"
+                        className="w-full border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 bg-slate-800/50 text-white placeholder-gray-400 h-12 transition-all duration-300 group-hover:border-emerald-500/50 rounded-xl"
                         placeholder="Enter your email address"
                       />
                     </div>
@@ -250,7 +250,7 @@ const Contact = () => {
                         value={formData.phone}
                         onChange={handleChange}
                         disabled={isSubmitting}
-                        className="w-full border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 bg-slate-700/50 text-white placeholder-gray-400 h-12 transition-all duration-300 group-hover:border-emerald-500/50 rounded-xl"
+                        className="w-full border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 bg-slate-800/50 text-white placeholder-gray-400 h-12 transition-all duration-300 group-hover:border-emerald-500/50 rounded-xl"
                         placeholder="Enter your phone number"
                       />
                     </div>

@@ -97,7 +97,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-3 gap-12 items-start">
           {/* Contact Information - Smaller Left Side */}
           <div className="space-y-6 animate-slide-up">
-            <Card className="hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 border-slate-700 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm transform hover:-translate-y-2">
+            <Card className="hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 border-emerald-700 bg-slate-800/70  backdrop-blur-sm transform hover:-translate-y-2">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-white mb-6 text-center">Get In Touch</h3>
                 <div className="space-y-4">
@@ -135,7 +135,7 @@ const Contact = () => {
             </Card>
 
             {/* Social Media */}
-            <Card className="hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 border-slate-700 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm transform hover:-translate-y-2">
+            <Card className="hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 border-emerald-700 bg-slate-800/70  backdrop-blur-sm transform hover:-translate-y-2">
               <CardContent className="p-6">
                 <h3 className="text-xl font-bold text-white mb-4 text-center">Follow Me</h3>
                 <div className="flex justify-center gap-4">
@@ -162,7 +162,7 @@ const Contact = () => {
 
           {/* Contact Form - Larger Right Side */}
           <div className="lg:col-span-2 animate-slide-up delay-300">
-            <Card className="hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 border-slate-700 bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur-sm">
+            <Card className="hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 border-emerald-700 bg-slate-800/70 backdrop-blur-sm">
               <CardContent className="p-8">
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-white mb-2">Send Message</h3>
@@ -244,7 +244,7 @@ const Contact = () => {
                     className="w-full bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white shadow-xl hover:shadow-emerald-500/30 transition-all duration-300 h-12 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
                   >
                     <Send className="mr-3 h-5 w-5" />
-                    {isSubmitting ? "Sending Message..." : "HIRE ME"}
+                    {isSubmitting ? "Sending Message..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>

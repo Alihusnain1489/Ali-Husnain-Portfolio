@@ -196,7 +196,7 @@ const Skills = () => {
                                 <h4 className="text-xl font-semibold text-white">
                                   {skill.name}
                                 </h4>
-                                <span className="text-sm text-cyan-400 font-bold bg-cyan-500/20 px-2 py-1 rounded">
+                                <span className="text-sm text-emerald-400 font-bold bg-cyan-500/20 px-2 py-1 rounded">
                                   {skill.level}%
                                 </span>
                               </div>

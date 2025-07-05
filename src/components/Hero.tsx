@@ -15,7 +15,7 @@ const Hero = () => {
               <span className="text-emerald-400 text-lg font-medium">HELLO, I'M A</span>
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-scale-in">
-              Front-end{" "}
+              Front-End{" "}
               <span className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
                 Developer.
               </span>

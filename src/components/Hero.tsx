@@ -41,7 +41,7 @@ const Hero = () => {
                 variant="outline"
                 size="lg"
                 className="border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 hover:text-white transform hover:scale-105 transition-all duration-300"
-                onClick={() => window.open("/Ali CV.pdf", "_blank")}
+                onClick={() => window.open("/Ali Husnain CV.pdf", "_blank")}
               >
                 <Download className="mr-2 h-4 w-4" />
                 DOWNLOAD CV

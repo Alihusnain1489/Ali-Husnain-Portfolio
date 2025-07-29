@@ -78,7 +78,7 @@ const Hero = () => {
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-emerald-400/30 shadow-2xl shadow-emerald-500/20 transform hover:scale-105 transition-all duration-500">
                 <img
-                  src="face-swap.png"
+                  src="/public/lovable-uploads/hero.png"
                   alt="Ali Husnain - Front-end Developer"
                   className="w-full h-full object-cover"
                 />

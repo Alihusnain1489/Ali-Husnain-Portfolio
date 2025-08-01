@@ -78,9 +78,10 @@ const Hero = () => {
             <div className="relative">
               <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-emerald-400/30 shadow-2xl shadow-emerald-500/20 transform hover:scale-105 transition-all duration-500">
                 <img
-                  src="/public/lovable-uploads/hero.png"
+                  src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
                   alt="Ali Husnain - Front-end Developer"
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full opacity-30 animate-pulse"></div>

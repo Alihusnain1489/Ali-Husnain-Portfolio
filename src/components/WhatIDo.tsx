@@ -6,10 +6,10 @@ const WhatIDo = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    const hasShownAnimation = localStorage.getItem('hero-animation-shown');
+    const hasShownAnimation = localStorage.getItem('whatido-animation-shown');
     if (!hasShownAnimation) {
       setHasAnimated(true);
-      localStorage.setItem('hero-animation-shown', 'true');
+      localStorage.setItem('whatido-animation-shown', 'true');
     }
   }, []);
 
@@ -57,11 +57,11 @@ const WhatIDo = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className={`text-4xl sm:text-5xl font-thin text-foreground mb-6 tracking-wide ${hasAnimated ? 'animate-fade-in' : ''}`}>
-            What I Do
+          <h2 className={`text-4xl sm:text-5xl font-playfair font-bold text-foreground mb-6 tracking-wide ${hasAnimated ? 'animate-slide-up' : ''}`}>
+            What I Do?
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
-          <p className={`text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed ${hasAnimated ? 'animate-fade-in delay-200' : ''}`}>
+          <p className={`text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed font-montserrat ${hasAnimated ? 'animate-slide-up delay-200' : ''}`}>
             Passionate about creating digital experiences that make a difference
           </p>
         </div>
@@ -71,7 +71,7 @@ const WhatIDo = () => {
           {services.map((service, index) => (
             <Card 
               key={service.title} 
-              className={`group border border-border bg-card hover:shadow-xl transition-all duration-500 hover:-translate-y-2 ${hasAnimated ? 'animate-fade-in' : ''}`}
+              className={`group border border-border bg-card hover:shadow-xl hover-lift transition-all duration-500 ${hasAnimated ? 'animate-slide-up' : ''}`}
               style={{ animationDelay: hasAnimated ? `${300 + index * 100}ms` : '0ms' }}
             >
               <CardContent className="p-8">
@@ -81,11 +81,11 @@ const WhatIDo = () => {
                   </div>
                 </div>
                 
-                <h3 className="text-xl font-medium text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors duration-300 font-montserrat">
                   {service.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed font-montserrat">
                   {service.description}
                 </p>
               </CardContent>

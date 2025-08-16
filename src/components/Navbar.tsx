@@ -10,9 +10,9 @@ const Navbar = () => {
   const navItems = [
     { href: "home", label: "Home" },
     { href: "about", label: "About" },
-    { href: "skills", label: "Skills" },
+    { href: "what-i-do", label: "What I Do" },
     { href: "projects", label: "Projects" },
-    { href: "contact", label: "Contact" },
+    { href: "contact", label: "Contact Me" },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -58,8 +58,8 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
             <button onClick={() => scrollToSection('home')} className="group">
-              <h1 className="text-xl font-light text-foreground tracking-wide group-hover:text-primary transition-all duration-300">
-                Ali Husnain
+              <h1 className="text-2xl font-playfair font-bold text-foreground tracking-wide group-hover:text-primary transition-all duration-300">
+                &lt; Ali Husnain /&gt;
               </h1>
             </button>
           </div>

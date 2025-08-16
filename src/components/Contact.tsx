@@ -5,10 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const [hasAnimated, setHasAnimated] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -18,6 +19,14 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const hasShownAnimation = localStorage.getItem('contact-animation-shown');
+    if (!hasShownAnimation) {
+      setHasAnimated(true);
+      localStorage.setItem('contact-animation-shown', 'true');
+    }
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -74,18 +83,18 @@ const Contact = () => {
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="max-w-4xl mx-auto relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl sm:text-5xl font-thin text-foreground mb-6 tracking-wide animate-fade-in">
-            Contact
+        <div className="text-center mb-16">
+          <h2 className={`text-4xl sm:text-5xl font-playfair font-bold text-foreground mb-6 tracking-wide ${hasAnimated ? 'animate-slide-up' : ''}`}>
+            Contact Me
           </h2>
           <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className={`text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed font-montserrat ${hasAnimated ? 'animate-slide-up delay-200' : ''}`}>
             Let's discuss your next project
           </p>
         </div>
 
         {/* Profile Image Section */}
-        <div className="flex justify-center mb-12 animate-fade-in delay-200">
+        <div className={`flex justify-center mb-12 ${hasAnimated ? 'animate-slide-up delay-300' : ''}`}>
           <div className="relative">
             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300">
               <img

@@ -1,57 +1,57 @@
 
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    const hasShownAnimation = localStorage.getItem('hero-animation-shown');
+    if (!hasShownAnimation) {
+      setHasAnimated(true);
+      localStorage.setItem('hero-animation-shown', 'true');
+    }
+  }, []);
+
   return (
     <section
       id="home"
       className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen flex items-center"
     >
       <div className="max-w-4xl mx-auto relative z-10 w-full text-center">
-        <div className="animate-fade-in">
-          {/* Hexagonal logo similar to reference */}
+        <div className={hasAnimated ? 'animate-fade-in' : ''}>
+          {/* Profile Image */}
           <div className="mb-8 flex justify-center">
             <div className="relative">
-              <svg 
-                width="100" 
-                height="100" 
-                viewBox="0 0 100 100" 
-                className="text-primary stroke-2"
-              >
-                <polygon 
-                  points="50,5 85,25 85,75 50,95 15,75 15,25" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2"
+              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl">
+                <img
+                  src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
+                  alt="Ali Husnain"
+                  className={`w-full h-full object-cover ${hasAnimated ? 'animate-scale-in' : ''}`}
                 />
-                <polygon 
-                  points="50,15 75,30 75,70 50,85 25,70 25,30" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="1"
-                />
-              </svg>
+              </div>
+              <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-background"></div>
             </div>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-thin text-foreground mb-6 tracking-wide animate-scale-in">
+          <h1 className={`text-5xl sm:text-6xl lg:text-7xl font-thin text-foreground mb-6 tracking-wide ${hasAnimated ? 'animate-scale-in delay-200' : ''}`}>
             Ali Husnain
           </h1>
           
           <div className="relative mb-8">
-            <p className="text-xl sm:text-2xl text-muted-foreground font-light tracking-wider animate-fade-in delay-200">
+            <p className={`text-xl sm:text-2xl text-muted-foreground font-light tracking-wider ${hasAnimated ? 'animate-fade-in delay-300' : ''}`}>
               Front-End Developer
             </p>
             <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-px bg-primary mt-4"></div>
           </div>
 
-          <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed animate-fade-in delay-300">
+          <p className={`text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed ${hasAnimated ? 'animate-fade-in delay-400' : ''}`}>
             Crafting digital experiences with modern web technologies. 
             Passionate about clean code, minimal design, and user-centered interfaces.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12 animate-fade-in delay-500">
+          <div className={`flex flex-col sm:flex-row gap-6 justify-center mb-12 ${hasAnimated ? 'animate-fade-in delay-500' : ''}`}>
             <Button
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-light tracking-wide px-8 py-3 rounded-none border border-primary hover:shadow-lg transition-all duration-300"
@@ -74,7 +74,7 @@ const Hero = () => {
             </Button>
           </div>
 
-          <div className="flex gap-6 justify-center animate-fade-in delay-700">
+          <div className={`flex gap-6 justify-center ${hasAnimated ? 'animate-fade-in delay-700' : ''}`}>
             <a
               href="https://github.com/Alihusnain1489"
               target="_blank"

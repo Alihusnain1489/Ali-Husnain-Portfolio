@@ -84,6 +84,20 @@ const Contact = () => {
           </p>
         </div>
 
+        {/* Profile Image Section */}
+        <div className="flex justify-center mb-12 animate-fade-in delay-200">
+          <div className="relative">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300">
+              <img
+                src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
+                alt="Ali Husnain"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-background"></div>
+          </div>
+        </div>
+
         <div className="space-y-12">
           {/* Contact Information */}
           <div className="grid md:grid-cols-3 gap-8 text-center animate-fade-in delay-300">

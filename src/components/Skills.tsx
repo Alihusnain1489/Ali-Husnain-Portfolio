@@ -36,40 +36,54 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen">
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-thin text-foreground mb-6 tracking-wide animate-fade-in">
-            Services
+    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen lendex-pattern">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-24 h-24 gradient-glow rounded-full opacity-20 animate-float"></div>
+        <div className="absolute bottom-20 left-20 w-16 h-16 gradient-glow rounded-full opacity-30 animate-pulse-custom"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-foreground mb-6 animate-fade-in">
+            Experience
           </h2>
-          <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in delay-200">
-            Specialized in creating modern, responsive web applications
+          <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-montserrat animate-fade-in delay-200">
+            Specialized in creating modern, responsive web applications with cutting-edge technologies
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Skills Categories */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card 
               key={service.title} 
-              className="group border border-border bg-card hover:shadow-lg transition-all duration-300"
+              className="group border border-border bg-card hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
-              <CardContent className="p-8">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="p-3 bg-primary/10 rounded-full">
-                    <service.icon className="h-6 w-6 text-primary" />
+              <CardContent className="p-8 text-center">
+                {/* Icon */}
+                <div className="mb-6">
+                  <div className="w-16 h-16 mx-auto gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <service.icon className="h-8 w-8 text-white" />
                   </div>
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1 duration-300" />
                 </div>
                 
-                <h3 className="text-lg font-medium text-foreground mb-4 group-hover:text-primary transition-colors">
+                {/* Title */}
+                <h3 className="text-xl font-playfair font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
                   {service.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                {/* Description */}
+                <p className="text-muted-foreground leading-relaxed font-montserrat text-sm">
                   {service.description}
                 </p>
+
+                {/* Hover Arrow */}
+                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-300">
+                  <ArrowUpRight className="h-5 w-5 text-primary mx-auto transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                </div>
               </CardContent>
             </Card>
           ))}

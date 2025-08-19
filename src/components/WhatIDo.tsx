@@ -1,4 +1,4 @@
-import { Code, Palette, Globe, Smartphone, Database, Zap } from "lucide-react";
+import { Layers, Code, Palette } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect, useState } from "react";
 
@@ -15,82 +15,85 @@ const WhatIDo = () => {
 
   const services = [
     {
-      title: "Frontend Development",
-      description: "Building responsive, interactive web applications using React, TypeScript, and modern CSS frameworks.",
-      icon: Code,
-      gradient: "from-blue-500 to-cyan-400"
-    },
-    {
+      icon: Layers,
       title: "UI/UX Design",
-      description: "Creating intuitive and beautiful user interfaces with focus on user experience and accessibility.",
+      description: "Landing Pages, User Flow, Wireframing, Prototyping, Mobile App Design",
+      gradient: "service-gradient-1"
+    },
+    {
+      icon: Code,
+      title: "Development", 
+      description: "HTML/CSS, JavaScript, Animation, WordPress, React",
+      gradient: "service-gradient-2"
+    },
+    {
       icon: Palette,
-      gradient: "from-purple-500 to-pink-400"
-    },
-    {
-      title: "Web Applications",
-      description: "Developing full-stack applications with modern frameworks and best practices for scalability.",
-      icon: Globe,
-      gradient: "from-green-500 to-emerald-400"
-    },
-    {
-      title: "Mobile-First Design",
-      description: "Ensuring perfect user experience across all devices with responsive and mobile-optimized designs.",
-      icon: Smartphone,
-      gradient: "from-orange-500 to-yellow-400"
-    },
-    {
-      title: "Database Integration",
-      description: "Implementing robust data solutions with modern databases and efficient query optimization.",
-      icon: Database,
-      gradient: "from-red-500 to-rose-400"
-    },
-    {
-      title: "Performance Optimization",
-      description: "Optimizing applications for speed, SEO, and user engagement with latest web technologies.",
-      icon: Zap,
-      gradient: "from-indigo-500 to-blue-400"
+      title: "Illustration",
+      description: "Character Design, Icon Set, Illustration Guide, Illustration Set, Motion Graphic",
+      gradient: "service-gradient-3"
     }
   ];
 
   return (
-    <section id="what-i-do" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className={`text-4xl sm:text-5xl font-playfair font-bold text-foreground mb-6 tracking-wide ${hasAnimated ? 'animate-slide-up' : ''}`}>
-            What I Do?
+    <section id="what-i-do" className="py-24 px-4 sm:px-6 lg:px-8 relative lendex-pattern">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-10 right-10 w-20 h-20 gradient-glow rounded-full opacity-20 animate-float"></div>
+        <div className="absolute bottom-20 left-10 w-16 h-16 gradient-glow rounded-full opacity-30 animate-pulse-custom"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Section Header */}
+        <div className="text-center mb-20">
+          <h2 className={`text-4xl sm:text-5xl font-playfair font-bold text-foreground mb-6 ${hasAnimated ? 'animate-slide-up' : ''}`}>
+            Service Provide For My Clients.
           </h2>
-          <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
-          <p className={`text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed font-montserrat ${hasAnimated ? 'animate-slide-up delay-200' : ''}`}>
-            Passionate about creating digital experiences that make a difference
-          </p>
+          <div className="w-20 h-1 bg-primary mx-auto"></div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card 
-              key={service.title} 
-              className={`group border border-border bg-card hover:shadow-xl hover-lift transition-all duration-500 ${hasAnimated ? 'animate-slide-up' : ''}`}
-              style={{ animationDelay: hasAnimated ? `${300 + index * 100}ms` : '0ms' }}
-            >
-              <CardContent className="p-8">
-                <div className="mb-6">
-                  <div className={`p-4 rounded-full bg-gradient-to-r ${service.gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className="h-8 w-8 text-white" />
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+          {services.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <Card 
+                key={index} 
+                className={`group relative overflow-hidden bg-card border-border hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 ${hasAnimated ? 'animate-slide-up' : ''}`}
+                style={{ animationDelay: hasAnimated ? `${300 + index * 100}ms` : '0ms' }}
+              >
+                <CardContent className="p-8 text-center relative z-10">
+                  {/* Icon with Gradient Background */}
+                  <div className="mb-8">
+                    <div className={`w-20 h-20 mx-auto ${service.gradient} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                      <Icon className="h-10 w-10 text-white" />
+                    </div>
                   </div>
+
+                  {/* Title */}
+                  <h3 className="text-2xl font-playfair font-bold text-foreground mb-6 group-hover:text-primary transition-colors duration-300">
+                    {service.title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-muted-foreground leading-relaxed font-montserrat">
+                    {service.description}
+                  </p>
+
+                  {/* Hover Arrow */}
+                  <div className={`mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${hasAnimated ? 'animate-slide-up' : ''}`}>
+                    <div className="w-12 h-12 mx-auto gradient-primary rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold">→</span>
+                    </div>
+                  </div>
+                </CardContent>
+
+                {/* Background Pattern */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent"></div>
                 </div>
-                
-                <h3 className="text-xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors duration-300 font-montserrat">
-                  {service.title}
-                </h3>
-                
-                <p className="text-muted-foreground leading-relaxed font-montserrat">
-                  {service.description}
-                </p>
-              </CardContent>
-            </Card>
-          ))}
+              </Card>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -80,159 +80,183 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      <div className="max-w-4xl mx-auto relative z-10">
+    <section id="contact" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden lendex-pattern">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 right-20 w-24 h-24 gradient-glow rounded-full opacity-20 animate-float"></div>
+        <div className="absolute bottom-10 left-10 w-16 h-16 gradient-glow rounded-full opacity-30 animate-pulse-custom"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          <h2 className={`text-4xl sm:text-5xl font-playfair font-bold text-foreground mb-6 tracking-wide ${hasAnimated ? 'animate-slide-up' : ''}`}>
-            Contact Me
+        <div className="text-center mb-20">
+          <h2 className={`text-4xl sm:text-5xl font-playfair font-bold text-foreground mb-6 ${hasAnimated ? 'animate-slide-up' : ''}`}>
+            Contact
           </h2>
-          <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
-          <p className={`text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed font-montserrat ${hasAnimated ? 'animate-slide-up delay-200' : ''}`}>
-            Let's discuss your next project
+          <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
+          <p className={`text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-montserrat ${hasAnimated ? 'animate-slide-up delay-200' : ''}`}>
+            Let's discuss your next project and bring your ideas to life
           </p>
         </div>
 
-        {/* Profile Image Section */}
-        <div className={`flex justify-center mb-12 ${hasAnimated ? 'animate-slide-up delay-300' : ''}`}>
-          <div className="relative">
-            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/20 shadow-lg hover:shadow-xl transition-all duration-300">
-              <img
-                src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
-                alt="Ali Husnain"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Left Side - Contact Info & Image */}
+          <div className={`space-y-8 ${hasAnimated ? 'animate-slide-left delay-300' : ''}`}>
+            {/* Profile Image */}
+            <div className="text-center">
+              <div className="relative inline-block">
+                <div className="w-48 h-48 rounded-3xl overflow-hidden border-4 border-primary/20 shadow-xl hover:shadow-2xl transition-all duration-300 gradient-secondary p-1">
+                  <img
+                    src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
+                    alt="Ali Husnain"
+                    className="w-full h-full object-cover rounded-3xl hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-12 h-12 gradient-primary rounded-full border-4 border-background flex items-center justify-center">
+                  <span className="text-white text-sm">👋</span>
+                </div>
+              </div>
             </div>
-            <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-4 border-background"></div>
+
+            {/* Contact Information Cards */}
+            <div className="space-y-6">
+              <Card className="border border-border bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardContent className="p-6 flex items-center space-x-4">
+                  <div className="p-3 service-gradient-1 rounded-xl">
+                    <FaEnvelope className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-playfair font-bold text-foreground mb-1">Email Address</h4>
+                    <p className="text-muted-foreground font-montserrat">mr.alihusnain11@gmail.com</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border border-border bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardContent className="p-6 flex items-center space-x-4">
+                  <div className="p-3 service-gradient-2 rounded-xl">
+                    <FaPhone className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-playfair font-bold text-foreground mb-1">Phone Number</h4>
+                    <p className="text-muted-foreground font-montserrat">+92 349 0470871</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border border-border bg-card hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                <CardContent className="p-6 flex items-center space-x-4">
+                  <div className="p-3 service-gradient-3 rounded-xl">
+                    <FaMapMarkerAlt className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-playfair font-bold text-foreground mb-1">Location</h4>
+                    <p className="text-muted-foreground font-montserrat">Lahore, Pakistan</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex justify-center gap-4 pt-6">
+              <a 
+                href="https://github.com/Alihusnain1489"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-full bg-card border border-border text-foreground flex items-center justify-center hover:scale-110 hover:bg-primary hover:text-white transition-all duration-300 shadow-lg"
+              >
+                <FaGithub className="h-5 w-5" />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/ali-husnain-790929252/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-12 h-12 rounded-full bg-card border border-border text-foreground flex items-center justify-center hover:scale-110 hover:bg-primary hover:text-white transition-all duration-300 shadow-lg"
+              >
+                <FaLinkedin className="h-5 w-5" />
+              </a>
+            </div>
           </div>
-        </div>
 
-        <div className="space-y-12">
-          {/* Contact Information */}
-          <div className="grid md:grid-cols-3 gap-8 text-center animate-fade-in delay-300">
-            <div className="space-y-2">
-              <div className="flex justify-center mb-3">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <FaEnvelope className="h-5 w-5 text-primary" />
+          {/* Right Side - Contact Form */}
+          <div className={`${hasAnimated ? 'animate-slide-right delay-400' : ''}`}>
+            <Card className="border border-border bg-card shadow-xl">
+              <CardContent className="p-8">
+                <div className="mb-8 text-center">
+                  <h3 className="text-2xl font-playfair font-bold text-foreground mb-2">Send Message</h3>
+                  <p className="text-muted-foreground font-montserrat">Ready to start your project?</p>
                 </div>
-              </div>
-              <h4 className="text-sm font-medium text-foreground">Email</h4>
-              <p className="text-sm text-muted-foreground">mr.alihusnain11@gmail.com</p>
-            </div>
 
-            <div className="space-y-2">
-              <div className="flex justify-center mb-3">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <FaPhone className="h-5 w-5 text-primary" />
-                </div>
-              </div>
-              <h4 className="text-sm font-medium text-foreground">Phone</h4>
-              <p className="text-sm text-muted-foreground">+92 349 0470871</p>
-            </div>
-
-            <div className="space-y-2">
-              <div className="flex justify-center mb-3">
-                <div className="p-3 bg-primary/10 rounded-full">
-                  <FaMapMarkerAlt className="h-5 w-5 text-primary" />
-                </div>
-              </div>
-              <h4 className="text-sm font-medium text-foreground">Location</h4>
-              <p className="text-sm text-muted-foreground">Lahore, Pakistan</p>
-            </div>
-          </div>
-
-          {/* Contact Form */}
-          <Card className="border border-border bg-card animate-fade-in delay-500">
-            <CardContent className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <Input
-                    type="text"
-                    name="fullName"
-                    value={formData.fullName}
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <Input
+                      type="text"
+                      name="fullName"
+                      value={formData.fullName}
+                      onChange={handleChange}
+                      required
+                      disabled={isSubmitting}
+                      className="border-border focus:border-primary focus:ring-primary bg-background text-foreground placeholder-muted-foreground rounded-lg h-12"
+                      placeholder="Full Name"
+                    />
+                    
+                    <Input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      disabled={isSubmitting}
+                      className="border-border focus:border-primary focus:ring-primary bg-background text-foreground placeholder-muted-foreground rounded-lg h-12"
+                      placeholder="Email Address"
+                    />
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <Input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      disabled={isSubmitting}
+                      className="border-border focus:border-primary focus:ring-primary bg-background text-foreground placeholder-muted-foreground rounded-lg h-12"
+                      placeholder="Phone Number"
+                    />
+                    
+                    <Input
+                      type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      disabled={isSubmitting}
+                      className="border-border focus:border-primary focus:ring-primary bg-background text-foreground placeholder-muted-foreground rounded-lg h-12"
+                      placeholder="Subject"
+                    />
+                  </div>
+                  
+                  <Textarea
+                    name="message"
+                    value={formData.message}
                     onChange={handleChange}
                     required
+                    rows={6}
                     disabled={isSubmitting}
-                    className="border-border focus:border-primary focus:ring-primary bg-background text-foreground placeholder-muted-foreground font-light"
-                    placeholder="Full Name"
+                    className="border-border focus:border-primary focus:ring-primary bg-background text-foreground placeholder-muted-foreground resize-none rounded-lg"
+                    placeholder="Tell me about your project..."
                   />
                   
-                  <Input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
+                  <Button 
+                    type="submit" 
                     disabled={isSubmitting}
-                    className="border-border focus:border-primary focus:ring-primary bg-background text-foreground placeholder-muted-foreground font-light"
-                    placeholder="Email Address"
-                  />
-                </div>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <Input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    disabled={isSubmitting}
-                    className="border-border focus:border-primary focus:ring-primary bg-background text-foreground placeholder-muted-foreground font-light"
-                    placeholder="Phone Number"
-                  />
-                  
-                  <Input
-                    type="text"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    disabled={isSubmitting}
-                    className="border-border focus:border-primary focus:ring-primary bg-background text-foreground placeholder-muted-foreground font-light"
-                    placeholder="Subject"
-                  />
-                </div>
-                
-                <Textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  disabled={isSubmitting}
-                  className="border-border focus:border-primary focus:ring-primary bg-background text-foreground placeholder-muted-foreground resize-none font-light"
-                  placeholder="Your Message"
-                />
-                
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-light tracking-wide disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  <Send className="mr-2 h-4 w-4" />
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-
-          {/* Social Links */}
-          <div className="flex justify-center gap-6 animate-fade-in delay-700">
-            <a 
-              href="https://github.com/Alihusnain1489"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 text-muted-foreground hover:text-primary transition-all duration-300 transform hover:scale-110"
-            >
-              <FaGithub className="h-6 w-6" />
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/ali-husnain-790929252/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 text-muted-foreground hover:text-primary transition-all duration-300 transform hover:scale-110"
-            >
-              <FaLinkedin className="h-6 w-6" />
-            </a>
+                    className="w-full gradient-primary text-white font-montserrat font-medium py-4 rounded-lg hover:scale-105 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed border-0 shadow-lg"
+                  >
+                    <Send className="mr-2 h-5 w-5" />
+                    {isSubmitting ? "Sending Message..." : "Send Message"}
+                  </Button>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>

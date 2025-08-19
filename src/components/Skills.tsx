@@ -100,6 +100,17 @@ const Skills = () => {
       description: "Object-oriented programming",
     },
     {
+      name: "Next.js",
+      level: 75,
+      color: "bg-gray-800",
+      icon: Code,
+      image:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      category: "Frontend",
+      experience: "5+ months",
+      description: "React framework for production applications",
+    },
+    {
       name: "Spring Boot",
       level: 65,
       color: "bg-green-600",
@@ -251,7 +262,7 @@ const Skills = () => {
                 </h4>
                 <p className="text-gray-300 text-sm">
                   Building responsive and interactive user interfaces with
-                  modern React and TypeScript
+                  modern React, Next.js and TypeScript
                 </p>
               </div>
               <div className="text-center">

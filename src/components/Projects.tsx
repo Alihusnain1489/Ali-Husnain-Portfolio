@@ -10,30 +10,30 @@ const Projects = () => {
       title: "Loopholedefender",
       description: "Cybersecurity package purchasing platform with modern UI and secure payment integration.",
       image: "/loopholedefender.png",
-      liveUrl: "https://loophole-defender.vercel.app/",
+      liveUrl: "https://lovable.dev/projects/1d42e610-404d-4c8c-9d4c-05f38eca317a",
       githubUrl: "#",
       technologies: ["React", "Django", "JavaScript"],
       category: "Security Platform"
     },
     {
       id: 2,
-      title: "Alif Threads",
+      title: "Wholesale Threads Bazaar",
       description: "Wholesale clothing marketplace with advanced filtering and product management features.",
       image: "/my.png",
-      liveUrl: "https://alif-threads.vercel.app/",
+      liveUrl: "https://wholesale-threads-bazaar.vercel.app/",
       githubUrl: "#",
       technologies: ["React", "JavaScript", "CSS3"],
       category: "E-commerce Platform"
     },
     {
       id: 3,
-      title: "Guardian Sheild",
-      description: "A Security platform for public service company.It is a BOOKING platform for different type of service packages",
-      image: "/security.png",
+      title: "Zaheer Sons Deals Shop",
+      description: "E-commerce platform for deals and shopping with modern UI design and responsive layout.",
+      image: "/zsh.png",
       liveUrl: "https://zaheer-sons-deals-shop.vercel.app/",
       githubUrl: "#",
       technologies: ["React", "Tailwind CSS", "Vercel"],
-      category: "Booking PlaTFORM"
+      category: "Online Store"
     },
     {
       id: 4,

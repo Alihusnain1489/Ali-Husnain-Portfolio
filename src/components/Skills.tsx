@@ -36,38 +36,34 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen">
-      <div className="max-w-6xl mx-auto relative z-10">
+    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen bg-slate-900">
+      <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-thin text-foreground mb-6 tracking-wide animate-fade-in">
-            Services
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            My <span className="text-emerald-400">Services</span>
           </h2>
-          <div className="w-24 h-px bg-primary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-fade-in delay-200">
-            Specialized in creating modern, responsive web applications
-          </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <Card 
               key={service.title} 
-              className="group border border-border bg-card hover:shadow-lg transition-all duration-300"
+              className="group relative overflow-hidden bg-slate-800/60 border-slate-700 hover:border-emerald-500/50 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm"
             >
               <CardContent className="p-8">
                 <div className="flex items-start justify-between mb-6">
-                  <div className="p-3 bg-primary/10 rounded-full">
-                    <service.icon className="h-6 w-6 text-primary" />
+                  <div className="p-3 bg-slate-700/50 rounded-lg">
+                    <service.icon className="h-8 w-8 text-white" />
                   </div>
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1 duration-300" />
+                  <ArrowUpRight className="h-5 w-5 text-gray-400 group-hover:text-emerald-400 transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1 duration-300" />
                 </div>
                 
-                <h3 className="text-lg font-medium text-foreground mb-4 group-hover:text-primary transition-colors">
+                <h3 className="text-xl font-semibold text-white mb-4 group-hover:text-emerald-400 transition-colors">
                   {service.title}
                 </h3>
                 
-                <p className="text-muted-foreground leading-relaxed text-sm">
+                <p className="text-gray-300 leading-relaxed">
                   {service.description}
                 </p>
               </CardContent>

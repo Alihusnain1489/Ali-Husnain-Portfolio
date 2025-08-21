@@ -1,102 +1,92 @@
 
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
 
 const Hero = () => {
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    const hasShownAnimation = localStorage.getItem('hero-animation-shown');
-    if (!hasShownAnimation) {
-      setHasAnimated(true);
-      localStorage.setItem('hero-animation-shown', 'true');
-    }
-  }, []);
-
   return (
     <section
       id="home"
-      className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen flex items-center"
+      className="pt-20 pb-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen flex items-center"
     >
-      <div className="max-w-4xl mx-auto relative z-10 w-full text-center">
-        <div className={hasAnimated ? 'animate-fade-in' : ''}>
-          {/* Profile Image */}
-          <div className="mb-8 flex justify-center">
-            <div className="relative">
-              <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl">
-                <img
-                  src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
-                  alt="Ali Husnain"
-                  className={`w-full h-full object-cover ${hasAnimated ? 'animate-scale-in' : ''}`}
-                />
-              </div>
-              <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-green-500 rounded-full border-4 border-background"></div>
+      <div className="max-w-7xl mx-auto relative z-10 w-full">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+          <div className="flex-1 text-center lg:text-left animate-fade-in">
+            <div className="mb-4">
+              <span className="text-emerald-400 text-lg font-medium">HELLO, I'M A</span>
+            </div>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 animate-scale-in">
+              Front-End{" "}
+              <span className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">
+                Developer.
+              </span>
+            </h1>
+            <p className="text-lg text-gray-300 mb-8 max-w-2xl animate-fade-in delay-200">
+              Hi I'm Ali Husnain, a passionate Front-end Developer based in Pakistan. 
+              Welcome to my portfolio website where you can explore my work and experience.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-fade-in delay-300">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-emerald-500/30"
+                onClick={() =>
+                  document
+                    .getElementById("projects")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                VIEW PORTFOLIO
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-emerald-400 text-emerald-400 hover:bg-emerald-400/10 hover:text-white transform hover:scale-105 transition-all duration-300"
+                onClick={() => window.open("/Ali Husnain CV.pdf", "_blank")}
+              >
+                <Download className="mr-2 h-4 w-4" />
+                DOWNLOAD CV
+              </Button>
+            </div>
+
+            <div className="flex gap-4 justify-center lg:justify-start animate-fade-in delay-500">
+              <a
+                href="https://github.com/Alihusnain1489"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-emerald-500/30"
+              >
+                <Github className="h-6 w-6 text-emerald-400" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ali-husnain-790929252/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-3 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-emerald-500/30"
+              >
+                <Linkedin className="h-6 w-6 text-emerald-400" />
+              </a>
+              <a
+                href="mailto:mr.alihusnain11@gmail.com"
+                className="p-3 bg-emerald-500/20 hover:bg-emerald-500/30 rounded-full transition-all duration-300 transform hover:scale-110 hover:shadow-lg hover:shadow-emerald-500/30"
+              >
+                <Mail className="h-6 w-6 text-emerald-400" />
+              </a>
             </div>
           </div>
 
-          <h1 className={`text-5xl sm:text-6xl lg:text-7xl font-thin text-foreground mb-6 tracking-wide ${hasAnimated ? 'animate-scale-in delay-200' : ''}`}>
-            Ali Husnain
-          </h1>
-          
-          <div className="relative mb-8">
-            <p className={`text-xl sm:text-2xl text-muted-foreground font-light tracking-wider ${hasAnimated ? 'animate-fade-in delay-300' : ''}`}>
-              Front-End Developer
-            </p>
-            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-px bg-primary mt-4"></div>
-          </div>
-
-          <p className={`text-lg text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed ${hasAnimated ? 'animate-fade-in delay-400' : ''}`}>
-            Crafting digital experiences with modern web technologies. 
-            Passionate about clean code, minimal design, and user-centered interfaces.
-          </p>
-
-          <div className={`flex flex-col sm:flex-row gap-6 justify-center mb-12 ${hasAnimated ? 'animate-fade-in delay-500' : ''}`}>
-            <Button
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-light tracking-wide px-8 py-3 rounded-none border border-primary hover:shadow-lg transition-all duration-300"
-              onClick={() =>
-                document
-                  .getElementById("projects")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
-            >
-              View Work
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground font-light tracking-wide px-8 py-3 rounded-none transition-all duration-300"
-              onClick={() => window.open("/Ali Husnain CV.pdf", "_blank")}
-            >
-              <Download className="mr-2 h-4 w-4" />
-              Resume
-            </Button>
-          </div>
-
-          <div className={`flex gap-6 justify-center ${hasAnimated ? 'animate-fade-in delay-700' : ''}`}>
-            <a
-              href="https://github.com/Alihusnain1489"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 text-muted-foreground hover:text-primary transition-all duration-300 transform hover:scale-110"
-            >
-              <Github className="h-6 w-6" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/ali-husnain-790929252/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 text-muted-foreground hover:text-primary transition-all duration-300 transform hover:scale-110"
-            >
-              <Linkedin className="h-6 w-6" />
-            </a>
-            <a
-              href="mailto:mr.alihusnain11@gmail.com"
-              className="p-3 text-muted-foreground hover:text-primary transition-all duration-300 transform hover:scale-110"
-            >
-              <Mail className="h-6 w-6" />
-            </a>
+          <div className="flex-1 flex justify-center lg:justify-end animate-fade-in delay-300">
+            <div className="relative">
+              <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-8 border-emerald-400/30 shadow-2xl shadow-emerald-500/20 transform hover:scale-105 transition-all duration-500">
+                <img
+                  src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
+                  alt="Ali Husnain - Front-end Developer"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full opacity-30 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full opacity-30 animate-pulse delay-1000"></div>
+            </div>
           </div>
         </div>
       </div>

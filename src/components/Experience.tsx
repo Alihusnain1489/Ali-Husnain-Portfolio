@@ -1,5 +1,4 @@
 
-import { Briefcase, Code, Users, Clock, Trophy, TrendingUp, GraduationCap, User } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Experience = () => {
@@ -12,7 +11,7 @@ const Experience = () => {
       status: "active"
     },
     {
-      year: "2023 - 2024",
+      year: "2023 - 2024", 
       title: "React Developer (Internship)",
       company: "Beyond Logics",
       description: "Developed custom web solutions, integrated APIs, and ensured SEO-friendly, high-performance applications.",
@@ -20,7 +19,7 @@ const Experience = () => {
     },
     {
       year: "2022 - 2023",
-      title: "Frontend Developer",
+      title: "Frontend Developer", 
       company: "Self Learning",
       description: "Created SaaS dashboards and reusable components, emphasizing clean code, speed, and mobile-first design.",
       status: "completed"
@@ -31,34 +30,36 @@ const Experience = () => {
     { label: "Experience", active: true },
     { label: "Education", active: false },
     { label: "Skills", active: false },
-    { label: "AboutMe", active: false }
+    { label: "About Me", active: false }
   ];
 
   return (
-    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen bg-slate-900">
+    <section id="experience" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Left side - Why Hire Me */}
-          <div className="lg:col-span-2">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-              Why Hire Me?
-            </h2>
-            <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-              I specialize in building modern, fast, and scalable frontend applications. With a focus on user-centric design and clean code, I can help transform your ideas into responsive digital products.
-            </p>
+          <div className="lg:col-span-2 space-y-8">
+            <div>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+                Why Hire Me?
+              </h2>
+              <p className="text-slate-300 text-lg leading-relaxed">
+                I specialize in building modern, fast, and scalable frontend applications. With a focus on user-centric design and clean code, I can help transform your ideas into responsive digital products.
+              </p>
+            </div>
             
             {/* Sidebar Navigation */}
-            <div className="space-y-2">
-              {sidebarItems.map((item, index) => (
+            <div className="space-y-3">
+              {sidebarItems.map((item) => (
                 <div
                   key={item.label}
-                  className={`p-4 rounded-lg border transition-all duration-300 ${
+                  className={`p-4 rounded-xl transition-all duration-300 cursor-pointer ${
                     item.active
-                      ? "bg-emerald-500/20 border-emerald-500/50 text-emerald-400"
-                      : "bg-slate-800/50 border-slate-700 text-gray-400 hover:border-slate-600"
+                      ? "card-gradient border border-emerald-500/30 text-emerald-400 shadow-lg"
+                      : "bg-slate-800/50 border border-slate-700 text-slate-400 hover:border-slate-600 hover:bg-slate-700/50"
                   }`}
                 >
-                  <div className="text-center font-medium">
+                  <div className="font-medium text-center">
                     {item.label}
                   </div>
                 </div>
@@ -68,41 +69,53 @@ const Experience = () => {
 
           {/* Right side - Experience Timeline */}
           <div className="lg:col-span-3">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12">
               My <span className="text-emerald-400">Experience</span>
             </h2>
             
-            <div className="space-y-6">
+            <div className="space-y-8">
               {experiences.map((exp, index) => (
                 <Card 
                   key={index}
-                  className="bg-slate-800/60 border-slate-700 hover:border-emerald-500/50 transition-all duration-300 backdrop-blur-sm"
+                  className="card-gradient card-hover border-0 relative overflow-hidden"
                 >
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-3 h-3 rounded-full mt-2 flex-shrink-0 ${
-                        exp.status === 'active' ? 'bg-emerald-400' : 'bg-slate-500'
-                      }`}></div>
-                      <div className="flex-1">
-                        <div className="flex items-start justify-between mb-2">
-                          <div>
-                            <p className="text-emerald-400 text-sm font-medium mb-1">
-                              {exp.year}
-                            </p>
-                            <h3 className="text-xl font-semibold text-white mb-1">
-                              {exp.title}
-                            </h3>
-                            <p className="text-gray-400 mb-3">
-                              ● {exp.company}
-                            </p>
-                          </div>
-                        </div>
-                        <p className="text-gray-300 leading-relaxed">
+                  <CardContent className="p-8 relative z-10">
+                    <div className="flex items-start gap-6">
+                      {/* Timeline dot */}
+                      <div className="flex flex-col items-center">
+                        <div className={`w-4 h-4 rounded-full flex-shrink-0 ${
+                          exp.status === 'active' 
+                            ? 'bg-emerald-400 shadow-lg shadow-emerald-400/50' 
+                            : 'bg-slate-500'
+                        }`}></div>
+                        {index < experiences.length - 1 && (
+                          <div className="w-px bg-slate-600 h-20 mt-4"></div>
+                        )}
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="flex-1 space-y-3">
+                        <span className="text-emerald-400 text-sm font-semibold tracking-wide uppercase">
+                          {exp.year}
+                        </span>
+                        <h3 className="text-xl font-bold text-white">
+                          {exp.title}
+                        </h3>
+                        <p className="text-slate-400 font-medium">
+                          <span className="inline-block w-2 h-2 bg-emerald-400 rounded-full mr-2"></span>
+                          {exp.company}
+                        </p>
+                        <p className="text-slate-300 leading-relaxed">
                           {exp.description}
                         </p>
                       </div>
                     </div>
                   </CardContent>
+                  
+                  {/* Hover effect background */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
+                    <div className="w-full h-full bg-gradient-to-r from-emerald-500/20 to-transparent"></div>
+                  </div>
                 </Card>
               ))}
             </div>

@@ -5,54 +5,58 @@
 
 @layer base {
   :root {
-    /* Lendex Dark Theme - Professional Portfolio Colors */
-    --background: 220 15% 10%;
-    --foreground: 0 0% 98%;
+    /* Lendex Professional Dark Theme */
+    --background: 220 20% 8%;
+    --foreground: 0 0% 95%;
 
     --card: 220 15% 12%;
-    --card-foreground: 0 0% 98%;
+    --card-foreground: 0 0% 95%;
 
     --popover: 220 15% 12%;
-    --popover-foreground: 0 0% 98%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 152 76% 50%;
-    --primary-foreground: 220 15% 10%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 98%;
 
     --secondary: 220 15% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary-foreground: 0 0% 95%;
 
     --muted: 220 15% 15%;
     --muted-foreground: 220 5% 65%;
 
-    --accent: 152 76% 50%;
-    --accent-foreground: 220 15% 10%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 15% 20%;
+    --border: 220 15% 18%;
     --input: 220 15% 15%;
-    --ring: 152 76% 50%;
+    --ring: 142 76% 36%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    /* Professional Portfolio Colors */
-    --primary-gradient: linear-gradient(135deg, hsl(152, 76%, 50%), hsl(152, 76%, 40%));
-    --secondary-gradient: linear-gradient(135deg, hsl(220, 15%, 15%), hsl(220, 15%, 20%));
-    --dark-overlay: rgba(15, 23, 42, 0.9);
+    /* Lendex Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(142, 76%, 36%), hsl(142, 76%, 42%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220, 15%, 15%), hsl(220, 15%, 20%));
+    --gradient-card: linear-gradient(145deg, hsl(220, 15%, 12%), hsl(220, 15%, 16%));
+    --gradient-hover: linear-gradient(145deg, hsl(220, 15%, 16%), hsl(220, 15%, 20%));
     
-    /* Social Media Colors */
-    --github: 0 0% 20%;
-    --linkedin: 201 100% 35%;
-    --twitter: 203 89% 53%;
-    --instagram: 329 100% 54%;
-    --behance: 231 99% 63%;
-    --dribbble: 340 82% 52%;
-
-    /* Geometric Pattern Colors */
-    --pattern-light: rgba(255, 255, 255, 0.05);
-    --pattern-medium: rgba(255, 255, 255, 0.1);
-    --glow-primary: rgba(52, 211, 153, 0.2);
+    /* Professional Color Palette */
+    --emerald: 142 76% 36%;
+    --emerald-light: 142 76% 42%;
+    --slate-900: 220 20% 8%;
+    --slate-800: 220 15% 12%;
+    --slate-700: 220 15% 16%;
+    --slate-600: 220 15% 20%;
+    --slate-400: 220 5% 65%;
+    
+    /* Pattern and Effects */
+    --pattern-dots: radial-gradient(circle at 25% 25%, hsl(var(--emerald) / 0.1) 1px, transparent 1px);
+    --pattern-grid: linear-gradient(90deg, hsl(var(--slate-700) / 0.3) 1px, transparent 1px), 
+                    linear-gradient(hsl(var(--slate-700) / 0.3) 1px, transparent 1px);
+    --glow-emerald: 0 0 30px hsl(var(--emerald) / 0.3);
+    --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
   }
 
   .light {
@@ -92,18 +96,17 @@
   }
 
   body {
-    @apply bg-background text-foreground font-montserrat;
-    background-image: 
-      radial-gradient(circle at 20% 50%, hsl(var(--pattern-light)) 1px, transparent 1px),
-      radial-gradient(circle at 80% 50%, hsl(var(--pattern-light)) 1px, transparent 1px),
-      linear-gradient(135deg, transparent 0%, hsl(var(--pattern-medium)) 50%, transparent 100%);
-    background-size: 100px 100px, 100px 100px, 100% 100%;
+    @apply bg-background text-foreground;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: hsl(var(--background));
+    background-image: var(--pattern-dots);
+    background-size: 40px 40px;
   }
 
-  /* Lendex Geometric Patterns */
+  /* Lendex Professional Patterns */
   .lendex-pattern {
     position: relative;
-    overflow: hidden;
+    background: hsl(var(--background));
   }
 
   .lendex-pattern::before {
@@ -113,12 +116,27 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: 
-      linear-gradient(45deg, transparent 25%, hsl(var(--pattern-light)) 25%, hsl(var(--pattern-light)) 50%, transparent 50%, transparent 75%, hsl(var(--pattern-light)) 75%),
-      linear-gradient(-45deg, transparent 25%, hsl(var(--pattern-light)) 25%, hsl(var(--pattern-light)) 50%, transparent 50%, transparent 75%, hsl(var(--pattern-light)) 75%);
-    background-size: 60px 60px;
-    opacity: 0.1;
+    background-image: var(--pattern-grid);
+    background-size: 50px 50px;
+    opacity: 0.03;
     pointer-events: none;
+  }
+
+  /* Card Styles */
+  .card-gradient {
+    background: var(--gradient-card);
+    border: 1px solid hsl(var(--border));
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    background: var(--gradient-hover);
+    box-shadow: var(--glow-emerald), var(--shadow-card);
+    transform: translateY(-4px);
   }
 }
 
@@ -269,34 +287,46 @@
 .bg-twitter { background-color: hsl(var(--twitter)); }
 .bg-instagram { background-color: hsl(var(--instagram)); }
 
-/* Lendex Professional Gradients */
+/* Professional Gradients */
 .gradient-primary {
-  background: var(--primary-gradient);
+  background: var(--gradient-primary);
 }
 
 .gradient-secondary {
-  background: var(--secondary-gradient);
+  background: var(--gradient-secondary);
 }
 
 .gradient-card {
-  background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+  background: var(--gradient-card);
 }
 
-.gradient-glow {
-  background: radial-gradient(circle, var(--glow-primary) 0%, transparent 70%);
+.gradient-emerald {
+  background: linear-gradient(135deg, hsl(var(--emerald)), hsl(var(--emerald-light)));
 }
 
-/* Service/Skill Card Gradients */
-.service-gradient-1 {
-  background: linear-gradient(135deg, hsl(152, 76%, 50%) 0%, hsl(152, 76%, 40%) 100%);
+/* Icon Background Gradients */
+.icon-gradient-1 {
+  background: linear-gradient(135deg, hsl(var(--emerald)), hsl(var(--emerald-light)));
 }
 
-.service-gradient-2 {
-  background: linear-gradient(135deg, hsl(231, 99%, 63%) 0%, hsl(231, 99%, 53%) 100%);
+.icon-gradient-2 {
+  background: linear-gradient(135deg, #3B82F6, #1D4ED8);
 }
 
-.service-gradient-3 {
-  background: linear-gradient(135deg, hsl(340, 82%, 52%) 0%, hsl(340, 82%, 42%) 100%);
+.icon-gradient-3 {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
+}
+
+.icon-gradient-4 {
+  background: linear-gradient(135deg, #8B5CF6, #7C3AED);
+}
+
+.icon-gradient-5 {
+  background: linear-gradient(135deg, #EF4444, #DC2626);
+}
+
+.icon-gradient-6 {
+  background: linear-gradient(135deg, #06B6D4, #0891B2);
 }
 
 /* Smooth scrolling */

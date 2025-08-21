@@ -27,13 +27,13 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Guardian Sheild",
-      description: "A Security platform for public service company.It is a BOOKING platform for different type of service packages",
+      title: "Guardian Shield",
+      description: "A Security platform for public service company. It is a BOOKING platform for different type of service packages",
       image: "/security.png",
       liveUrl: "https://zaheer-sons-deals-shop.vercel.app/",
       githubUrl: "#",
       technologies: ["React", "Tailwind CSS", "Vercel"],
-      category: "Booking PlaTFORM"
+      category: "Booking Platform"
     },
     {
       id: 4,
@@ -48,29 +48,24 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-6 lg:px-8 relative lendex-pattern">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-10 left-10 w-20 h-20 gradient-glow rounded-full opacity-20 animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-16 h-16 gradient-glow rounded-full opacity-30 animate-pulse-custom"></div>
-      </div>
-
+    <section id="projects" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-foreground mb-6 animate-fade-in">
-            Category
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            Featured <span className="text-emerald-400">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-montserrat animate-fade-in delay-200">
+          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
             Selected projects showcasing modern web development solutions and creative designs
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <Card 
               key={project.id} 
-              className="border border-border bg-card hover:shadow-2xl transition-all duration-500 group overflow-hidden hover:-translate-y-4 animate-fade-in"
+              className="card-gradient card-hover border-0 group overflow-hidden relative"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <CardHeader className="p-0 relative">
@@ -80,12 +75,12 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  {/* Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  {/* Dark Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   {/* Category Badge */}
                   <div className="absolute top-6 left-6">
-                    <span className="px-3 py-1 text-xs gradient-primary text-white font-medium tracking-wide rounded-full">
+                    <span className="px-3 py-1 text-xs bg-emerald-500 text-white font-medium tracking-wide rounded-full">
                       {project.category}
                     </span>
                   </div>
@@ -95,7 +90,7 @@ const Projects = () => {
                     <div className="flex gap-3">
                       <Button
                         size="sm"
-                        className="gradient-primary text-white rounded-full px-6 hover:scale-105 transition-transform duration-300"
+                        className="gradient-emerald text-white rounded-full px-6 hover:scale-105 transition-transform duration-300 shadow-lg"
                         onClick={() => window.open(project.liveUrl, "_blank")}
                       >
                         <ExternalLink className="mr-2 h-4 w-4" />
@@ -105,7 +100,7 @@ const Projects = () => {
                         <Button
                           size="sm"
                           variant="outline"
-                          className="bg-white/90 border-white text-foreground rounded-full hover:scale-105 transition-transform duration-300"
+                          className="bg-white/90 border-white text-slate-900 rounded-full hover:scale-105 transition-transform duration-300"
                           onClick={() => window.open(project.githubUrl, "_blank")}
                         >
                           <Github className="h-4 w-4" />
@@ -116,11 +111,11 @@ const Projects = () => {
                 </div>
               </CardHeader>
               
-              <CardContent className="p-8">
-                <CardTitle className="text-xl font-playfair font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
+              <CardContent className="p-8 relative z-10">
+                <CardTitle className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors duration-300">
                   {project.title}
                 </CardTitle>
-                <CardDescription className="text-muted-foreground mb-6 leading-relaxed font-montserrat">
+                <CardDescription className="text-slate-300 mb-6 leading-relaxed">
                   {project.description}
                 </CardDescription>
                 
@@ -128,13 +123,18 @@ const Projects = () => {
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 text-xs text-muted-foreground border border-border rounded-full hover:border-primary hover:text-primary transition-colors duration-300"
+                      className="px-3 py-1 text-xs text-slate-400 border border-slate-600 rounded-full hover:border-emerald-400 hover:text-emerald-400 transition-colors duration-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
               </CardContent>
+              
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                <div className="w-full h-full bg-gradient-to-br from-emerald-500/20 to-transparent"></div>
+              </div>
             </Card>
           ))}
         </div>

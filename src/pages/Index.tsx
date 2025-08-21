@@ -1,8 +1,7 @@
 
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import WhatIDo from "@/components/WhatIDo";
-import Skills from "@/components/Skills";
+import Services from "@/components/Services";
+import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
@@ -21,9 +20,8 @@ const Index = () => {
       <div className="relative z-10">
         <Navbar />
         <Hero />
-        <About />
-        <WhatIDo />
-        <Skills />
+        <Services />
+        <Experience />
         <Projects />
         <Contact />
         <ScrollToTop />

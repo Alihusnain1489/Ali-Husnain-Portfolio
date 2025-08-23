@@ -9,8 +9,8 @@ import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative lendex-pattern min-h-screen flex items-center">
+      <div className="max-w-6xl mx-auto relative z-10 w-full">
         {/* Header */}
         <div className="text-center mb-20">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
@@ -21,7 +21,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Left Side - Contact Info & Image */}
           <div className="space-y-8">
             {/* Professional Image */}

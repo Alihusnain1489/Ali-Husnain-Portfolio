@@ -7,43 +7,43 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Loopholedefender",
-      description: "Cybersecurity package purchasing platform with modern UI and secure payment integration.",
-      image: "/loopholedefender.png",
-      liveUrl: "https://loophole-defender.vercel.app/",
-      githubUrl: "#",
-      technologies: ["React", "Django", "JavaScript"],
+      title: "Booking Platform",
+      description: "A cyber security company website designed to book cyber product services. Architecture based on React.js modern components with React, TypeScript, Redux, Tailwind CSS, BootStrap.",
+      image: "/face-swap.png",
+      liveUrl: "https://github.com/Alihusnain1489",
+      githubUrl: "https://github.com/Alihusnain1489",
+      technologies: ["React", "TypeScript", "Redux", "Tailwind CSS", "Bootstrap"],
       category: "Security Platform"
     },
     {
       id: 2,
-      title: "Alif Threads",
-      description: "Wholesale clothing marketplace with advanced filtering and product management features.",
-      image: "/my.png",
+      title: "Ecommerce Website",
+      description: "Developed and deployed a responsive wholesale e-commerce platform using React, Tailwind CSS, and Next.js. Implemented dynamic product listings, category filters, and clean, mobile-friendly UI for seamless user experience.",
+      image: "/loopholedefender.png",
       liveUrl: "https://alif-threads.vercel.app/",
-      githubUrl: "#",
-      technologies: ["React", "JavaScript", "CSS3"],
+      githubUrl: "https://github.com/Alihusnain1489",
+      technologies: ["React", "Next.js", "Tailwind CSS", "Vercel"],
       category: "E-commerce Platform"
     },
     {
       id: 3,
-      title: "Guardian Shield",
-      description: "A Security platform for public service company. It is a BOOKING platform for different type of service packages",
-      image: "/security.png",
-      liveUrl: "https://zaheer-sons-deals-shop.vercel.app/",
-      githubUrl: "#",
-      technologies: ["React", "Tailwind CSS", "Vercel"],
-      category: "Booking Platform"
+      title: "Professional Portfolio",
+      description: "Designed and built a personal portfolio website using React and Tailwind CSS to professionally highlight development projects and skills. Integrated smooth scroll, responsive layout, project galleries, and animated sections.",
+      image: "/my.png",
+      liveUrl: "https://alihusnain11.vercel.app",
+      githubUrl: "https://github.com/Alihusnain1489",
+      technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
+      category: "Portfolio"
     },
     {
       id: 4,
-      title: "Alif Technologies",
-      description: "Corporate technology website showcasing services and solutions with professional design.",
-      image: "/alif.png",
-      liveUrl: "https://alihusnain1489.github.io/Alif-Technologies/",
-      githubUrl: "https://github.com/Alihusnain1489/Alif-Technologies",
-      technologies: ["HTML5", "CSS3", "JavaScript"],
-      category: "Corporate Website"
+      title: "Employee Management System",
+      description: "Built a full-stack Employee Management system using React, Tailwind CSS for the frontend, and Spring Boot REST API for the backend. Implemented full CRUD operations with real-time UI updates and responsive design for desktop and mobile.",
+      image: "/security.png",
+      liveUrl: "https://github.com/Alihusnain1489",
+      githubUrl: "https://github.com/Alihusnain1489",
+      technologies: ["React", "Spring Boot", "Java", "MySQL", "Tailwind CSS"],
+      category: "Full Stack"
     },
   ];
 

@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Github, Linkedin, Mail, Download, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
@@ -58,7 +58,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 className="gradient-emerald text-white font-medium px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-xl border-0 group"
-                onClick={() => window.open("/Ali Husnain CV.pdf", "_blank")}
+                onClick={() => window.open("/Ali-cv.pdf", "_blank")}
               >
                 <span>Get Resume</span>
                 <Download className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
@@ -69,8 +69,8 @@ const Hero = () => {
           {/* Right Side - Professional Image */}
           <div className={`flex justify-center lg:justify-end ${hasAnimated ? 'animate-slide-right delay-300' : ''}`}>
             <div className="relative">
-              {/* Main Image Container */}
-              <div className="relative w-80 h-80 sm:w-96 sm:h-96">
+              {/* Main Image Container - Responsive */}
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
                 {/* Background Circle */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 transform rotate-6"></div>
                 
@@ -79,33 +79,46 @@ const Hero = () => {
                   <img
                     src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
                     alt="Ali Husnain - Frontend Developer"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
                   />
                 </div>
                 
-                {/* Floating Social Icons */}
-                <div className="absolute -right-4 top-1/4 space-y-4">
+                {/* Floating Social Icons - Responsive positioning */}
+                <div className="absolute -right-2 sm:-right-4 top-1/4 space-y-3 sm:space-y-4">
                   <a
                     href="https://github.com/Alihusnain1489"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-12 h-12 rounded-full bg-slate-800 border border-slate-600 text-white flex items-center justify-center hover:bg-emerald-600 hover:scale-110 transition-all duration-300 shadow-lg"
+                    className="block w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 border border-slate-600 text-white flex items-center justify-center hover:bg-emerald-600 hover:scale-110 transition-all duration-300 shadow-lg"
+                    aria-label="GitHub Profile"
                   >
-                    <Github className="h-5 w-5" />
+                    <Github className="h-4 w-4 sm:h-5 sm:w-5" />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/ali-husnain-790929252/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block w-12 h-12 rounded-full bg-slate-800 border border-slate-600 text-white flex items-center justify-center hover:bg-blue-600 hover:scale-110 transition-all duration-300 shadow-lg"
+                    className="block w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 border border-slate-600 text-white flex items-center justify-center hover:bg-blue-600 hover:scale-110 transition-all duration-300 shadow-lg"
+                    aria-label="LinkedIn Profile"
                   >
-                    <Linkedin className="h-5 w-5" />
+                    <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
                   </a>
                   <a
                     href="mailto:mr.alihusnain11@gmail.com"
-                    className="block w-12 h-12 rounded-full bg-slate-800 border border-slate-600 text-white flex items-center justify-center hover:bg-red-600 hover:scale-110 transition-all duration-300 shadow-lg"
+                    className="block w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 border border-slate-600 text-white flex items-center justify-center hover:bg-red-600 hover:scale-110 transition-all duration-300 shadow-lg"
+                    aria-label="Email Contact"
                   >
-                    <Mail className="h-5 w-5" />
+                    <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
+                  </a>
+                  <a
+                    href="https://alihusnain11.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 border border-slate-600 text-white flex items-center justify-center hover:bg-purple-600 hover:scale-110 transition-all duration-300 shadow-lg"
+                    aria-label="Portfolio Website"
+                  >
+                    <Globe className="h-4 w-4 sm:h-5 sm:w-5" />
                   </a>
                 </div>
               </div>

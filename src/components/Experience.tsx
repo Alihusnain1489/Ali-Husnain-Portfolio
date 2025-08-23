@@ -4,24 +4,24 @@ import { Card, CardContent } from "@/components/ui/card";
 const Experience = () => {
   const experiences = [
     {
-      year: "2024 - Present",
-      title: "Frontend Developer",
-      company: "Infinix.io (Remote)",
-      description: "Building fast, responsive UIs with React.js and Tailwind CSS, focused on user experience and scalable architecture.",
+      year: "04/2025 - 05/2025",
+      title: "Front-End Developer",
+      company: "Upwork (Freelancer Platform)",
+      description: "Started working on a Cyber Security package purchasing platform, a service booking platform with admin dashboard as an associate. Implemented latest React, JavaScript, BootStrap, Tailwind CSS and React UI library Ant Design.",
       status: "active"
     },
     {
-      year: "2023 - 2024", 
-      title: "React Developer (Internship)",
-      company: "Beyond Logics",
-      description: "Developed custom web solutions, integrated APIs, and ensured SEO-friendly, high-performance applications.",
-      status: "completed"
+      year: "2024 - Present", 
+      title: "Bachelor of Science Student",
+      company: "Virtual University, Pakistan",
+      description: "Major in Information Technology, focusing on modern web development technologies and software engineering principles.",
+      status: "active"
     },
     {
-      year: "2022 - 2023",
-      title: "Frontend Developer", 
-      company: "Self Learning",
-      description: "Created SaaS dashboards and reusable components, emphasizing clean code, speed, and mobile-first design.",
+      year: "2023 - 2024",
+      title: "Mentorship & Teaching", 
+      company: "PakistanCitizenAlliance & Private Tutoring",
+      description: "Freelancing Bootcamp Mentor responsible for mentoring and giving career advice to PCA students. Computer Science Tutor for Programming, web development, career advice, and professional portfolio development.",
       status: "completed"
     }
   ];

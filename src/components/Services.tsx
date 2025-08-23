@@ -4,38 +4,38 @@ import { Card, CardContent } from "@/components/ui/card";
 const Services = () => {
   const services = [
     {
-      title: "React.js Development",
-      description: "I develop high-performance, scalable web apps with React.js, Tailwind CSS, and modern JavaScript (ES6+), ensuring your digital product stands out.",
+      title: "React.js & Next.js Development",
+      description: "Expert in building high-performance web applications using React.js, Next.js, and modern JavaScript (ES6+) with TypeScript for type safety.",
       icon: Code,
       gradient: "icon-gradient-1"
     },
     {
-      title: "State Management", 
-      description: "I integrate Redux Toolkit or React Context to handle complex state, making your app fast, maintainable, and future-ready.",
+      title: "State Management & Routing", 
+      description: "Proficient in Redux-Toolkit, React Context, and React-Router for complex state management and seamless navigation experiences.",
       icon: Database,
       gradient: "icon-gradient-2"
     },
     {
-      title: "UI/UX Design",
-      description: "From wireframes to pixel-perfect interfaces, I focus on clean layouts and seamless user journeys that keep visitors engaged.",
+      title: "Modern CSS & Styling",
+      description: "Skilled in Tailwind CSS, Bootstrap, and custom CSS to create responsive, beautiful, and accessible user interfaces.",
       icon: Palette,
       gradient: "icon-gradient-3"
     },
     {
-      title: "API Integration",
-      description: "I connect your frontend seamlessly with REST APIs using Axios & Fetch, enabling real-time data and dynamic features.",
+      title: "API Integration & Data Fetching",
+      description: "Experience with TanStack Query, REST APIs, and modern data fetching patterns for dynamic, real-time applications.",
       icon: Server,
       gradient: "icon-gradient-4"
     },
     {
-      title: "SEO & Deployment",
-      description: "I apply on-page SEO best practices and deploy to platforms like Vercel or Netlify, so your app is fast, discoverable, and live with CI/CD.",
+      title: "Full-Stack Technologies",
+      description: "Knowledge of Java, Spring Boot, Maven, JDBC, MySQL, and MongoDB for comprehensive web development solutions.",
       icon: Globe,
       gradient: "icon-gradient-5"
     },
     {
-      title: "Cross-Browser Testing",
-      description: "I ensure your website works flawlessly across modern browsers and devices, delivering consistent experiences to all your users.",
+      title: "Development Tools & Version Control",
+      description: "Proficient with GitHub, modern development workflows, testing, and deployment strategies for reliable applications.",
       icon: TestTube,
       gradient: "icon-gradient-6"
     },

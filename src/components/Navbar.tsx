@@ -62,10 +62,10 @@ const Navbar = () => {
           <div className="flex-shrink-0">
             <button onClick={() => scrollToSection('home')} className="group flex items-center space-x-3">
               <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                <span className="text-slate-900 font-bold text-lg">L</span>
+                <span className="text-slate-900 font-bold text-lg">A</span>
               </div>
               <span className="text-white text-xl font-bold group-hover:text-emerald-400 transition-colors">
-                Lendex
+                Ali Husnain
               </span>
             </button>
           </div>

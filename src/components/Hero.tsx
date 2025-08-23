@@ -47,45 +47,13 @@ const Hero = () => {
                   Frontend Developer
                 </p>
                 <p className="text-lg text-slate-300 leading-relaxed max-w-xl">
-                  UI/UX Designer specializing in Shopify & Webflow. 
-                  I create sustainable and scalable digital solutions that make a real impact.
+                 Developer skilled in Next.js, Modern React, and Tailwind CSS, with experience building scalable and responsive web applications.
                 </p>
               </div>
             </div>
 
-            {/* CTA Button */}
-            <div className={`${hasAnimated ? 'animate-slide-left delay-400' : ''}`}>
-              <Button
-                size="lg"
-                className="gradient-emerald text-white font-medium px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-xl border-0 group"
-                onClick={() => window.open("/Ali-cv.pdf", "_blank")}
-              >
-                <span>Get Resume</span>
-                <Download className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
-              </Button>
-            </div>
-          </div>
-
-          {/* Right Side - Professional Image */}
-          <div className={`flex justify-center lg:justify-end ${hasAnimated ? 'animate-slide-right delay-300' : ''}`}>
-            <div className="relative">
-              {/* Main Image Container - Responsive */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                {/* Background Circle */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 transform rotate-6"></div>
-                
-                {/* Profile Image */}
-                <div className="relative z-10 w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-slate-700 hover:scale-105 transition-transform duration-500">
-                  <img
-                    src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
-                    alt="Ali Husnain - Frontend Developer"
-                    className="w-full h-full object-cover object-center"
-                    loading="lazy"
-                  />
-                </div>
-                
-                {/* Floating Social Icons - Responsive positioning */}
-                <div className="absolute -right-2 sm:-right-4 top-1/4 space-y-3 sm:space-y-4">
+            {/* Floating Social Icons - Responsive positioning */}
+                <div className="flex gap-2">
                   <a
                     href="https://github.com/Alihusnain1489"
                     target="_blank"
@@ -111,16 +79,41 @@ const Hero = () => {
                   >
                     <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                   </a>
-                  <a
-                    href="https://alihusnain11.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 border border-slate-600 text-white flex items-center justify-center hover:bg-purple-600 hover:scale-110 transition-all duration-300 shadow-lg"
-                    aria-label="Portfolio Website"
-                  >
-                    <Globe className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </a>
+                
                 </div>
+
+            {/* CTA Button */}
+            <div className={`${hasAnimated ? 'animate-slide-left delay-400' : ''}`}>
+              <Button
+                size="lg"
+                className="gradient-emerald text-white font-medium px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-xl border-0 group"
+                onClick={() => window.open("/Ali Husnain CV.pdf", "_blank")}
+              >
+                <span>Get Resume</span>
+                <Download className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
+              </Button>
+            </div>
+          </div>
+
+          {/* Right Side - Professional Image */}
+          <div className={`flex justify-center lg:justify-end ${hasAnimated ? 'animate-slide-right delay-300' : ''}`}>
+            <div className="relative">
+              {/* Main Image Container - Responsive */}
+              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                {/* Background Circle */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 transform rotate-6"></div>
+                
+                {/* Profile Image */}
+                <div className="relative z-10 w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-slate-700 hover:scale-105 transition-transform duration-500">
+                  <img
+                    src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
+                    alt="Ali Husnain - Frontend Developer"
+                    className="w-full h-full object-cover object-center"
+                    loading="lazy"
+                  />
+                </div>
+                
+                
               </div>
             </div>
           </div>

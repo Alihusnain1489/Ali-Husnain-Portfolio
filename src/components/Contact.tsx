@@ -1,4 +1,3 @@
-
 import { Send, MessageCircle } from "lucide-react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { Button } from "@/components/ui/button";

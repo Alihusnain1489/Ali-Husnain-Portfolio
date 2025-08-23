@@ -1,124 +1,136 @@
 
+import { Briefcase, Code, Users, Clock, Trophy, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Experience = () => {
-  const experiences = [
+  const stats = [
+    { number: "6+", label: "Months Experience", icon: Clock },
+    { number: "10+", label: "Projects Completed", icon: Trophy },
+    { number: "5+", label: "Technologies", icon: Code },
+    { number: "100%", label: "Client Satisfaction", icon: TrendingUp },
+  ];
+
+  const highlights = [
     {
-      year: "2024 - Present",
-      title: "Frontend Developer",
-      company: "Infinix.io (Remote)",
-      description: "Building fast, responsive UIs with React.js and Tailwind CSS, focused on user experience and scalable architecture.",
-      status: "active"
+      icon: Code,
+      title: "Modern Development",
+      description: "Built responsive web applications using React, TypeScript, and modern CSS frameworks with industry best practices."
     },
     {
-      year: "2023 - 2024", 
-      title: "React Developer (Internship)",
-      company: "Beyond Logics",
-      description: "Developed custom web solutions, integrated APIs, and ensured SEO-friendly, high-performance applications.",
-      status: "completed"
+      icon: Users,
+      title: "Remote Collaboration", 
+      description: "Successfully collaborated with distributed teams across different time zones and cultural backgrounds."
     },
     {
-      year: "2022 - 2023",
-      title: "Frontend Developer", 
-      company: "Self Learning",
-      description: "Created SaaS dashboards and reusable components, emphasizing clean code, speed, and mobile-first design.",
-      status: "completed"
+      icon: Clock,
+      title: "Project Delivery",
+      description: "Consistently delivered high-quality code within project deadlines while maintaining code quality standards."
     }
   ];
 
-  const sidebarItems = [
-    { label: "Experience", active: true },
-    { label: "Education", active: false },
-    { label: "Skills", active: false },
-    { label: "About Me", active: false }
-  ];
-
   return (
-    <section id="experience" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
+    <section id="experience" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen bg-slate-800">
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-5 gap-12">
-          {/* Left side - Why Hire Me */}
-          <div className="lg:col-span-2 space-y-8">
-            <div>
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                Why Hire Me?
-              </h2>
-              <p className="text-slate-300 text-lg leading-relaxed">
-                I specialize in building modern, fast, and scalable frontend applications. With a focus on user-centric design and clean code, I can help transform your ideas into responsive digital products.
-              </p>
-            </div>
-            
-            {/* Sidebar Navigation */}
-            <div className="space-y-3">
-              {sidebarItems.map((item) => (
-                <div
-                  key={item.label}
-                  className={`p-4 rounded-xl transition-all duration-300 cursor-pointer ${
-                    item.active
-                      ? "card-gradient border border-emerald-500/30 text-emerald-400 shadow-lg"
-                      : "bg-slate-800/50 border border-slate-700 text-slate-400 hover:border-slate-600 hover:bg-slate-700/50"
-                  }`}
-                >
-                  <div className="font-medium text-center">
-                    {item.label}
-                  </div>
-                </div>
-              ))}
+        <div className="text-center mb-16">
+          <div className="flex justify-center mb-4">
+            <div className="p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full border border-yellow-500/30 animate-scale-in">
+              <Trophy className="h-8 w-8 text-yellow-400" />
             </div>
           </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 animate-fade-in">
+            Experience & <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">Achievements</span>
+          </h2>
+          <p className="text-lg text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
+            Rapid solutions to the most complex development challenges with cooperative process-driven approach.
+          </p>
+        </div>
 
-          {/* Right side - Experience Timeline */}
-          <div className="lg:col-span-3">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12">
-              My <span className="text-emerald-400">Experience</span>
-            </h2>
-            
-            <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <Card 
-                  key={index}
-                  className="card-gradient card-hover border-0 relative overflow-hidden"
-                >
-                  <CardContent className="p-8 relative z-10">
-                    <div className="flex items-start gap-6">
-                      {/* Timeline dot */}
-                      <div className="flex flex-col items-center">
-                        <div className={`w-4 h-4 rounded-full flex-shrink-0 ${
-                          exp.status === 'active' 
-                            ? 'bg-emerald-400 shadow-lg shadow-emerald-400/50' 
-                            : 'bg-slate-500'
-                        }`}></div>
-                        {index < experiences.length - 1 && (
-                          <div className="w-px bg-slate-600 h-20 mt-4"></div>
-                        )}
-                      </div>
-                      
-                      {/* Content */}
-                      <div className="flex-1 space-y-3">
-                        <span className="text-emerald-400 text-sm font-semibold tracking-wide uppercase">
-                          {exp.year}
-                        </span>
-                        <h3 className="text-xl font-bold text-white">
-                          {exp.title}
-                        </h3>
-                        <p className="text-slate-400 font-medium">
-                          <span className="inline-block w-2 h-2 bg-emerald-400 rounded-full mr-2"></span>
-                          {exp.company}
-                        </p>
-                        <p className="text-slate-300 leading-relaxed">
-                          {exp.description}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                  
-                  {/* Hover effect background */}
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300">
-                    <div className="w-full h-full bg-gradient-to-r from-emerald-500/20 to-transparent"></div>
+        {/* Stats Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          {stats.map((stat, index) => (
+            <Card 
+              key={index} 
+              className="text-center p-6 bg-slate-900/60 border-yellow-500/30 hover:border-yellow-400/60 transition-all duration-500 transform hover:scale-105 animate-fade-in"
+              style={{ animationDelay: `${index * 150}ms` }}
+            >
+              <CardContent className="p-0">
+                <div className="flex justify-center mb-3">
+                  <div className="p-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg">
+                    <stat.icon className="h-6 w-6 text-yellow-400" />
                   </div>
-                </Card>
-              ))}
-            </div>
+                </div>
+                <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
+                <div className="text-sm text-gray-400 uppercase tracking-wide">{stat.label}</div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="animate-fade-in delay-300">
+            <Card className="p-8 hover:shadow-xl hover:shadow-yellow-500/10 transition-all duration-500 border-yellow-500/30 bg-slate-900/60 backdrop-blur-sm transform hover:scale-105">
+              <CardContent className="p-0">
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="p-4 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg">
+                    <Briefcase className="h-8 w-8 text-yellow-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-semibold text-white mb-2">Front-end Developer</h3>
+                    <p className="text-yellow-400 font-medium">Remote Position</p>
+                    <p className="text-sm text-gray-400">6 Months Experience</p>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3 text-gray-300">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Developed responsive web applications using React and TypeScript</p>
+                  </div>
+                  <div className="flex items-start gap-3 text-gray-300">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Implemented state management solutions with Redux Toolkit</p>
+                  </div>
+                  <div className="flex items-start gap-3 text-gray-300">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Created modern UI components with Tailwind CSS</p>
+                  </div>
+                  <div className="flex items-start gap-3 text-gray-300">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Collaborated effectively in remote team environments</p>
+                  </div>
+                  <div className="flex items-start gap-3 text-gray-300">
+                    <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                    <p>Maintained clean, well-documented, and scalable code</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="space-y-6 animate-fade-in delay-500">
+            {highlights.map((highlight, index) => (
+              <Card 
+                key={index} 
+                className="hover:shadow-xl hover:shadow-yellow-500/10 transition-all duration-500 border-yellow-500/30 bg-slate-900/60 backdrop-blur-sm transform hover:scale-105"
+                style={{ animationDelay: `${600 + index * 200}ms` }}
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-lg flex-shrink-0">
+                      <highlight.icon className="h-6 w-6 text-yellow-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">
+                        {highlight.title}
+                      </h4>
+                      <p className="text-gray-300 leading-relaxed">
+                        {highlight.description}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

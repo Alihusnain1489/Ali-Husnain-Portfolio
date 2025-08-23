@@ -1,7 +1,7 @@
 
 import Hero from "@/components/Hero";
-import Services from "@/components/Services";
-import Experience from "@/components/Experience";
+import About from "@/components/About";
+import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
@@ -9,19 +9,19 @@ import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background relative overflow-x-hidden">
-      {/* Lendex Background with Geometric Patterns */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/20"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 gradient-glow rounded-full opacity-10 animate-pulse-custom"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 gradient-glow rounded-full opacity-5 animate-float"></div>
-      </div>
+    <div className="min-h-screen bg-slate-900 relative">
+      {/* Main background with green accents */}
+      <div className="fixed inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900/20 z-0"></div>
+      
+      {/* Floating green elements */}
+      <div className="fixed top-20 right-20 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl animate-float z-0"></div>
+      <div className="fixed bottom-40 left-20 w-40 h-40 bg-green-500/10 rounded-full blur-3xl animate-float delay-300 z-0"></div>
       
       <div className="relative z-10">
         <Navbar />
         <Hero />
-        <Services />
-        <Experience />
+        <About />
+        <Skills />
         <Projects />
         <Contact />
         <ScrollToTop />

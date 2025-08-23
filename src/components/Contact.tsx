@@ -1,156 +1,249 @@
-
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Send, MessageCircle } from "lucide-react";
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: ""
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const formDataToSend = new FormData();
+      formDataToSend.append("access_key", "f576c5bd-042c-4484-b925-a8c5b0a47f2c");
+      formDataToSend.append("name", formData.fullName);
+      formDataToSend.append("email", formData.email);
+      formDataToSend.append("phone", formData.phone);
+      formDataToSend.append("subject", formData.subject);
+      formDataToSend.append("message", formData.message);
+      
+      formDataToSend.append("from_name", "Portfolio Contact Form");
+      formDataToSend.append("to_name", "Ali Husnain");
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: "Message Sent Successfully! ✅",
+          description: "Thank you for your message. I'll get back to you within 24 hours!",
+        });
+        setFormData({ fullName: "", email: "", phone: "", subject: "", message: "" });
+      } else {
+        throw new Error(data.message || "Something went wrong");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      toast({
+        title: "Error Sending Message ❌",
+        description: "There was a problem sending your message. Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
   return (
-    <section id="contact" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Get In <span className="text-emerald-400">Touch</span>
+    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden bg-slate-900">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-emerald-400/10 to-green-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-br from-green-400/10 to-emerald-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header Section */}
+        <div className="text-center mb-16 animate-fade-in">
+          <div className="flex justify-center mb-6">
+            <div className="p-4 bg-gradient-to-r from-emerald-500/20 to-green-500/20 rounded-full border border-emerald-500/30 transform hover:scale-110 transition-all duration-300 animate-scale-in">
+              <MessageCircle className="h-10 w-10 text-emerald-400" />
+            </div>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+            LET'S TALK
           </h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Have a project in mind or want to discuss opportunities? I'd love to hear from you.
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+            Contact me and let me know how I can help with your project
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left Side - Contact Info & Image */}
-          <div className="space-y-8">
-            {/* Professional Image */}
-            <div className="flex justify-center mb-8">
-              <div className="relative">
-                <div className="w-48 h-48 rounded-full overflow-hidden shadow-2xl border-4 border-emerald-500/20">
-                  <img
-                    src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
-                    alt="Ali Husnain - Contact"
-                    className="w-full h-full object-cover"
-                  />
+        <div className="grid lg:grid-cols-3 gap-12 items-start">
+          {/* Contact Information - Smaller Left Side */}
+          <div className="space-y-6 animate-slide-up">
+            <Card className="hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 border-emerald-700 bg-slate-800/70  backdrop-blur-sm transform hover:-translate-y-2">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-white mb-6 text-center">Get In Touch</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 group hover:bg-slate-700/30 p-3 rounded-lg transition-all duration-300">
+                    <div className="p-2 bg-gradient-to-r from-emerald-500/20 to-green-500/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <FaEnvelope className="h-4 w-4 text-emerald-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-white">Email</h4>
+                      <p className="text-xs text-gray-300">mr.alihusnain11@gmail.com</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 group hover:bg-slate-700/30 p-3 rounded-lg transition-all duration-300">
+                    <div className="p-2 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <FaPhone className="h-4 w-4 text-blue-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-white">Phone</h4>
+                      <p className="text-xs text-gray-300">+92 349 0470871</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-3 group hover:bg-slate-700/30 p-3 rounded-lg transition-all duration-300">
+                    <div className="p-2 bg-gradient-to-r from-green-500/20 to-emerald-500/20 rounded-full group-hover:scale-110 transition-transform duration-300">
+                      <FaMapMarkerAlt className="h-4 w-4 text-green-400" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-semibold text-white">Location</h4>
+                      <p className="text-xs text-gray-300">Lahore, Pakistan</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="absolute -bottom-2 -right-2 w-16 h-16 gradient-emerald rounded-full flex items-center justify-center text-white text-2xl shadow-xl">
-                  👋
+              </CardContent>
+            </Card>
+
+            {/* Social Media */}
+            <Card className="hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 border-emerald-700 bg-slate-800/70  backdrop-blur-sm transform hover:-translate-y-2">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-white mb-4 text-center">Follow Me</h3>
+                <div className="flex justify-center gap-4">
+                  <a 
+                    href="https://github.com/Alihusnain1489"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gradient-to-r from-gray-500/20 to-slate-500/20 hover:from-gray-500/30 hover:to-slate-500/30 rounded-full transition-all duration-300 hover:scale-125 transform hover:-translate-y-1 shadow-lg hover:shadow-gray-500/20"
+                  >
+                    <FaGithub className="h-5 w-5 text-gray-300 hover:text-white transition-colors duration-300" />
+                  </a>
+                  <a 
+                    href="https://www.linkedin.com/in/ali-husnain-790929252/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 hover:from-blue-500/30 hover:to-cyan-500/30 rounded-full transition-all duration-300 hover:scale-125 transform hover:-translate-y-1 shadow-lg hover:shadow-blue-500/20"
+                  >
+                    <FaLinkedin className="h-5 w-5 text-blue-400 hover:text-blue-300 transition-colors duration-300" />
+                  </a>
                 </div>
-              </div>
-            </div>
-
-            {/* Contact Cards */}
-            <div className="space-y-6">
-              <Card className="card-gradient card-hover border-0">
-                <CardContent className="p-6 flex items-center space-x-4">
-                  <div className="p-3 icon-gradient-1 rounded-xl">
-                    <Mail className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1">Email</h3>
-                    <p className="text-slate-300">mr.alihusnain11@gmail.com</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="card-gradient card-hover border-0">
-                <CardContent className="p-6 flex items-center space-x-4">
-                  <div className="p-3 icon-gradient-2 rounded-xl">
-                    <Phone className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1">Phone</h3>
-                    <p className="text-slate-300">+92 300 1234567</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="card-gradient card-hover border-0">
-                <CardContent className="p-6 flex items-center space-x-4">
-                  <div className="p-3 icon-gradient-3 rounded-xl">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1">Location</h3>
-                    <p className="text-slate-300">Lahore, Pakistan</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
+              </CardContent>
+            </Card>
           </div>
 
-          {/* Right Side - Contact Form */}
-          <div>
-            <Card className="card-gradient border-0 shadow-2xl">
+          {/* Contact Form - Larger Right Side */}
+          <div className="lg:col-span-2 animate-slide-up delay-300">
+            <Card className="hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-500 border-emerald-700 bg-slate-800/70 backdrop-blur-sm">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-6">
-                  Send Me a Message
-                </h3>
-                <form className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-slate-300 mb-2">
-                        First Name
-                      </label>
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-white mb-2">Send Message</h3>
+                  <p className="text-gray-400">Get in touch and let me know how I can help</p>
+                </div>
+                
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="relative group">
                       <Input
                         type="text"
-                        placeholder="John"
-                        className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
+                        name="fullName"
+                        value={formData.fullName}
+                        onChange={handleChange}
+                        required
+                        disabled={isSubmitting}
+                        className="w-full border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 bg-slate-700/50 text-white placeholder-gray-400 h-12 transition-all duration-300 group-hover:border-emerald-500/50 rounded-xl"
+                        placeholder="Enter your full name"
                       />
                     </div>
-                    <div>
-                      <label className="block text-sm font-medium text-slate-300 mb-2">
-                        Last Name
-                      </label>
+                    
+                    <div className="relative group">
+                      <Input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        disabled={isSubmitting}
+                        className="w-full border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 bg-slate-700/50 text-white placeholder-gray-400 h-12 transition-all duration-300 group-hover:border-emerald-500/50 rounded-xl"
+                        placeholder="Enter your email address"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="relative group">
+                      <Input
+                        type="tel"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        disabled={isSubmitting}
+                        className="w-full border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 bg-slate-700/50 text-white placeholder-gray-400 h-12 transition-all duration-300 group-hover:border-emerald-500/50 rounded-xl"
+                        placeholder="Enter your phone number"
+                      />
+                    </div>
+                    
+                    <div className="relative group">
                       <Input
                         type="text"
-                        placeholder="Doe"
-                        className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        disabled={isSubmitting}
+                        className="w-full border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 bg-slate-700/50 text-white placeholder-gray-400 h-12 transition-all duration-300 group-hover:border-emerald-500/50"
+                        placeholder="Subject"
                       />
                     </div>
                   </div>
                   
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
-                      Email
-                    </label>
-                    <Input
-                      type="email"
-                      placeholder="john@example.com"
-                      className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
-                      Subject
-                    </label>
-                    <Input
-                      type="text"
-                      placeholder="Project Discussion"
-                      className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
-                      Message
-                    </label>
+                  <div className="relative group">
                     <Textarea
-                      placeholder="Tell me about your project..."
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
                       rows={5}
-                      className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400 resize-none"
+                      disabled={isSubmitting}
+                      className="w-full border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 bg-slate-700/50 text-white placeholder-gray-400 resize-none transition-all duration-300 group-hover:border-emerald-500/50"
+                      placeholder="Tell me about your project..."
                     />
                   </div>
                   
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full gradient-emerald text-white font-medium px-8 py-4 rounded-xl hover:scale-105 transition-all duration-300 border-0 shadow-lg"
+                  <Button 
+                    type="submit" 
+                    disabled={isSubmitting}
+                    className="w-full bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white shadow-xl hover:shadow-emerald-500/30 transition-all duration-300 h-12 text-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105"
                   >
-                    <Send className="mr-2 h-5 w-5" />
-                    Send Message
+                    <Send className="mr-3 h-5 w-5" />
+                    {isSubmitting ? "Sending Message..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>
@@ -160,7 +253,6 @@ const Contact = () => {
       </div>
     </section>
   );
-};
 };
 
 export default Contact;

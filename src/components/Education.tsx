@@ -54,12 +54,32 @@ const Education = () => {
                 </div>
               </CardContent>
             </Card>
+                  {/* left Side - Achievements & Stats */}
+                   <Card className="card-gradient card-hover border-0">
+              <CardContent className="p-8 text-center">
+                <div className="p-4 icon-gradient-3 rounded-2xl w-fit mx-auto mb-6">
+                  <Award className="h-8 w-8 text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-bold text-white mb-4">Academic Excellence</h3>
+                <p className="text-slate-300 leading-relaxed">
+                  Maintaining strong academic performance while gaining practical experience 
+                  through freelance projects and mentorship roles.
+                </p>
+              </CardContent>
+            </Card>
+            
+          </div>
+
+          
+          <div className="space-y-8 ">
+         
 
             {/* Skills Acquired */}
-            <Card className="card-gradient card-hover border-0">
+            <Card className="card-gradient card-hover border-0 mb-13">
               <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 icon-gradient-2 rounded-xl">
+                <div className="flex items-center gap-4 mb-12">
+                  <div className="p-6 icon-gradient-2 rounded-xl">
                     <Book className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white">Key Areas of Study</h3>
@@ -81,34 +101,17 @@ const Education = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
 
-          {/* Right Side - Achievements & Stats */}
-          <div className="space-y-8">
-            <Card className="card-gradient card-hover border-0">
-              <CardContent className="p-8 text-center">
-                <div className="p-4 icon-gradient-3 rounded-2xl w-fit mx-auto mb-6">
-                  <Award className="h-8 w-8 text-white" />
-                </div>
-                
-                <h3 className="text-2xl font-bold text-white mb-4">Academic Excellence</h3>
-                <p className="text-slate-300 leading-relaxed">
-                  Maintaining strong academic performance while gaining practical experience 
-                  through freelance projects and mentorship roles.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="card-gradient card-hover border-0">
+            <Card className="card-gradient card-hover border-0 mb-10">
               <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-6">
+                <div className="flex items-center gap-4 mb-16">
                   <div className="p-3 icon-gradient-4 rounded-xl">
                     <Code className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-white">Practical Learning</h3>
                 </div>
                 
-                <div className="space-y-4">
+                <div className="space-y-8 ">
                   <div className="flex justify-between items-center">
                     <span className="text-slate-300">Project Completion</span>
                     <span className="text-emerald-400 font-bold">10+ Projects</span>
@@ -117,10 +120,7 @@ const Education = () => {
                     <span className="text-slate-300">Freelance Experience</span>
                     <span className="text-emerald-400 font-bold">6+ Months</span>
                   </div>
-                  <div className="flex justify-between items-center">
-                    <span className="text-slate-300">Mentorship Sessions</span>
-                    <span className="text-emerald-400 font-bold">50+ Students</span>
-                  </div>
+                 
                 </div>
               </CardContent>
             </Card>

@@ -2,6 +2,7 @@
 import { Github, Linkedin, Mail, Download, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import CV from "./ui/Ali Husnain  CV .pdf";
 
 const Hero = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -79,7 +80,7 @@ const Hero = () => {
                   >
                     <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
                   </a>
-                
+              
                 </div>
 
             {/* CTA Button */}
@@ -87,8 +88,9 @@ const Hero = () => {
               <Button
                 size="lg"
                 className="gradient-emerald text-white font-medium px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-xl border-0 group"
-                onClick={() => window.open("/Ali Husnain CV.pdf", "_blank")}
-              >
+                onClick={() => window.open(CV, "_blank")}
+                >
+                  
                 <span>Get Resume</span>
                 <Download className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
               </Button>

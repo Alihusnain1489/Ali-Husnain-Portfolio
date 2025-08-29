@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +9,8 @@ const Navbar = () => {
 
   const navItems = [
     { href: "home", label: "Home" },
-    { href: "services", label: "Services" },
-    { href: "experience", label: "Experience" },
-    { href: "education", label: "Education" },
+    { href: "about", label: "About" },
+    { href: "skills", label: "Skills" },
     { href: "projects", label: "Projects" },
     { href: "contact", label: "Contact" },
   ];
@@ -53,61 +51,41 @@ const Navbar = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-slate-900/95 backdrop-blur-xl border-b border-slate-700' 
+        ? 'bg-background/80 backdrop-blur-md border-b border-border' 
         : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
-            <button onClick={() => scrollToSection('home')} className="group flex items-center space-x-3">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                <span className="text-slate-900 font-bold text-lg">A</span>
-              </div>
-              <span className="text-white text-xl font-bold group-hover:text-emerald-400 transition-colors">
+            <button onClick={() => scrollToSection('home')} className="group">
+              <h1 className="text-xl font-light text-foreground tracking-wide group-hover:text-primary transition-all duration-300">
                 Ali Husnain
-              </span>
+              </h1>
             </button>
           </div>
           
-          {/* Navigation Menu */}
-          <div className="hidden lg:block">
-            <div className="flex items-center space-x-8">
+          <div className="hidden md:block">
+            <div className="ml-10 flex items-baseline space-x-1">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                  className={`px-4 py-2 text-sm font-light transition-all duration-300 tracking-wide ${
                     activeSection === item.href
-                      ? "text-emerald-400"
-                      : "text-slate-300 hover:text-white"
+                      ? "text-primary border-b border-primary"
+                      : "text-muted-foreground hover:text-primary"
                   }`}
                 >
                   {item.label}
-                  {activeSection === item.href && (
-                    <div className="absolute bottom-0 left-0 w-full h-0.5 bg-emerald-400 transform origin-left animate-scale-in"></div>
-                  )}
                 </button>
               ))}
             </div>
           </div>
 
-          {/* Hire Me Button */}
-          <div className="hidden lg:block">
-            <Button
-              onClick={() => scrollToSection('contact')}
-              className="bg-transparent border border-emerald-400 text-emerald-400 hover:bg-emerald-400 hover:text-white px-6 py-2 rounded-full transition-all duration-300 font-medium"
-            >
-              Hire Me
-              <span className="ml-2">→</span>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <div className="lg:hidden">
+          <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-300 hover:text-white transition-colors duration-300 p-2"
+              className="text-muted-foreground hover:text-primary transition-colors duration-300"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -115,29 +93,22 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden animate-fade-in">
-          <div className="px-6 pt-2 pb-4 space-y-2 bg-slate-900/95 backdrop-blur-xl border-b border-slate-700">
+        <div className="md:hidden animate-fade-in">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background/95 backdrop-blur-md border-b border-border">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className={`block w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-all duration-300 ${
+                className={`block w-full text-left px-3 py-2 text-base font-light transition-all duration-300 tracking-wide ${
                   activeSection === item.href
-                    ? "text-emerald-400 bg-emerald-400/10"
-                    : "text-slate-300 hover:text-white hover:bg-slate-800"
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-primary"
                 }`}
               >
                 {item.label}
               </button>
             ))}
-            <Button
-              onClick={() => scrollToSection('contact')}
-              className="w-full bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-3 rounded-lg transition-all duration-300 font-medium mt-4"
-            >
-              Hire Me →
-            </Button>
           </div>
         </div>
       )}

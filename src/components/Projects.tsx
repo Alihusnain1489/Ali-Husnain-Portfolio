@@ -23,7 +23,7 @@ const Projects = () => {
       description:
         "Developed and deployed a responsive wholesale e-commerce platform using React, Tailwind CSS, and Next.js. Implemented dynamic product listings, category filters, and clean, mobile-friendly UI for seamless user experience.",
       image: "/my.png",
-      liveUrl: "https://alif-threads.vercel.app/",
+      liveUrl: "https://wholesale-threads.vercel.app/",
       githubUrl: "https://github.com/Alihusnain1489/alif-threads", // Replace with actual repo URL
       technologies: ["React", "Next.js", "Tailwind CSS", "Vercel"],
       category: "E-commerce Platform",

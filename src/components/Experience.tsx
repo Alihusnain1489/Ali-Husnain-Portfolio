@@ -10,28 +10,11 @@ const Experience = () => {
       description: "Started working on a Cyber Security package purchasing platform, a service booking platform with admin dashboard as an associate. Implemented latest React, JavaScript, BootStrap, Tailwind CSS and React UI library Ant Design.",
       status: "active"
     },
-    {
-      year: "2024 - Present", 
-      title: "Bachelor of Science Student",
-      company: "Virtual University, Pakistan",
-      description: "Major in Information Technology, focusing on modern web development technologies and software engineering principles.",
-      status: "active"
-    },
-    {
-      year: "2023 - 2024",
-      title: "Mentorship & Teaching", 
-      company: "PakistanCitizenAlliance & Private Tutoring",
-      description: "Freelancing Bootcamp Mentor responsible for mentoring and giving career advice to PCA students. Computer Science Tutor for Programming, web development, career advice, and professional portfolio development.",
-      status: "completed"
-    }
+   
+   
   ];
 
-  const sidebarItems = [
-    { label: "Experience", active: true },
-    { label: "Education", active: false },
-    { label: "Skills", active: false },
-    { label: "About Me", active: false }
-  ];
+ 
 
   return (
     <section id="experience" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
@@ -50,20 +33,13 @@ const Experience = () => {
             
             {/* Sidebar Navigation */}
             <div className="space-y-3">
-              {sidebarItems.map((item) => (
-                <div
-                  key={item.label}
-                  className={`p-4 rounded-xl transition-all duration-300 cursor-pointer ${
-                    item.active
-                      ? "card-gradient border border-emerald-500/30 text-emerald-400 shadow-lg"
-                      : "bg-slate-800/50 border border-slate-700 text-slate-400 hover:border-slate-600 hover:bg-slate-700/50"
-                  }`}
-                >
+              
+                
                   <div className="font-medium text-center">
-                    {item.label}
+                    
                   </div>
                 </div>
-              ))}
+            
             </div>
           </div>
 
@@ -121,9 +97,8 @@ const Experience = () => {
             </div>
           </div>
         </div>
-      </div>
     </section>
-  );
+  )
 };
 
 export default Experience;

@@ -9,7 +9,7 @@ const Projects = () => {
       id: 1,
       title: "Booking Platform",
       description: "A cyber security company website designed to book cyber product services. Architecture based on React.js modern components with React, TypeScript, Redux, Tailwind CSS, BootStrap.",
-      image: "/face-swap.png",
+      image: "/loopholedefender.png",
       liveUrl: "https://github.com/Alihusnain1489",
       githubUrl: "https://github.com/Alihusnain1489",
       technologies: ["React", "TypeScript", "Redux", "Tailwind CSS", "Bootstrap"],
@@ -19,7 +19,7 @@ const Projects = () => {
       id: 2,
       title: "Ecommerce Website",
       description: "Developed and deployed a responsive wholesale e-commerce platform using React, Tailwind CSS, and Next.js. Implemented dynamic product listings, category filters, and clean, mobile-friendly UI for seamless user experience.",
-      image: "/loopholedefender.png",
+      image: "/my.png",
       liveUrl: "https://alif-threads.vercel.app/",
       githubUrl: "https://github.com/Alihusnain1489",
       technologies: ["React", "Next.js", "Tailwind CSS", "Vercel"],
@@ -29,22 +29,13 @@ const Projects = () => {
       id: 3,
       title: "Professional Portfolio",
       description: "Designed and built a personal portfolio website using React and Tailwind CSS to professionally highlight development projects and skills. Integrated smooth scroll, responsive layout, project galleries, and animated sections.",
-      image: "/my.png",
+      image: "/alif.png",
       liveUrl: "https://alihusnain11.vercel.app",
       githubUrl: "https://github.com/Alihusnain1489",
       technologies: ["React", "Tailwind CSS", "Framer Motion", "Vite"],
       category: "Portfolio"
     },
-    {
-      id: 4,
-      title: "Employee Management System",
-      description: "Built a full-stack Employee Management system using React, Tailwind CSS for the frontend, and Spring Boot REST API for the backend. Implemented full CRUD operations with real-time UI updates and responsive design for desktop and mobile.",
-      image: "/security.png",
-      liveUrl: "https://github.com/Alihusnain1489",
-      githubUrl: "https://github.com/Alihusnain1489",
-      technologies: ["React", "Spring Boot", "Java", "MySQL", "Tailwind CSS"],
-      category: "Full Stack"
-    },
+    
   ];
 
   return (

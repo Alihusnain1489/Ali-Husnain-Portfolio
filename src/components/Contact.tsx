@@ -61,7 +61,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-bold text-white mb-1">Phone</h3>
-                    <p className="text-slate-300">+92 300 1234567</p>
+                    <p className="text-slate-300">+92 326 1052244</p>
                   </div>
                 </CardContent>
               </Card>
@@ -95,7 +95,7 @@ const Contact = () => {
                       </label>
                       <Input
                         type="text"
-                        placeholder="John"
+                        placeholder="First Name"
                         className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
                       />
                     </div>
@@ -105,7 +105,7 @@ const Contact = () => {
                       </label>
                       <Input
                         type="text"
-                        placeholder="Doe"
+                        placeholder="Last Name"
                         className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
                       />
                     </div>
@@ -117,7 +117,7 @@ const Contact = () => {
                     </label>
                     <Input
                       type="email"
-                      placeholder="john@example.com"
+                      placeholder="demo@example.com"
                       className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
                     />
                   </div>

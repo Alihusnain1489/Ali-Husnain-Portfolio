@@ -17,7 +17,7 @@ const Experience = () => {
  
 
   return (
-    <section id="experience" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
+    <section id="experience" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern ">
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-5 gap-12">
           {/* Left side - Why Hire Me */}
@@ -45,7 +45,7 @@ const Experience = () => {
 
           {/* Right side - Experience Timeline */}
           <div className="lg:col-span-3">
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-12 text-center">
               My <span className="text-emerald-400">Experience</span>
             </h2>
             

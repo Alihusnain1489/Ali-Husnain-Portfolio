@@ -3,6 +3,8 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const Education = () => {
   return (
+    
+
     <section id="education" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}

@@ -4,82 +4,88 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen bg-slate-900">
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <div className="flex justify-center mb-4">
-            <div className="p-4 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full border border-emerald-500/30 animate-scale-in">
-              <Award className="h-8 w-8 text-white" />
-            </div>
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 animate-fade-in">
-            About <span className="bg-gradient-to-r from-emerald-400 to-green-400 bg-clip-text text-transparent">Me</span>
+    <section id="about" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen lendex-pattern">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-16 h-16 gradient-glow rounded-full opacity-20 animate-float"></div>
+        <div className="absolute bottom-40 right-20 w-12 h-12 gradient-glow rounded-full opacity-30 animate-pulse-custom"></div>
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            About <span className="text-emerald-400">Me</span>
           </h2>
-          <p className="text-lg text-gray-300 max-w-2xl mx-auto animate-fade-in delay-200">
-            Dedicated to creating exceptional digital experiences through clean code and innovative design
+          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Frontend Developer specializing in React.js, Next.js, and modern web technologies.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 animate-fade-in delay-300">
-            <p className="text-lg text-gray-300 leading-relaxed">
-              I'm a passionate front-end developer with a strong foundation in modern web technologies. 
-              My journey in web development started during my studies at Virtual University of Pakistan, 
-              where I developed a deep appreciation for creating user-centered digital solutions.
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Side - Content */}
+          <div className="space-y-8 animate-fade-in delay-300">
+            <p className="text-lg text-slate-300 leading-relaxed">
+              I'm a passionate Frontend Developer with expertise in React.js, Next.js, JavaScript, TypeScript, 
+              and modern web technologies. Currently pursuing my Bachelor of Science in Information Technology 
+              at Virtual University of Pakistan, I combine academic knowledge with practical experience.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              With 6 months of remote work experience, I've had the opportunity to work on diverse projects, 
-              collaborating with teams across different time zones and contributing to real-world applications 
-              that serve users globally.
+            <p className="text-lg text-slate-300 leading-relaxed">
+              With hands-on experience at Upwork as a Front-End Developer, I've worked on cyber security platforms, 
+              service booking systems, and e-commerce solutions. I also mentor aspiring developers and provide 
+              career guidance to students in programming and web development.
             </p>
-            <p className="text-lg text-gray-300 leading-relaxed">
-              I'm constantly learning and staying up-to-date with the latest trends and best practices 
-              in front-end development, always striving to write clean, efficient, and maintainable code.
-            </p>
+            
+            {/* Stats */}
+            <div className="grid grid-cols-2 gap-8 pt-8">
+              <div className="text-center">
+                <h4 className="text-3xl font-bold text-emerald-400 mb-2">6+</h4>
+                <p className="text-slate-300">Months Experience</p>
+              </div>
+              <div className="text-center">
+                <h4 className="text-3xl font-bold text-emerald-400 mb-2">15+</h4>
+                <p className="text-slate-300">Projects Completed</p>
+              </div>
+            </div>
           </div>
 
+          {/* Right Side - Info Cards */}
           <div className="space-y-6 animate-fade-in delay-500">
-            <Card className="hover:shadow-xl hover:shadow-yellow-500/10 transition-all duration-500 border-yellow-500/30 bg-slate-800/60 backdrop-blur-sm transform hover:scale-105">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-gradient-to-r from-emerald-400 to-green-400 rounded-lg">
-                    <GraduationCap className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Education</h3>
-                    <p className="text-gray-300 font-medium">BS - Information Technology</p>
-                    <p className="text-gray-400">Virtual University of Pakistan</p>
-                  </div>
+            <Card className="card-gradient card-hover border-0">
+              <CardContent className="p-6 flex items-center space-x-4">
+                <div className="p-3 icon-gradient-1 rounded-xl">
+                  <GraduationCap className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1">Education</h3>
+                  <p className="text-slate-300 text-sm">BS - Information Technology</p>
+                  <p className="text-slate-300 text-xs">Virtual University of Pakistan</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 border-emerald-500/30 bg-slate-800/60 backdrop-blur-sm transform hover:scale-105">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-gradient-to-r from-emerald-400 to-green-400 rounded-lg">
-                    <Calendar className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Experience</h3>
-                    <p className="text-gray-300 font-medium">6 Months Remote Work</p>
-                    <p className="text-gray-400">Front-end Development</p>
-                  </div>
+            <Card className="card-gradient card-hover border-0">
+              <CardContent className="p-6 flex items-center space-x-4">
+                <div className="p-3 icon-gradient-2 rounded-xl">
+                  <Calendar className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1">Experience</h3>
+                  <p className="text-slate-300 text-sm">6+ Months Professional Work</p>
+                  <p className="text-slate-300 text-xs">Frontend Development & Mentoring</p>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-500 border-emerald-500/30 bg-slate-800/60 backdrop-blur-sm transform hover:scale-105">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-gradient-to-r from-emerald-400 to-green-400 rounded-lg">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white mb-2">Location</h3>
-                    <p className="text-gray-300 font-medium">Pakistan</p>
-                    <p className="text-gray-400">Available for Remote Work</p>
-                  </div>
+            <Card className="card-gradient card-hover border-0">
+              <CardContent className="p-6 flex items-center space-x-4">
+                <div className="p-3 icon-gradient-3 rounded-xl">
+                  <MapPin className="h-6 w-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-white mb-1">Location</h3>
+                  <p className="text-slate-300 text-sm">Lahore, Pakistan</p>
+                  <p className="text-slate-300 text-xs">Available for Remote Work</p>
                 </div>
               </CardContent>
             </Card>

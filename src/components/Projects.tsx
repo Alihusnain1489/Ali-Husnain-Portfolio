@@ -44,7 +44,7 @@ const Projects = () => {
       title: "Security Company",
       description:
         "This is an ongoing project.I am building this project using Loveable.dev, React.js, Tailwind-css And for managing state redux-toolkit .",
-      image: "/secuity.png",
+      image: "/security.png",
       liveUrl: "https://lahore-security.vercel.app//",
       githubUrl: "https://github.com/Alihusnain1489/lahore-security",
       technologies: ["Loveable", "React.js", "Tailwind"],

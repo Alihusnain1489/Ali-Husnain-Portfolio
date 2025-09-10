@@ -12,47 +12,60 @@ const Projects = () => {
       description:
         "A cyber security company website designed to book cyber product services. Architecture based on React.js modern components with React, TypeScript, Redux, Tailwind CSS, BootStrap.",
       image: "/loopholedefender.png",
-      liveUrl: "https://loophole-defender.vercel.app/", // Replace with actual live URL
-      githubUrl: "https://github.com/Alihusnain1489/booking-platform", // Replace with actual repo URL
+      liveUrl: "https://loophole-defender.vercel.app/",
+      githubUrl: "https://github.com/Alihusnain1489/booking-platform", 
       technologies: ["React", "TypeScript", "Redux", "Tailwind CSS", "Bootstrap"],
       category: "Security Platform",
     },
     {
       id: 2,
+      title: "Manzio",
+      description:
+        "A Next.js project using SSR Tailwind SWR,",
+      image: "/manzio.png",
+      liveUrl: "https://manzio.vercel.app/", 
+      githubUrl: "https://github.com/Alihusnain1489/manzio", 
+      technologies: ["Next.js", "React.js", "Javascript", "Tailwind CSS", "Shad-cdn"],
+      category: "IT Services Company",
+    },
+    {
+      id: 3,
       title: "Ecommerce Website",
       description:
         "Developed and deployed a responsive wholesale e-commerce platform using React, Tailwind CSS, and Next.js. Implemented dynamic product listings, category filters, and clean, mobile-friendly UI for seamless user experience.",
       image: "/my.png",
       liveUrl: "https://wholesale-threads.vercel.app/",
-      githubUrl: "https://github.com/Alihusnain1489/alif-threads", // Replace with actual repo URL
+      githubUrl: "https://github.com/Alihusnain1489/alif-threads", 
       technologies: ["React", "Next.js", "Tailwind CSS", "Vercel"],
       category: "E-commerce Platform",
     },
     {
-      id: 3,
+      id: 4,
+      title: "Security Company",
+      description:
+        "This is an ongoing project.I am building this project using Loveable.dev, React.js, Tailwind-css And for managing state redux-toolkit .",
+      image: "/secuity.png",
+      liveUrl: "https://lahore-security.vercel.app//",
+      githubUrl: "https://github.com/Alihusnain1489/lahore-security",
+      technologies: ["Loveable", "React.js", "Tailwind"],
+      category: "Security Service Platform",
+    },
+    
+    {
+      id: 5,
       title: "Next.js Portfolio",
       description:
         "This is an ongoing project.I am building this project using Next.js, React.js, Tailwind-css And for managing state redux-toolkit .",
       image: "/my1.png",
       liveUrl: "https://ali-husnain-nextjs.vercel.app/",
-      githubUrl: "https://github.com/Alihusnain1489/Next.js-Portfolio", // Replace with actual repo URL
+      githubUrl: "https://github.com/Alihusnain1489/Next.js-Portfolio",
       technologies: ["Next.js", "React.js", "Framer Motion", "Tailwind"],
       category: "Portfolio",
     },
-     {
-      id: 4,
-      title: "Security Company",
-      description:
-        "This is an ongoing project.I am building this project using Loveable an AI tool for Front-end .",
-      image: "/security.png/",
-      liveUrl: "https://lahore-security.vercel.app/",
-      githubUrl: "https://github.com/Alihusnain1489/lahore-security", // Replace with actual repo URL
-      technologies: ["Next.js", "React.js", "Framer Motion", "Tailwind"],
-      category: "Company",
-    },
+  
   ];
 
-  // Simple working link handler
+
   const handleLinkClick = (url) => {
     if (url) {
       window.open(url, "_blank", "noopener,noreferrer");

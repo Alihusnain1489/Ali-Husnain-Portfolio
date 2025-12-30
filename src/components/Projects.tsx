@@ -8,61 +8,59 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Booking Platform",
+      title: "Nextal Pest Control",
       description:
-        "A cyber security company website designed to book cyber product services. Architecture based on React.js modern components with React, TypeScript, Redux, Tailwind CSS, BootStrap.",
-      image: "/loopholedefender.png",
-      liveUrl: "https://loophole-defender.vercel.app/",
-      githubUrl: "https://github.com/Alihusnain1489/booking-platform", 
-      technologies: ["React", "TypeScript", "Redux", "Tailwind CSS", "Bootstrap"],
-      category: "Security Platform",
+        "Built a complete service platform using Next.js and Tailwind CSS. Developed admin dashboard for bookings, services, users, and role management. Optimized SEO, performance, and mobile responsiveness.",
+      image: "/lovable-uploads/f1fc6b74-a80c-449c-b59b-db02b8eec7d2.png",
+      liveUrl: "https://nextalpestcontrol.com/",
+      githubUrl: "https://github.com/Alihusnain1489", 
+      technologies: ["Next.js", "Tailwind CSS", "Admin Dashboard", "SEO"],
+      category: "Service Platform",
     },
     {
       id: 2,
-      title: "Manzio",
+      title: "Loophole Defender",
       description:
-        "A Next.js project using SSR Tailwind SWR,",
-      image: "/manzio.png",
-      liveUrl: "https://manzio.vercel.app/", 
-      githubUrl: "https://github.com/Alihusnain1489/manzio", 
-      technologies: ["Next.js", "React.js", "Javascript", "Tailwind CSS", "Shad-cdn"],
-      category: "IT Services Company",
+        "Cybersecurity service booking platform based on modern React.js architecture. Frontend built with React, Framer Motion for animations, and Material UI for component design. Implemented smooth transitions and responsive UI.",
+      image: "/loopholedefender.png",
+      liveUrl: "https://loophole-defender.vercel.app/",
+      githubUrl: "https://github.com/Alihusnain1489/booking-platform", 
+      technologies: ["React.js", "Framer Motion", "Material UI", "TypeScript"],
+      category: "Security Platform",
     },
     {
       id: 3,
-      title: "Ecommerce Website",
+      title: "Solar House (E-commerce)",
       description:
-        "Developed and deployed a responsive wholesale e-commerce platform using React, Tailwind CSS, and Next.js. Implemented dynamic product listings, category filters, and clean, mobile-friendly UI for seamless user experience.",
+        "Developed and deployed a responsive wholesale e-commerce platform using Next.js and Tailwind CSS. Implemented product listings, filters, and mobile-friendly UI with server-side rendering.",
       image: "/wholesale.png",
       liveUrl: "https://wholesale-threads.vercel.app/",
       githubUrl: "https://github.com/Alihusnain1489/alif-threads", 
-      technologies: ["React", "Next.js", "Tailwind CSS","TanStack Query" , "Vercel"],
+      technologies: ["Next.js", "Tailwind CSS", "TanStack Query", "SSR"],
       category: "E-commerce Platform",
     },
     {
       id: 4,
-      title: "Security Company",
+      title: "Manzio",
       description:
-        "This is an ongoing project.I am building this project using Loveable.dev, React.js, Tailwind-css And for managing state redux-toolkit .",
-      image: "/security.png",
-      liveUrl: "https://lahore-security.vercel.app//",
-      githubUrl: "https://github.com/Alihusnain1489/lahore-security",
-      technologies: ["Loveable", "React.js", "Tailwind"],
-      category: "Security Service Platform",
+        "A Next.js project using server-side rendering, Tailwind CSS, and SWR for data fetching. Built for an IT services company with modern design.",
+      image: "/manzio.png",
+      liveUrl: "https://manzio.vercel.app/", 
+      githubUrl: "https://github.com/Alihusnain1489/manzio", 
+      technologies: ["Next.js", "React.js", "SWR", "Tailwind CSS"],
+      category: "IT Services",
     },
-    
     {
       id: 5,
       title: "Next.js Portfolio",
       description:
-        "This is an ongoing project.I am building this project using Next.js, React.js, Tailwind-css And for managing state redux-toolkit .",
+        "Personal portfolio built with Next.js, React.js, and Framer Motion for smooth animations. Showcases projects and skills with modern design.",
       image: "/my1.png",
       liveUrl: "https://ali-husnain-nextjs.vercel.app/",
       githubUrl: "https://github.com/Alihusnain1489/Next.js-Portfolio",
       technologies: ["Next.js", "React.js", "Framer Motion", "Tailwind"],
       category: "Portfolio",
     },
-  
   ];
 
 

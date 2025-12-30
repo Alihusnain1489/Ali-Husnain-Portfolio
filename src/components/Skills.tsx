@@ -1,88 +1,88 @@
-import { Code, Database, Palette, Server, Globe, Smartphone, ArrowUpRight, Layout, Zap, TestTube } from "lucide-react";
+import { Code, Database, Cloud, Wrench, Server, GitBranch } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const Skills = () => {
-  const services = [
+  const skillCategories = [
     {
-      title: "React.js Development",
-      description: "I develop high-performance, scalable web apps with React.js, Tailwind CSS, and modern JavaScript (ES6+), ensuring your digital product stands out.",
+      title: "Libraries / Frameworks",
       icon: Code,
+      gradient: "icon-gradient-1",
+      skills: ["React.js", "Next.js", "Redux Toolkit", "React Router", "TanStack Query", "Tailwind CSS", "Bootstrap", "Ant Design", "Spring Boot"]
     },
     {
-      title: "State Management",
-      description: "I integrate Redux Toolkit or React Context to handle complex state, making your app fast, maintainable, and future-ready.",
-      icon: Database,
-    },
-    {
-      title: "UI/UX Design",
-      description: "From wireframes to pixel-perfect interfaces, I focus on clean layouts and seamless user journeys that keep visitors engaged.",
-      icon: Layout,
-    },
-    {
-      title: "API Integration",
-      description: "I connect your frontend seamlessly with REST APIs using Axios & Fetch, enabling real-time data and dynamic features.",
+      title: "Programming Languages",
       icon: Server,
+      gradient: "icon-gradient-2",
+      skills: ["JavaScript (Proficient)", "TypeScript (Proficient)", "Java (Familiar)", "HTML5", "CSS3", "SQL"]
     },
     {
-      title: "SEO & Deployment",
-      description: "I apply on-page SEO best practices and deploy to platforms like Vercel or Netlify, so your app is fast, discoverable, and live with CI/CD.",
-      icon: Globe,
+      title: "DevOps / CI-CD",
+      icon: GitBranch,
+      gradient: "icon-gradient-3",
+      skills: ["GitHub Actions", "CI/CD Pipelines", "Build & Deployment Automation"]
     },
     {
-      title: "Cross-Browser Testing",
-      description: "I ensure your website works flawlessly across modern browsers and devices, delivering consistent experiences to all your users.",
-      icon: TestTube,
+      title: "Cloud / Platforms",
+      icon: Cloud,
+      gradient: "icon-gradient-4",
+      skills: ["AWS (EC2, S3 - basic)", "Vercel", "Netlify"]
+    },
+    {
+      title: "Tools & Databases",
+      icon: Database,
+      gradient: "icon-gradient-5",
+      skills: ["Git", "GitHub", "Postman", "MySQL", "MongoDB", "SQLite"]
+    },
+    {
+      title: "Development Practices",
+      icon: Wrench,
+      gradient: "icon-gradient-6",
+      skills: ["RESTful APIs", "Responsive Design", "SEO Optimization", "Agile Methodology"]
     },
   ];
 
   return (
-    <section id="skills" className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden min-h-screen lendex-pattern">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 right-20 w-24 h-24 gradient-glow rounded-full opacity-20 animate-float"></div>
-        <div className="absolute bottom-20 left-20 w-16 h-16 gradient-glow rounded-full opacity-30 animate-pulse-custom"></div>
-      </div>
-
+    <section id="skills" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
       <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-playfair font-bold text-foreground mb-6 animate-fade-in">
-            Experience
+          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+            My <span className="text-emerald-400">Skills</span>
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed font-montserrat animate-fade-in delay-200">
-            Specialized in creating modern, responsive web applications with cutting-edge technologies
+          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Technical expertise and tools I use to build modern web applications
           </p>
         </div>
 
-        {/* Skills Categories */}
+        {/* Skills Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
+          {skillCategories.map((category, index) => (
             <Card 
-              key={service.title} 
-              className="group border border-border bg-card hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 animate-fade-in"
+              key={category.title}
+              className="card-gradient card-hover border-0 group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <CardContent className="p-8 text-center">
-                {/* Icon */}
-                <div className="mb-6">
-                  <div className="w-16 h-16 mx-auto gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                    <service.icon className="h-8 w-8 text-white" />
+              <CardContent className="p-8">
+                {/* Header */}
+                <div className="flex items-center gap-4 mb-6">
+                  <div className={`w-12 h-12 ${category.gradient} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                    <category.icon className="h-6 w-6 text-white" />
                   </div>
+                  <h3 className="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors duration-300">
+                    {category.title}
+                  </h3>
                 </div>
                 
-                {/* Title */}
-                <h3 className="text-xl font-playfair font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </h3>
-                
-                {/* Description */}
-                <p className="text-muted-foreground leading-relaxed font-montserrat text-sm">
-                  {service.description}
-                </p>
-
-                {/* Hover Arrow */}
-                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <ArrowUpRight className="h-5 w-5 text-primary mx-auto transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                {/* Skills Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <span
+                      key={skillIndex}
+                      className="px-3 py-1.5 text-xs font-medium text-slate-300 bg-slate-800/50 border border-slate-700 rounded-full hover:border-emerald-400 hover:text-emerald-400 transition-all duration-300 cursor-default"
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
               </CardContent>
             </Card>

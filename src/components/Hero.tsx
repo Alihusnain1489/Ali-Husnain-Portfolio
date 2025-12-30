@@ -2,7 +2,7 @@
 import { Github, Linkedin, Mail, Download, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import CV from "./ui/Ali Husnain  CV .pdf";
+import CV from "./ui/Ali Husnain.pdf";
 
 const Hero = () => {
   const [hasAnimated, setHasAnimated] = useState(false);
@@ -45,10 +45,10 @@ const Hero = () => {
               
               <div className="space-y-4">
                 <p className="text-xl sm:text-2xl text-emerald-500 font-medium">
-                  Frontend Developer
+                  Full Stack  Developer
                 </p>
                 <p className="text-lg text-slate-300 leading-relaxed max-w-xl">
-                 Developer skilled in Next.js, Modern React, and Tailwind CSS, with experience building scalable and responsive web applications.
+                 Developer skilled in Next.js, Modern React, Tailwind CSS, and Java, with experience building scalable and responsive web applications.
                 </p>
               </div>
             </div>
@@ -102,13 +102,11 @@ const Hero = () => {
             <div className="relative">
               {/* Main Image Container - Responsive */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                {/* Background Circle */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-slate-800 to-slate-900 transform rotate-6"></div>
                 
                 {/* Profile Image */}
                 <div className="relative z-10 w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-slate-700 hover:scale-105 transition-transform duration-500">
                   <img
-                    src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
+                    src="/lovable-uploads/ccc.png"
                     alt="Ali Husnain - Frontend Developer"
                     className="w-full h-full object-cover object-center"
                     loading="lazy"

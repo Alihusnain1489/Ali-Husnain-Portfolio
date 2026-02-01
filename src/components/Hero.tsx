@@ -103,8 +103,27 @@ const Hero = () => {
               {/* Main Image Container - Responsive */}
               <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
                 
+                {/* Circular Motion Effects */}
+                <div className="absolute inset-0 rounded-full border-2 border-dashed border-emerald-500/30 animate-spin" style={{ animationDuration: '20s' }}></div>
+                <div className="absolute -inset-4 rounded-full border border-emerald-500/20 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
+                <div className="absolute -inset-8 rounded-full border border-slate-500/10 animate-spin" style={{ animationDuration: '25s' }}></div>
+                
+                {/* Orbiting Dots */}
+                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '8s' }}>
+                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 w-3 h-3 rounded-full bg-emerald-500 shadow-lg shadow-emerald-500/50"></div>
+                </div>
+                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '12s', animationDirection: 'reverse' }}>
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2 w-2 h-2 rounded-full bg-blue-500 shadow-lg shadow-blue-500/50"></div>
+                </div>
+                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '10s' }}>
+                  <div className="absolute top-1/2 right-0 translate-x-2 -translate-y-1/2 w-2 h-2 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50"></div>
+                </div>
+
+                {/* White Background Circle */}
+                <div className="absolute inset-2 rounded-full bg-white shadow-2xl"></div>
+                
                 {/* Profile Image */}
-                <div className="relative z-10 w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-slate-700 hover:scale-105 transition-transform duration-500">
+                <div className="relative z-10 w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500">
                   <img
                     src="/lovable-uploads/ccc.png"
                     alt="Ali Husnain - Frontend Developer"
@@ -112,7 +131,6 @@ const Hero = () => {
                     loading="lazy"
                   />
                 </div>
-                
                 
               </div>
             </div>

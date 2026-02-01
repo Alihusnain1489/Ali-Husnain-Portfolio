@@ -7,6 +7,7 @@ import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
   return (
@@ -27,6 +28,7 @@ const Index = () => {
         <Projects />
         <Contact />
         <ScrollToTop />
+        <WhatsAppFloat />
       </div>
     </div>
   );

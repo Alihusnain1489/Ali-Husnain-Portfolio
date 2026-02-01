@@ -28,6 +28,14 @@ const Experience = () => {
       description: "Worked on a cybersecurity service purchasing and booking platform with an admin dashboard. Implemented UI using React, JavaScript, Tailwind CSS, Bootstrap, and Ant Design. Assisted in UI design improvements and responsive component development.",
       status: "completed"
     },
+    {
+      year: "Oct 2021 – Feb 2025",
+      title: "Bank Teller",
+      company: "Bank Al Habib LTD",
+      location: "Pakistan",
+      description: "Handled customer transactions including deposits, withdrawals, and account inquiries. Provided excellent customer service, maintained accurate records, and ensured compliance with banking regulations and procedures.",
+      status: "completed"
+    },
   ];
 
  

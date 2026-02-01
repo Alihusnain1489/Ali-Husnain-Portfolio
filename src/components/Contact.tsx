@@ -4,10 +4,54 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent } from "@/components/ui/card";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
+      });
+
+      if (error) throw error;
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for reaching out. I'll get back to you soon.",
+      });
+
+      setFormData({ firstName: "", lastName: "", email: "", subject: "", message: "" });
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative lendex-pattern min-h-screen flex items-center">
       <div className="max-w-6xl mx-auto relative z-10 w-full">
@@ -87,7 +131,7 @@ const Contact = () => {
                 <h3 className="text-2xl font-bold text-white mb-6">
                   Send Me a Message
                 </h3>
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-slate-300 mb-2">
@@ -95,7 +139,11 @@ const Contact = () => {
                       </label>
                       <Input
                         type="text"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
                         placeholder="First Name"
+                        required
                         className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
                       />
                     </div>
@@ -105,7 +153,11 @@ const Contact = () => {
                       </label>
                       <Input
                         type="text"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
                         placeholder="Last Name"
+                        required
                         className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
                       />
                     </div>
@@ -117,7 +169,11 @@ const Contact = () => {
                     </label>
                     <Input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
                       placeholder="demo@example.com"
+                      required
                       className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
                     />
                   </div>
@@ -128,7 +184,11 @@ const Contact = () => {
                     </label>
                     <Input
                       type="text"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
                       placeholder="Project Discussion"
+                      required
                       className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
                     />
                   </div>
@@ -138,8 +198,12 @@ const Contact = () => {
                       Message
                     </label>
                     <Textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
                       placeholder="Tell me about your project..."
                       rows={5}
+                      required
                       className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400 resize-none"
                     />
                   </div>
@@ -147,10 +211,11 @@ const Contact = () => {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full gradient-emerald text-white font-medium px-8 py-4 rounded-xl hover:scale-105 transition-all duration-300 border-0 shadow-lg"
+                    disabled={isSubmitting}
+                    className="w-full gradient-emerald text-white font-medium px-8 py-4 rounded-xl hover:scale-105 transition-all duration-300 border-0 shadow-lg disabled:opacity-50"
                   >
                     <Send className="mr-2 h-5 w-5" />
-                    Send Message
+                    {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
               </CardContent>

@@ -125,7 +125,7 @@ const Hero = () => {
                 {/* Profile Image */}
                 <div className="relative z-10 w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500">
                   <img
-                    src="/lovable-uploads/ccc.png"
+                    src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
                     alt="Ali Husnain - Frontend Developer"
                     className="w-full h-full object-cover object-center"
                     loading="lazy"

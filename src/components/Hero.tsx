@@ -1,4 +1,5 @@
 import { ArrowUpRight, Download, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import CV from "@/components/ui/Ali Husnain.pdf";
 
 const Hero = () => {
   return (
@@ -34,12 +35,7 @@ const Hero = () => {
               <a href="#contact" className="btn-ink">
                 Start a project <ArrowUpRight className="h-4 w-4" />
               </a>
-              <a
-                href="/Ali-Husnain-CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline-ink"
-              >
+              <a href={CV} target="_blank" rel="noopener noreferrer" className="btn-outline-ink">
                 Download CV <Download className="h-4 w-4" />
               </a>
             </div>

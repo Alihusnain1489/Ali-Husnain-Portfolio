@@ -1,9 +1,6 @@
-
-import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -26,201 +23,102 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
     try {
-      const { error } = await supabase.functions.invoke("send-contact-email", {
-        body: formData,
-      });
-
+      const { error } = await supabase.functions.invoke("send-contact-email", { body: formData });
       if (error) throw error;
-
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-
+      toast({ title: "Message sent!", description: "Thanks — I'll get back to you shortly." });
       setFormData({ firstName: "", lastName: "", email: "", subject: "", message: "" });
-    } catch (error: any) {
-      console.error("Error sending message:", error);
-      toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
-      });
+    } catch (err) {
+      console.error(err);
+      toast({ title: "Something went wrong", description: "Please try again in a moment.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative lendex-pattern min-h-screen flex items-center">
-      <div className="max-w-6xl mx-auto relative z-10 w-full">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Get In <span className="text-emerald-400">Touch</span>
-          </h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Have a project in mind or want to discuss opportunities? I'd love to hear from you.
-          </p>
-        </div>
+    <section id="contact" className="relative bg-background py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="grid gap-16 lg:grid-cols-[1fr_1.1fr]">
+          {/* Left — arched portrait + info */}
+          <div>
+            <p className="eyebrow mb-6">Get in touch</p>
+            <h2 className="font-playfair text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
+              Let's build your next <span className="italic text-[hsl(var(--coral))]">product</span>
+            </h2>
+            <p className="mt-6 max-w-md text-foreground/70">
+              Available for full-stack engineering, AI automation and freelance product work.
+              I typically respond within a business day.
+            </p>
 
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          {/* Left Side - Contact Info & Image */}
-          <div className="space-y-8">
-            {/* Professional Image */}
-            <div className="flex justify-center mb-8">
-              <div className="relative">
-                <div className="w-48 h-48 rounded-full overflow-hidden shadow-2xl border-4 border-emerald-500/20">
-                  <img
-                    src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
-                    alt="Ali Husnain - Contact"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-2 -right-2 w-16 h-16 gradient-emerald rounded-full flex items-center justify-center text-white text-2xl shadow-xl">
-                  👋
+            <div className="mt-10 relative w-full max-w-sm">
+              <div className="arch-top overflow-hidden bg-secondary aspect-[3/4]">
+                <img
+                  src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
+                  alt="Ali Husnain"
+                  className="h-full w-full object-cover object-top"
+                />
+                <div className="absolute left-4 bottom-4">
+                  <span className="location-pill"><MapPin className="h-3.5 w-3.5" /> Lahore, Pakistan</span>
                 </div>
               </div>
             </div>
 
-            {/* Contact Cards */}
-            <div className="space-y-6">
-              <Card className="card-gradient card-hover border-0">
-                <CardContent className="p-6 flex items-center space-x-4">
-                  <div className="p-3 icon-gradient-1 rounded-xl">
-                    <Mail className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1">Email</h3>
-                    <p className="text-slate-300">mr.alihusnain11@gmail.com</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="card-gradient card-hover border-0">
-                <CardContent className="p-6 flex items-center space-x-4">
-                  <div className="p-3 icon-gradient-2 rounded-xl">
-                    <Phone className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1">Phone</h3>
-                    <p className="text-slate-300">+92 326 1052244</p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card className="card-gradient card-hover border-0">
-                <CardContent className="p-6 flex items-center space-x-4">
-                  <div className="p-3 icon-gradient-3 rounded-xl">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-1">Location</h3>
-                    <p className="text-slate-300">Lahore, Pakistan</p>
-                  </div>
-                </CardContent>
-              </Card>
+            <div className="mt-10 space-y-4 text-sm">
+              <a href="mailto:mr.alihusnain11@gmail.com" className="flex items-center gap-3 text-foreground hover:text-[hsl(var(--coral))]">
+                <Mail className="h-4 w-4" /> mr.alihusnain11@gmail.com
+              </a>
+              <a href="tel:+923261052244" className="flex items-center gap-3 text-foreground hover:text-[hsl(var(--coral))]">
+                <Phone className="h-4 w-4" /> +92 326 1052244
+              </a>
+              <div className="flex items-center gap-3 text-foreground/70">
+                <MapPin className="h-4 w-4" /> Lahore, Pakistan · Remote worldwide
+              </div>
             </div>
           </div>
 
-          {/* Right Side - Contact Form */}
-          <div>
-            <Card className="card-gradient border-0 shadow-2xl">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-white mb-6">
-                  Send Me a Message
-                </h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-slate-300 mb-2">
-                        First Name
-                      </label>
-                      <Input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        placeholder="First Name"
-                        required
-                        className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-slate-300 mb-2">
-                        Last Name
-                      </label>
-                      <Input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        placeholder="Last Name"
-                        required
-                        className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
-                      Email
-                    </label>
-                    <Input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="demo@example.com"
-                      required
-                      className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
-                      Subject
-                    </label>
-                    <Input
-                      type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="Project Discussion"
-                      required
-                      className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-2">
-                      Message
-                    </label>
-                    <Textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Tell me about your project..."
-                      rows={5}
-                      required
-                      className="w-full bg-slate-800 border-slate-600 focus:border-emerald-400 focus:ring-emerald-400 text-white placeholder-slate-400 resize-none"
-                    />
-                  </div>
-                  
-                  <Button
-                    type="submit"
-                    size="lg"
-                    disabled={isSubmitting}
-                    className="w-full gradient-emerald text-white font-medium px-8 py-4 rounded-xl hover:scale-105 transition-all duration-300 border-0 shadow-lg disabled:opacity-50"
-                  >
-                    <Send className="mr-2 h-5 w-5" />
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
+          {/* Right — form on ink block */}
+          <form onSubmit={handleSubmit} className="ink-block p-8 lg:p-12">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-white/60">Send a message</p>
+            <h3 className="mt-3 font-playfair text-3xl text-white">Tell me about your project</h3>
+            <div className="hairline my-8 !bg-white/20" />
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              <div>
+                <label className="mb-2 block text-xs uppercase tracking-wider text-white/60">First name</label>
+                <Input name="firstName" value={formData.firstName} onChange={handleChange} required
+                  className="rounded-none border-0 border-b border-white/30 bg-transparent px-0 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:border-[hsl(var(--coral))]" />
+              </div>
+              <div>
+                <label className="mb-2 block text-xs uppercase tracking-wider text-white/60">Last name</label>
+                <Input name="lastName" value={formData.lastName} onChange={handleChange} required
+                  className="rounded-none border-0 border-b border-white/30 bg-transparent px-0 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:border-[hsl(var(--coral))]" />
+              </div>
+            </div>
+
+            <div className="mt-5">
+              <label className="mb-2 block text-xs uppercase tracking-wider text-white/60">Email</label>
+              <Input type="email" name="email" value={formData.email} onChange={handleChange} required
+                className="rounded-none border-0 border-b border-white/30 bg-transparent px-0 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:border-[hsl(var(--coral))]" />
+            </div>
+
+            <div className="mt-5">
+              <label className="mb-2 block text-xs uppercase tracking-wider text-white/60">Subject</label>
+              <Input name="subject" value={formData.subject} onChange={handleChange} required
+                className="rounded-none border-0 border-b border-white/30 bg-transparent px-0 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:border-[hsl(var(--coral))]" />
+            </div>
+
+            <div className="mt-5">
+              <label className="mb-2 block text-xs uppercase tracking-wider text-white/60">Message</label>
+              <Textarea name="message" value={formData.message} onChange={handleChange} required rows={5}
+                className="rounded-none border-0 border-b border-white/30 bg-transparent px-0 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:border-[hsl(var(--coral))] resize-none" />
+            </div>
+
+            <button type="submit" disabled={isSubmitting}
+              className="mt-10 inline-flex items-center gap-2 rounded-full bg-[hsl(var(--coral))] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-60">
+              {isSubmitting ? "Sending..." : "Send message"} <ArrowUpRight className="h-4 w-4" />
+            </button>
+          </form>
         </div>
       </div>
     </section>

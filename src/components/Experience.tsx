@@ -1,110 +1,125 @@
-
-import { Card, CardContent } from "@/components/ui/card";
-import { Briefcase } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 
 const Experience = () => {
   const experiences = [
     {
-      year: "Dec 2025 – Present",
-      title: "Frontend Developer",
-      company: "DevStax",
-      location: "Lahore, Pakistan",
-      description: "Developing and maintaining web applications using Next.js, React.js, JavaScript, Tailwind CSS, and Bootstrap. Building modern, scalable frontend solutions.",
-      status: "active"
+      n: "01",
+      year: "Mar 2026 – Present",
+      title: "Full Stack Engineer",
+      company: "LUXKODE",
+      location: "Aberdeen, UK · Remote",
+      bullets: [
+        "Building scalable, high-performance web apps and digital solutions.",
+        "Shipping full-stack features with React, Next.js and Python.",
+        "Delivering agentic AI and full-stack solutions across client projects.",
+      ],
+      active: true,
     },
     {
+      n: "02",
+      year: "Jan 2026 – Present",
+      title: "Full Stack Engineer (Freelance)",
+      company: "Fiverr",
+      location: "Remote",
+      bullets: [
+        "Custom web apps, e-commerce platforms and AI-powered automations.",
+        "End-to-end delivery with strong client communication and on-time shipping.",
+      ],
+      active: true,
+    },
+    {
+      n: "03",
       year: "Sep 2025 – Dec 2025",
-      title: "Junior Full Stack Developer",
+      title: "Junior Frontend Developer",
       company: "Nextal Solutions",
       location: "Lahore, Pakistan",
-      description: "Developed and maintained web applications using Next.js, React.js, JavaScript, Tailwind CSS, and Bootstrap. Worked on frontend–backend integration, API consumption, and debugging. Collaborated with senior developers to deliver responsive UI.",
-      status: "completed"
+      bullets: [
+        "Built and maintained apps in Next.js, React, Tailwind CSS and Bootstrap.",
+        "Owned frontend–backend integration, API consumption and debugging.",
+      ],
     },
     {
+      n: "04",
       year: "Mar 2025 – Jul 2025",
       title: "Junior Frontend Developer",
       company: "Freelance Company",
       location: "Remote",
-      description: "Worked on a cybersecurity service purchasing and booking platform with an admin dashboard. Implemented UI using React, JavaScript, Tailwind CSS, Bootstrap, and Ant Design. Assisted in UI design improvements and responsive component development.",
-      status: "completed"
+      bullets: [
+        "Cybersecurity service booking platform with admin dashboard.",
+        "UI in React, Tailwind CSS, Bootstrap and Ant Design.",
+      ],
     },
     {
+      n: "05",
       year: "Oct 2021 – Feb 2025",
-      title: "Bank Teller",
-      company: "Bank Al Habib LTD",
+      title: "Cash Officer",
+      company: "Bank Al Habib Limited",
       location: "Pakistan",
-      description: "Handled customer transactions including deposits, withdrawals, and account inquiries. Provided excellent customer service, maintained accurate records, and ensured compliance with banking regulations and procedures.",
-      status: "completed"
+      bullets: [
+        "Managed daily cash operations, deposits, withdrawals and balancing.",
+        "Ensured AML compliance and prepared daily cash reports.",
+      ],
     },
   ];
 
- 
-
   return (
-    <section id="experience" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            My <span className="text-emerald-400">Experience</span>
-          </h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Professional journey in web development and software engineering
+    <section id="experience" className="bg-background py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="mb-16 grid gap-8 lg:grid-cols-2 lg:items-end">
+          <div>
+            <p className="eyebrow mb-6">Tenure</p>
+            <h2 className="font-playfair text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
+              5+ years across finance, freelance and full-stack engineering
+            </h2>
+          </div>
+          <p className="text-foreground/70 max-w-md lg:justify-self-end">
+            A career built on operational precision at a leading bank, then re-forged
+            through freelance and product engineering across the UK and remote teams.
           </p>
         </div>
 
-        {/* Experience Timeline */}
-        <div className="max-w-4xl mx-auto">
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-emerald-400 via-slate-600 to-transparent hidden md:block"></div>
+        {/* Ink-block timeline — echoing the Hilton "8 years at Hilton" cards */}
+        <div className="grid gap-6 lg:grid-cols-2">
+          {experiences.map((e, i) => (
+            <article
+              key={e.n}
+              className={`relative p-8 lg:p-10 ${
+                i % 2 === 0 ? "ink-block" : "bg-secondary text-foreground"
+              } ${i % 3 === 1 ? "lg:translate-y-8" : ""}`}
+            >
+              <div className="flex items-start justify-between gap-6">
+                <div>
+                  <p className={`text-[10px] uppercase tracking-[0.22em] ${i % 2 === 0 ? "text-white/60" : "text-foreground/60"}`}>
+                    {e.year}
+                  </p>
+                  <h3 className="mt-3 font-playfair text-2xl leading-tight">{e.title}</h3>
+                  <p className={`mt-1 text-sm ${i % 2 === 0 ? "text-white/70" : "text-foreground/70"}`}>
+                    {e.company} · {e.location}
+                  </p>
+                </div>
+                <span className={`font-playfair text-2xl ${i % 2 === 0 ? "text-white/50" : "text-foreground/40"}`}>
+                  {e.n}
+                </span>
+              </div>
 
-            <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <Card 
-                  key={index}
-                  className="card-gradient card-hover border-0 relative overflow-hidden ml-0 md:ml-20"
-                >
-                  {/* Timeline Dot */}
-                  <div className={`absolute -left-20 top-8 w-4 h-4 rounded-full hidden md:block ${
-                    exp.status === 'active' 
-                      ? 'bg-emerald-400 shadow-lg shadow-emerald-400/50 animate-pulse' 
-                      : 'bg-slate-500'
-                  }`}></div>
-                  
-                  {/* Timeline Icon */}
-                  <div className="absolute -left-24 top-6 w-8 h-8 icon-gradient-1 rounded-lg hidden md:flex items-center justify-center">
-                    <Briefcase className="h-4 w-4 text-white" />
-                  </div>
+              <ul className={`mt-6 space-y-2 text-sm leading-relaxed ${i % 2 === 0 ? "text-white/80" : "text-foreground/75"}`}>
+                {e.bullets.map((b) => (
+                  <li key={b} className="flex gap-2">
+                    <span className="mt-2 inline-block h-1 w-3 flex-shrink-0 bg-current opacity-60" />
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
 
-                  <CardContent className="p-8">
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
-                      <div>
-                        <span className="inline-block px-3 py-1 text-xs font-semibold text-emerald-400 bg-emerald-400/10 rounded-full mb-3">
-                          {exp.year}
-                        </span>
-                        <h3 className="text-xl font-bold text-white">
-                          {exp.title}
-                        </h3>
-                        <p className="text-slate-400 font-medium flex items-center gap-2 mt-1">
-                          <span className="inline-block w-2 h-2 bg-emerald-400 rounded-full"></span>
-                          {exp.company} • {exp.location}
-                        </p>
-                      </div>
-                      {exp.status === 'active' && (
-                        <span className="inline-flex items-center px-3 py-1 text-xs font-medium text-emerald-400 bg-emerald-400/10 border border-emerald-400/30 rounded-full">
-                          Current
-                        </span>
-                      )}
-                    </div>
-                    <p className="text-slate-300 leading-relaxed">
-                      {exp.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
+              {e.active && (
+                <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-full bg-[hsl(var(--coral))] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
+                  <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" /> Current
+                </span>
+              )}
+
+              <ArrowDownRight className={`mt-8 h-5 w-5 ${i % 2 === 0 ? "text-white/60" : "text-foreground/50"}`} />
+            </article>
+          ))}
         </div>
       </div>
     </section>

@@ -1,153 +1,88 @@
-import { GraduationCap, Calendar, MapPin, Award, Book, Code } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { GraduationCap } from "lucide-react";
 
 const Education = () => {
-  const educationData = [
+  const items = [
     {
       degree: "Bachelor's in Information Technology",
       institution: "Virtual University of Pakistan",
       year: "2024",
       location: "Lahore, Pakistan",
-      description: "Comprehensive degree program focusing on modern software development, web technologies, and information systems.",
-      gradient: "icon-gradient-1"
+      description:
+        "Software engineering, web technologies, databases and information systems.",
     },
     {
       degree: "Bachelor's in Arts",
       institution: "University of Punjab",
       year: "2019",
       location: "Lahore, Pakistan",
-      description: "Developed strong communication and analytical skills that complement technical expertise.",
-      gradient: "icon-gradient-2"
-    }
+      description:
+        "Broad-based degree that sharpened communication, research and analytical thinking.",
+    },
+  ];
+
+  const focus = [
+    "Software Engineering",
+    "Modern Web Development",
+    "Database Systems",
+    "Data Structures & Algorithms",
+    "Object-Oriented Programming",
+    "AI & Automation",
+    "System Analysis & Design",
+    "Applied Communication",
   ];
 
   return (
-    <section id="education" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            My <span className="text-emerald-400">Education</span>
-          </h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Academic background and continuous learning journey in technology
+    <section id="education" className="bg-[hsl(var(--cream-warm))] py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="mb-16 grid gap-8 lg:grid-cols-2 lg:items-end">
+          <div>
+            <p className="eyebrow mb-6">Education</p>
+            <h2 className="font-playfair text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
+              Two degrees, one continuous learning practice
+            </h2>
+          </div>
+          <p className="text-foreground/70 max-w-md lg:justify-self-end">
+            Formal training in IT and the arts, combined with a daily practice of shipping,
+            reading and rebuilding.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left Side - Education Cards */}
-          <div className="space-y-8">
-            {educationData.map((edu, index) => (
-              <Card key={index} className="card-gradient card-hover border-0 relative overflow-hidden">
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
-                    <div className={`p-4 ${edu.gradient} rounded-2xl flex-shrink-0`}>
-                      <GraduationCap className="h-8 w-8 text-white" />
+        <div className="grid gap-8 lg:grid-cols-[1.1fr_1fr]">
+          <div className="space-y-6">
+            {items.map((e, i) => (
+              <article key={e.degree} className="editorial-card bg-card p-8 lg:p-10">
+                <div className="flex items-start justify-between gap-6">
+                  <div className="flex gap-5">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center bg-foreground text-background">
+                      <GraduationCap className="h-6 w-6" />
                     </div>
-                    
-                    <div className="space-y-4">
-                      <div>
-                        <h3 className="text-xl font-bold text-white mb-2">
-                          {edu.degree}
-                        </h3>
-                        <p className="text-emerald-400 font-semibold">
-                          {edu.institution}
-                        </p>
-                      </div>
-                      
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-3 text-slate-300 text-sm">
-                          <MapPin className="h-4 w-4 text-emerald-400" />
-                          <span>{edu.location}</span>
-                        </div>
-                        <div className="flex items-center gap-3 text-slate-300 text-sm">
-                          <Calendar className="h-4 w-4 text-emerald-400" />
-                          <span>{edu.year}</span>
-                        </div>
-                      </div>
-
-                      <p className="text-slate-300 leading-relaxed text-sm">
-                        {edu.description}
-                      </p>
+                    <div>
+                      <p className="eyebrow mb-2">{e.year} · {e.location}</p>
+                      <h3 className="font-playfair text-2xl text-foreground">{e.degree}</h3>
+                      <p className="mt-1 text-sm text-foreground/70">{e.institution}</p>
+                      <p className="mt-4 text-sm leading-relaxed text-foreground/70">{e.description}</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                  <span className="font-playfair text-3xl text-foreground/30">0{i + 1}</span>
+                </div>
+              </article>
             ))}
           </div>
 
-          {/* Right Side - Additional Info */}
-          <div className="space-y-8">
-            {/* Key Areas */}
-            <Card className="card-gradient card-hover border-0">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 icon-gradient-3 rounded-xl">
-                    <Book className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">Key Areas of Study</h3>
-                </div>
-                
-                <div className="grid sm:grid-cols-2 gap-3">
-                  {[
-                    "Software Engineering",
-                    "Web Development",
-                    "Database Systems",
-                    "Data Structures",
-                    "Object-Oriented Programming",
-                    "System Analysis",
-                    "Network Security",
-                    "Project Management"
-                  ].map((area, index) => (
-                    <div key={index} className="flex items-center gap-2 text-slate-300">
-                      <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
-                      <span className="text-sm">{area}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Practical Learning */}
-            <Card className="card-gradient card-hover border-0">
-              <CardContent className="p-8">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 icon-gradient-4 rounded-xl">
-                    <Code className="h-6 w-6 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-white">Practical Achievements</h3>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
-                    <span className="text-slate-300">Projects Completed</span>
-                    <span className="text-emerald-400 font-bold">10+</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
-                    <span className="text-slate-300">Work Experience</span>
-                    <span className="text-emerald-400 font-bold">1+ Year</span>
-                  </div>
-                  <div className="flex justify-between items-center p-3 bg-slate-800/50 rounded-lg">
-                    <span className="text-slate-300">Technologies Mastered</span>
-                    <span className="text-emerald-400 font-bold">15+</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Achievement Badge */}
-            <Card className="card-gradient card-hover border-0">
-              <CardContent className="p-8 text-center">
-                <div className="p-4 icon-gradient-5 rounded-2xl w-fit mx-auto mb-4">
-                  <Award className="h-8 w-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">Continuous Learner</h3>
-                <p className="text-slate-300 text-sm">
-                  Committed to staying current with the latest technologies and best practices in web development.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
+          <aside className="ink-block p-10">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-white/60">Focus areas</p>
+            <h3 className="mt-4 font-playfair text-3xl leading-tight">
+              What I studied &amp; keep sharpening today
+            </h3>
+            <div className="hairline my-8 !bg-white/20" />
+            <ul className="grid gap-y-3 gap-x-6 sm:grid-cols-2">
+              {focus.map((f) => (
+                <li key={f} className="flex items-center gap-3 text-sm text-white/85">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[hsl(var(--coral))]" /> {f}
+                </li>
+              ))}
+            </ul>
+          </aside>
         </div>
       </div>
     </section>

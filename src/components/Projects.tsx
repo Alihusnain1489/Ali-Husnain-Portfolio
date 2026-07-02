@@ -1,210 +1,114 @@
-"use client";
-
-import { ExternalLink, Github } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
-      id: 1,
-      title: "Nextal Pest Control",
-      description:
-        "A complete service booking platform with admin dashboard for managing bookings, services, users, and role-based access. Optimized for SEO, performance, and mobile responsiveness using Next.js built-in features.",
-      image: "/sc1.png",
-      liveUrl: "https://nextal-pest-website.vercel.app/",
-      githubUrl: "",
-      technologies: [
-        "Next.js",
-        "React.js",
-        "JavaScript",
-        "Tailwind CSS",
-        "REST APIs",
-        "Vercel",
-      ],
-      category: "Service Booking Platform",
-    },
-  
-    {
-      id: 2,
-      title: "Loophole Defender",
-      description:
-        "A cybersecurity service booking platform built with modern React architecture, featuring smooth animations, responsive UI, and clean component-based design.",
-      image: "/loopholedefender.png",
-      liveUrl: "https://loophole-defender.vercel.app/",
-      githubUrl: "",
-      technologies: [
-        "React.js",
-        "JavaScript",
-        "Framer Motion",
-        "Material UI",
-        "CSS",
-      ],
-      category: "Cyber Security Platform",
-    },
-  
-    {
-      id: 3,
-      title: "Solar House",
-      description:
-        "A responsive web platform built using Next.js and Tailwind CSS, featuring dynamic listings, filtering, and server-side rendering for optimized performance.",
-      image: "/sc2.png",
-      liveUrl: "https://solarhouse.vercel.app/",
-      githubUrl: "",
-      technologies: [
-        "Next.js",
-        "Tailwind CSS",
-        "JavaScript",
-        "SSR",
-        "Vercel",
-      ],
-      category: "Renewable Energy Platform",
-    },
-  
-    {
-      id: 4,
-      title: "Manzio",
-      description:
-        "A modern IT services company website built using Next.js with SSR, Tailwind CSS, and SWR for efficient data fetching.",
+      title: "Manzio Clarity",
+      tag: "SaaS Landing Platform",
+      description: "Modern, high-converting SaaS landing platform built with Next.js and Tailwind CSS. Optimized for performance, SEO and full mobile responsiveness.",
       image: "/manzio.png",
-      liveUrl: "https://manzio.vercel.app/",
-      githubUrl: "https://github.com/Alihusnain1489/manzio",
-      technologies: [
-        "Next.js",
-        "React.js",
-        "JavaScript",
-        "Tailwind CSS",
-        "SWR",
-        "shadcn/ui",
-      ],
-      category: "IT Services Company",
+      url: "https://manzio.vercel.app/",
+      stack: ["Next.js", "Tailwind CSS", "SEO"],
     },
-  
     {
-      id: 5,
-      title: "E-commerce Website",
-      description:
-        "A responsive wholesale e-commerce platform with dynamic product listings, category filtering, and a clean, mobile-first UI.",
+      title: "Nextal Pest Control",
+      tag: "Service Booking Platform",
+      description: "Complete service platform with admin dashboard for bookings, services, users and role management. Optimized SEO and mobile responsiveness.",
+      image: "/sc1.png",
+      url: "https://nextal-pest-website.vercel.app/",
+      stack: ["Next.js", "Tailwind CSS", "Admin Dashboard"],
+    },
+    {
+      title: "Loophole Defender",
+      tag: "Cybersecurity Platform",
+      description: "Cybersecurity service booking platform on modern React.js architecture. Framer Motion animations and Material UI components.",
+      image: "/loopholedefender.png",
+      url: "https://loophole-defender.vercel.app/",
+      stack: ["React", "Framer Motion", "Material UI"],
+    },
+    {
+      title: "Fruity Dubai Delights",
+      tag: "E-commerce · Dubai",
+      description: "E-commerce and ordering platform for a Dubai-based food brand. Product listings, mobile-friendly storefront and streamlined ordering flow.",
+      image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=900&h=700&fit=crop",
+      url: "#",
+      stack: ["Next.js", "E-commerce", "Mobile-first"],
+    },
+    {
+      title: "A-Ryan",
+      tag: "Business Portfolio",
+      description: "Responsive business/portfolio website built with React and Next.js. Clean component-based UI with smooth, animated user experience.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&h=700&fit=crop",
+      url: "#",
+      stack: ["React", "Next.js", "Animation"],
+    },
+    {
+      title: "Global Drive Permit",
+      tag: "Booking & Forms",
+      description: "International driving permit application and booking platform. Multi-step form flow with validation and a responsive, user-friendly interface.",
+      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=900&h=700&fit=crop",
+      url: "#",
+      stack: ["Next.js", "Multi-step forms", "Validation"],
+    },
+    {
+      title: "Wholesale E-commerce",
+      tag: "E-commerce Platform",
+      description: "Responsive wholesale e-commerce platform using React, Node.js, Tailwind CSS and Supabase. Product listings, filters and order booking.",
       image: "/wholesale.png",
-      liveUrl: "https://wholesale-threads.vercel.app/",
-      githubUrl: "https://github.com/Alihusnain1489/alif-threads",
-      technologies: [
-        "React",
-        "Next.js",
-        "Tailwind CSS",
-        "TanStack Query",
-        "Vercel",
-      ],
-      category: "E-commerce Platform",
+      url: "https://wholesale-threads.vercel.app/",
+      stack: ["React", "Node.js", "Supabase"],
     },
   ];
-  
-
-
-  const handleLinkClick = (url) => {
-    if (url) {
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
-  };
 
   return (
-    <section id="projects" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Featured <span className="text-emerald-400">Projects</span>
-          </h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Selected projects showcasing modern web development solutions and creative designs
-          </p>
+    <section id="projects" className="bg-background py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="mb-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="eyebrow mb-6">Selected Work</p>
+            <h2 className="font-playfair text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl max-w-3xl">
+              Recent projects shipped for clients and product teams
+            </h2>
+          </div>
+          <a href="https://github.com/Alihusnain1489" target="_blank" rel="noreferrer" className="btn-outline-ink self-start lg:self-auto">
+            View all on GitHub <ArrowUpRight className="h-4 w-4" />
+          </a>
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <Card
-              key={project.id}
-              className="card-gradient card-hover border-0 group overflow-hidden relative"
-              style={{ animationDelay: `${index * 150}ms` }}
+        {/* Editorial staggered grid — echoing the 3-portrait Hilton reference */}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {projects.map((p, i) => (
+            <a
+              key={p.title}
+              href={p.url}
+              target="_blank"
+              rel="noreferrer"
+              className={`group block ${i % 3 === 1 ? "lg:translate-y-12" : ""} ${i % 3 === 2 ? "lg:translate-y-24" : ""}`}
             >
-              <CardHeader className="p-0 relative">
-                <div className="relative overflow-hidden aspect-video">
-                  <img
-                    src={project.image}
-                    alt={`Screenshot of ${project.title}`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  {/* Dark Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  {/* Category Badge */}
-                  <div className="absolute top-6 left-6">
-                    <span className="px-3 py-1 text-xs bg-emerald-500 text-white font-medium tracking-wide rounded-full">
-                      {project.category}
-                    </span>
-                  </div>
-
-                  {/* Hover Buttons */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="flex gap-3">
-                    </div>
-                  </div>
-                </div>
-              </CardHeader>
-
-              <CardContent className="p-8 relative z-10">
-                <CardTitle className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors duration-300">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="text-slate-300 mb-6 leading-relaxed">
-                  {project.description}
-                </CardDescription>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 text-xs text-slate-400 border border-slate-600 rounded-full hover:border-emerald-400 hover:text-emerald-400 transition-colors duration-300"
-                    >
-                      {tech}
+              <div className="relative overflow-hidden bg-secondary aspect-[3/4]">
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <span className="location-pill absolute left-4 top-4">{p.tag}</span>
+                <span className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center bg-background text-foreground opacity-0 transition group-hover:opacity-100">
+                  <ArrowUpRight className="h-5 w-5" />
+                </span>
+              </div>
+              <div className="mt-5">
+                <h3 className="font-playfair text-2xl text-foreground">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/70">{p.description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {p.stack.map((s) => (
+                    <span key={s} className="text-[11px] uppercase tracking-wider text-foreground/50">
+                      {s}
                     </span>
                   ))}
                 </div>
-
-                {/* Footer Links (optional) */}
-                <div className="flex gap-3 mt-4">
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-emerald-400 hover:text-emerald-300 transition-colors duration-300 text-sm font-medium"
-                    >
-                      <ExternalLink className="mr-1 h-4 w-4" />
-                      Live Demo
-                    </a>
-                  )}
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-slate-400 hover:text-white transition-colors duration-300 text-sm font-medium"
-                    >
-                      <Github className="mr-1 h-4 w-4" />
-                      Source Code
-                    </a>
-                  )}
-                </div>
-              </CardContent>
-
-              {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
-                <div className="w-full h-full bg-gradient-to-br from-emerald-500/20 to-transparent"></div>
               </div>
-            </Card>
+            </a>
           ))}
         </div>
       </div>

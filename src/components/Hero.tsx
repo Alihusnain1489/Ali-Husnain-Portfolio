@@ -1,137 +1,82 @@
-
-import { Github, Linkedin, Mail, Download, Globe } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
-import CV from "./ui/Ali Husnain.pdf";
+import { ArrowUpRight, Download, Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 const Hero = () => {
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    const hasShownAnimation = localStorage.getItem('hero-animation-shown');
-    if (!hasShownAnimation) {
-      setHasAnimated(true);
-      localStorage.setItem('hero-animation-shown', 'true');
-    }
-  }, []);
-
   return (
     <section
       id="home"
-      className="pt-20 pb-20 px-6 sm:px-8 lg:px-12 relative overflow-hidden min-h-screen flex items-center lendex-pattern"
+      className="relative overflow-hidden bg-background pt-32 pb-20 lg:pt-40 lg:pb-28"
     >
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 right-20 w-32 h-32 rounded-full bg-gradient-to-r from-emerald-500/10 to-emerald-600/10 animate-float"></div>
-        <div className="absolute bottom-32 left-20 w-20 h-20 rounded-full bg-gradient-to-r from-blue-500/10 to-blue-600/10 animate-pulse"></div>
-        <div className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-emerald-500/30 animate-bounce"></div>
-      </div>
+      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        {/* Breadcrumb */}
+        <div className="mb-10 flex items-center gap-2 text-sm text-foreground/60 animate-fade-in">
+          <a href="/" className="underline underline-offset-4 hover:text-foreground">Home</a>
+          <span>/</span>
+          <span>Full Stack &amp; AI Engineer</span>
+        </div>
 
-      <div className="max-w-7xl mx-auto relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
-          {/* Left Content */}
-          <div className={`space-y-8 ${hasAnimated ? 'animate-slide-left' : ''}`}>
-            <div className={`space-y-6 ${hasAnimated ? 'animate-slide-left delay-100' : ''}`}>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-px bg-emerald-500"></div>
-                <span className="text-emerald-500 text-sm font-medium tracking-wider uppercase">
-                  Hello! I'm
-                </span>
-              </div>
-              
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight">
-                Ali Husnain
-              </h1>
-              
-              <div className="space-y-4">
-                <p className="text-xl sm:text-2xl text-emerald-500 font-medium">
-                  Full Stack  Developer
-                </p>
-                <p className="text-lg text-slate-300 leading-relaxed max-w-xl">
-                 Developer skilled in Next.js, Modern React, Tailwind CSS, and Java, with experience building scalable and responsive web applications.
-                </p>
-              </div>
+        <div className="grid gap-14 lg:grid-cols-[1.15fr_1fr] lg:gap-20 items-start">
+          {/* Left — Editorial headline */}
+          <div className="animate-fade-up">
+            <p className="eyebrow mb-8">Ali Husnain — Portfolio</p>
+            <h1 className="font-playfair text-[46px] leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-[76px]">
+              Building fast, elegant<br/>
+              web &amp; <span className="italic text-[hsl(var(--coral))]">AI-powered</span><br/>
+              products
+            </h1>
+
+            <p className="mt-8 max-w-lg text-base leading-relaxed text-foreground/70">
+              Full Stack &amp; AI Engineer working across Next.js, React and Python.
+              I ship performant SaaS platforms, e-commerce experiences and agentic AI
+              workflows for teams in the UK, Middle East and beyond.
+            </p>
+
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <a href="#contact" className="btn-ink">
+                Start a project <ArrowUpRight className="h-4 w-4" />
+              </a>
+              <a
+                href="/Ali-Husnain-CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-outline-ink"
+              >
+                Download CV <Download className="h-4 w-4" />
+              </a>
             </div>
 
-            {/* Floating Social Icons - Responsive positioning */}
-                <div className="flex gap-2">
-                  <a
-                    href="https://github.com/Alihusnain1489"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 border border-slate-600 text-white flex items-center justify-center hover:bg-emerald-600 hover:scale-110 transition-all duration-300 shadow-lg"
-                    aria-label="GitHub Profile"
-                  >
-                    <Github className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/ali-husnain-790929252/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 border border-slate-600 text-white flex items-center justify-center hover:bg-blue-600 hover:scale-110 transition-all duration-300 shadow-lg"
-                    aria-label="LinkedIn Profile"
-                  >
-                    <Linkedin className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </a>
-                  <a
-                    href="mailto:mr.alihusnain11@gmail.com"
-                    className="block w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-slate-800 border border-slate-600 text-white flex items-center justify-center hover:bg-red-600 hover:scale-110 transition-all duration-300 shadow-lg"
-                    aria-label="Email Contact"
-                  >
-                    <Mail className="h-4 w-4 sm:h-5 sm:w-5" />
-                  </a>
-              
-                </div>
-
-            {/* CTA Button */}
-            <div className={`${hasAnimated ? 'animate-slide-left delay-400' : ''}`}>
-              <Button
-                size="lg"
-                className="gradient-emerald text-white font-medium px-8 py-4 rounded-full hover:scale-105 transition-all duration-300 shadow-xl border-0 group"
-                onClick={() => window.open(CV, "_blank")}
-                >
-                  
-                <span>Get Resume</span>
-                <Download className="ml-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
-              </Button>
+            <div className="mt-12 flex items-center gap-6 text-sm text-foreground/60">
+              <a href="https://github.com/Alihusnain1489" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-foreground">
+                <Github className="h-4 w-4" /> GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/ali-husnain-790929252/" target="_blank" rel="noreferrer" className="flex items-center gap-2 hover:text-foreground">
+                <Linkedin className="h-4 w-4" /> LinkedIn
+              </a>
+              <a href="mailto:mr.alihusnain11@gmail.com" className="flex items-center gap-2 hover:text-foreground">
+                <Mail className="h-4 w-4" /> Email
+              </a>
             </div>
           </div>
 
-          {/* Right Side - Professional Image */}
-          <div className={`flex justify-center lg:justify-end ${hasAnimated ? 'animate-slide-right delay-300' : ''}`}>
-            <div className="relative">
-              {/* Main Image Container - Responsive */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                
-                {/* Circular Motion Effects */}
-                <div className="absolute inset-0 rounded-full border-2 border-dashed border-emerald-500/30 animate-spin" style={{ animationDuration: '20s' }}></div>
-                <div className="absolute -inset-4 rounded-full border border-emerald-500/20 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }}></div>
-                <div className="absolute -inset-8 rounded-full border border-slate-500/10 animate-spin" style={{ animationDuration: '25s' }}></div>
-                
-                {/* Orbiting Dots */}
-                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '8s' }}>
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 w-3 h-3 rounded-full bg-emerald-500 shadow-lg shadow-emerald-500/50"></div>
+          {/* Right — Arched portrait with location pill */}
+          <div className="relative animate-fade-in delay-200">
+            <div className="relative mx-auto w-full max-w-md">
+              <div className="relative overflow-hidden arch-top bg-secondary aspect-[3/4] shadow-[var(--shadow-editorial)]">
+                <img
+                  src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
+                  alt="Ali Husnain — Full Stack & AI Engineer"
+                  className="h-full w-full object-cover object-top"
+                />
+                <div className="absolute left-4 bottom-4 location-pill">
+                  <MapPin className="h-3.5 w-3.5" /> Lahore, Pakistan · Remote
                 </div>
-                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '12s', animationDirection: 'reverse' }}>
-                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-2 w-2 h-2 rounded-full bg-blue-500 shadow-lg shadow-blue-500/50"></div>
-                </div>
-                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '10s' }}>
-                  <div className="absolute top-1/2 right-0 translate-x-2 -translate-y-1/2 w-2 h-2 rounded-full bg-emerald-400 shadow-lg shadow-emerald-400/50"></div>
-                </div>
+              </div>
 
-                {/* White Background Circle */}
-                <div className="absolute inset-2 rounded-full bg-white shadow-2xl"></div>
-                
-                {/* Profile Image */}
-                <div className="relative z-10 w-full h-full rounded-full overflow-hidden shadow-2xl border-4 border-white hover:scale-105 transition-transform duration-500">
-                  <img
-                    src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
-                    alt="Ali Husnain - Frontend Developer"
-                    className="w-full h-full object-cover object-center"
-                    loading="lazy"
-                  />
+              {/* Little floating stat block, echoing tenure card */}
+              <div className="absolute -left-6 -bottom-10 hidden sm:block">
+                <div className="ink-block px-5 py-4 shadow-[var(--shadow-editorial)]">
+                  <p className="text-[10px] uppercase tracking-[0.22em] text-white/70">Experience</p>
+                  <p className="mt-1 font-playfair text-2xl">5+ years across finance &amp; tech</p>
                 </div>
-                
               </div>
             </div>
           </div>

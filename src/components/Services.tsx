@@ -1,90 +1,102 @@
-
 import { ArrowUpRight } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 const Services = () => {
   const services = [
     {
-      title: "React.js & Next.js Development",
-      description: "Expert in building high-performance web applications using React.js, Next.js, and modern JavaScript (ES6+) with TypeScript for type safety.",
-      image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=300&fit=crop"
+      title: "Full Stack Web Engineering",
+      description:
+        "Production Next.js and React applications with performant APIs, clean architecture, SEO and Core Web Vitals baked in.",
+      image:
+        "https://images.unsplash.com/photo-1522252234503-e356532cafd5?w=900&h=1100&fit=crop",
+      tag: "Next.js · React · Node.js",
     },
     {
-      title: "State Management & Routing", 
-      description: "Proficient in Redux-Toolkit, React Context, and React-Router for complex state management and seamless navigation experiences.",
-      image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=300&fit=crop"
+      title: "Agentic AI &amp; Automation",
+      description:
+        "LangChain, LangGraph and RAG systems that turn documents, APIs and CRMs into intelligent workflows and copilots.",
+      image:
+        "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&h=1100&fit=crop",
+      tag: "LangGraph · RAG · Python",
     },
     {
-      title: "Modern CSS & Styling",
-      description: "Skilled in Tailwind CSS, Bootstrap, and custom CSS to create responsive, beautiful, and accessible user interfaces.",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop"
+      title: "E-commerce Platforms",
+      description:
+        "Custom storefronts, ordering flows and admin dashboards — from Fruity Dubai Delights to wholesale marketplaces.",
+      image:
+        "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&h=1100&fit=crop",
+      tag: "Supabase · Stripe · Tailwind",
     },
     {
-      title: "API Integration & Data Fetching",
-      description: "Experience with TanStack Query, REST APIs, and modern data fetching patterns for dynamic, real-time applications.",
-      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=300&fit=crop"
+      title: "SaaS Landing &amp; Marketing Sites",
+      description:
+        "High-converting landing platforms optimized for performance, SEO and mobile — Manzio Clarity style.",
+      image:
+        "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=900&h=1100&fit=crop",
+      tag: "Framer Motion · SEO · CRO",
     },
     {
-      title: "Full-Stack Technologies",
-      description: "Knowledge of Java, Spring Boot, Maven, JDBC, MySQL, and MongoDB for comprehensive web development solutions.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop"
+      title: "Growth &amp; Lead Generation",
+      description:
+        "Meta &amp; Google Ads campaigns, Apollo.io outreach and HubSpot pipelines wired straight into your product.",
+      image:
+        "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=900&h=1100&fit=crop",
+      tag: "Meta Ads · Apollo · HubSpot",
     },
     {
-      title: "Development Tools & Version Control",
-      description: "Proficient with GitHub, modern development workflows, testing, and deployment strategies for reliable applications.",
-      image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=400&h=300&fit=crop"
+      title: "DevOps &amp; Cloud Delivery",
+      description:
+        "Dockerized services, GitHub Actions CI/CD and deployments to AWS, Vercel and Netlify with monitoring.",
+      image:
+        "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=900&h=1100&fit=crop",
+      tag: "Docker · AWS · Vercel",
     },
   ];
 
   return (
-    <section id="services" className="py-24 px-6 sm:px-8 lg:px-12 relative lendex-pattern">
-      <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            My <span className="text-emerald-400">Services</span>
-          </h2>
-          <p className="text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Specialized in creating modern, responsive web applications with cutting-edge technologies
+    <section id="services" className="bg-[hsl(var(--cream-warm))] py-24 lg:py-32">
+      <div className="mx-auto max-w-7xl px-6 lg:px-12">
+        <div className="mb-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+          <div>
+            <p className="eyebrow mb-6">Services</p>
+            <h2 className="font-playfair text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl max-w-3xl">
+              What I build for clients and product teams
+            </h2>
+          </div>
+          <p className="max-w-md text-foreground/70">
+            End-to-end delivery — from architecture and design to launch, growth
+            and iteration. Pick a lane below, or combine several.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card 
-              key={service.title} 
-              className="group card-gradient card-hover border-0 relative overflow-hidden"
-              style={{ animationDelay: `${index * 100}ms` }}
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {services.map((s, i) => (
+            <article
+              key={s.title}
+              className="group editorial-card overflow-hidden bg-card"
+              style={{ animationDelay: `${i * 80}ms` }}
             >
-              {/* Image */}
-              <div className="relative h-48 overflow-hidden">
-                <img 
-                  src={service.image} 
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <img
+                  src={s.image}
+                  alt=""
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/50 to-transparent"></div>
+                <span className="location-pill absolute left-4 top-4" dangerouslySetInnerHTML={{ __html: s.tag }} />
               </div>
-              
-              <CardContent className="p-6 relative z-10">
-                {/* Content */}
-                <div className="space-y-3">
-                  <h3 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors duration-300">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-slate-300 leading-relaxed text-sm">
-                    {service.description}
-                  </p>
+              <div className="p-6">
+                <h3
+                  className="font-playfair text-2xl text-foreground"
+                  dangerouslySetInnerHTML={{ __html: s.title }}
+                />
+                <p
+                  className="mt-3 text-sm leading-relaxed text-foreground/70"
+                  dangerouslySetInnerHTML={{ __html: s.description }}
+                />
+                <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-foreground">
+                  Explore <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </div>
-
-                {/* Hover Arrow */}
-                <div className="mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <ArrowUpRight className="h-6 w-6 text-emerald-400 transform group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+            </article>
           ))}
         </div>
       </div>

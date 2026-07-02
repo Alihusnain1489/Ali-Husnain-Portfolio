@@ -1,35 +1,37 @@
-
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import About from "@/components/About";
 import Services from "@/components/Services";
 import Experience from "@/components/Experience";
-import Education from "@/components/Education";
 import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
+import Education from "@/components/Education";
 import Contact from "@/components/Contact";
-import Navbar from "@/components/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background relative overflow-x-hidden">
-      {/* Lendex Background with Geometric Patterns */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/20"></div>
-        <div className="absolute top-0 right-0 w-96 h-96 gradient-glow rounded-full opacity-10 animate-pulse-custom"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 gradient-glow rounded-full opacity-5 animate-float"></div>
-      </div>
-      
-      <div className="relative z-10">
-        <Navbar />
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <main>
         <Hero />
+        <About />
         <Services />
         <Experience />
-        <Education />
         <Projects />
+        <Skills />
+        <Education />
         <Contact />
-        <ScrollToTop />
-        <WhatsAppFloat />
-      </div>
+      </main>
+      <footer className="border-t border-border bg-background py-10">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-sm text-foreground/60 lg:flex-row lg:px-12">
+          <p>© {new Date().getFullYear()} Ali Husnain — Full Stack &amp; AI Engineer.</p>
+          <p>Built with Next-gen React · Designed in Lahore.</p>
+        </div>
+      </footer>
+      <ScrollToTop />
+      <WhatsAppFloat />
     </div>
   );
 };

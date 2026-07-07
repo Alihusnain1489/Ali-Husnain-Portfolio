@@ -147,7 +147,7 @@ const Hero = () => {
               </motion.div>
 
               <motion.div
-                className="absolute -left-4 -bottom-8 sm:-left-6 sm:-bottom-10 hidden xs:block"
+                className="absolute -left-4 -bottom-8 sm:-left-6 sm:-bottom-10 hidden sm:block"
                 initial={{ opacity: 0, y: 20, rotate: -3 }}
                 animate={{ opacity: 1, y: 0, rotate: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}

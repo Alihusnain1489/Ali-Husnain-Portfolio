@@ -18,19 +18,19 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen w-full overflow-hidden bg-background flex items-center pt-28 pb-16 sm:pt-32 lg:pt-24 lg:pb-0"
+      className="relative min-h-screen w-full overflow-hidden bg-background flex items-center pt-24 pb-14 sm:pt-32 sm:pb-16 lg:pt-24 lg:pb-0"
     >
-      {/* Ambient background */}
+      {/* Ambient background — scaled down on mobile to avoid overflow/clipping issues */}
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full blur-3xl"
+        className="pointer-events-none absolute -top-24 -right-24 h-[280px] w-[280px] rounded-full blur-3xl sm:-top-40 sm:-right-40 sm:h-[520px] sm:w-[520px]"
         style={{ background: "radial-gradient(circle, hsl(var(--coral)/0.28), transparent 65%)" }}
         animate={{ y: [0, 25, 0], x: [0, -15, 0] }}
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -bottom-32 -left-32 h-[420px] w-[420px] rounded-full blur-3xl"
+        className="pointer-events-none absolute -bottom-20 -left-20 h-[220px] w-[220px] rounded-full blur-3xl sm:-bottom-32 sm:-left-32 sm:h-[420px] sm:w-[420px]"
         style={{ background: "radial-gradient(circle, hsl(var(--ink)/0.18), transparent 70%)" }}
         animate={{ y: [0, -20, 0], x: [0, 20, 0] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
@@ -43,40 +43,46 @@ const Hero = () => {
         style={{
           backgroundImage:
             "linear-gradient(hsl(var(--ink)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--ink)) 1px, transparent 1px)",
-          backgroundSize: "56px 56px",
+          backgroundSize: "40px 40px",
         }}
       />
 
-      <div className="relative mx-auto w-full max-w-7xl px-6 lg:px-12">
+      <div className="relative mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-12">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-20 items-center"
+          className="grid gap-10 sm:gap-12 lg:grid-cols-[1.15fr_1fr] lg:gap-20 items-center"
         >
           {/* Left */}
-          <div>
-
+          <div className="text-center lg:text-left">
             <motion.h1
               variants={item}
-              className="font-playfair uppercase text-[40px] leading-[0.98] tracking-tight text-foreground sm:text-6xl lg:text-[68px] xl:text-[68px]"
+              className="font-playfair uppercase text-[32px] leading-[1.05] tracking-tight text-foreground xs:text-[36px] sm:text-5xl sm:leading-[1.02] lg:text-[68px] lg:leading-[0.98]"
             >
               <span className="text-primary block">Revolutionizing</span>
-              Web &amp; <span className="text-gradient">AI-Powered</span><br />
-              Products
+              <span className="block sm:inline">
+                Web &amp; <span className="text-gradient">AI-Powered</span>
+              </span>
+              <span className="block">Products</span>
             </motion.h1>
 
-
-            <motion.p variants={item} className="mt-6 sm:mt-8 max-w-lg text-sm sm:text-base leading-relaxed text-foreground/70">
+            <motion.p
+              variants={item}
+              className="mt-5 sm:mt-8 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base leading-relaxed text-foreground/70"
+            >
               Full Stack &amp; AI Engineer working across Next.js, React and Python.
               I ship performant SaaS platforms, e-commerce experiences and agentic AI
               workflows for teams in the UK, Middle East and beyond.
             </motion.p>
 
-            <motion.div variants={item} className="mt-8 sm:mt-10 flex flex-wrap items-center gap-3 sm:gap-4">
+            <motion.div
+              variants={item}
+              className="mt-7 sm:mt-10 flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-center lg:justify-start gap-3 sm:gap-4"
+            >
               <motion.a
                 href="#contact"
-                className="btn-ink"
+                className="btn-ink justify-center w-full sm:w-auto"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -86,7 +92,7 @@ const Hero = () => {
                 href={CV}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline-ink"
+                className="btn-outline-ink justify-center w-full sm:w-auto"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
               >
@@ -94,24 +100,40 @@ const Hero = () => {
               </motion.a>
             </motion.div>
 
-            <motion.div variants={item} className="mt-10 sm:mt-12 flex flex-wrap items-center gap-5 sm:gap-6 text-sm text-foreground/60">
-              <a href="https://github.com/Alihusnain1489" target="_blank" rel="noreferrer" className="group flex items-center gap-2 hover:text-foreground transition">
+            <motion.div
+              variants={item}
+              className="mt-8 sm:mt-12 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-sm text-foreground/60"
+            >
+              <a
+                href="https://github.com/Alihusnain1489"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center gap-2 hover:text-foreground transition"
+              >
                 <Github className="h-4 w-4 transition group-hover:-translate-y-0.5" /> GitHub
               </a>
-              <a href="https://www.linkedin.com/in/ali-husnain-790929252/" target="_blank" rel="noreferrer" className="group flex items-center gap-2 hover:text-foreground transition">
+              <a
+                href="https://www.linkedin.com/in/ali-husnain-790929252/"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center gap-2 hover:text-foreground transition"
+              >
                 <Linkedin className="h-4 w-4 transition group-hover:-translate-y-0.5" /> LinkedIn
               </a>
-              <a href="mailto:mr.alihusnain11@gmail.com" className="group flex items-center gap-2 hover:text-foreground transition">
+              <a
+                href="mailto:mr.alihusnain11@gmail.com"
+                className="group flex items-center gap-2 hover:text-foreground transition"
+              >
                 <Mail className="h-4 w-4 transition group-hover:-translate-y-0.5" /> Email
               </a>
             </motion.div>
           </div>
 
           {/* Right — portrait */}
-          <motion.div variants={item} className="relative">
-            <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-md">
+          <motion.div variants={item} className="relative order-first lg:order-last">
+            <div className="relative mx-auto w-full max-w-[220px] sm:max-w-xs lg:max-w-md">
               <motion.div
-                className="relative overflow-hidden arch-top  aspect-[3/4] shadow-[var(--shadow-editorial)]"
+                className="relative overflow-hidden arch-top aspect-[3/4] shadow-[var(--shadow-editorial)]"
                 initial={{ opacity: 0, scale: 0.95, y: 30 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
@@ -121,31 +143,12 @@ const Hero = () => {
                   alt="Ali Husnain — Full Stack & AI Engineer"
                   className="h-full w-full object-cover object-top"
                 />
-               
-              </motion.div>
-
-              <motion.div
-                className="absolute -left-4 -bottom-8 sm:-left-6 sm:-bottom-10 hidden sm:block"
-                initial={{ opacity: 0, y: 20, rotate: -3 }}
-                animate={{ opacity: 1, y: 0, rotate: 0 }}
-                transition={{ duration: 0.8, delay: 0.9 }}
-              >
-               
-              </motion.div>
-
-              <motion.div
-                className="absolute -right-3 top-6 hidden sm:block"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 1.1 }}
-              >
-                
               </motion.div>
             </div>
           </motion.div>
         </motion.div>
 
-        {/* Scroll cue */}
+        {/* Scroll cue — desktop only */}
         <motion.a
           href="#about"
           aria-label="Scroll to about"

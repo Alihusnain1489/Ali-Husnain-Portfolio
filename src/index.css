@@ -4,56 +4,58 @@
 
 @layer base {
   :root {
-    /* Editorial Cream & Navy — inspired by luxury hospitality editorial */
-    --background: 40 30% 96%;        /* #f6f3ec cream */
-    --foreground: 217 65% 15%;       /* #0d2445 deep navy ink */
+    /* MedDev-inspired dark theme with electric blue */
+    --background: 220 45% 4%;          /* near-black with faint blue */
+    --foreground: 210 20% 96%;         /* off-white */
 
-    --card: 0 0% 100%;
-    --card-foreground: 217 65% 15%;
+    --card: 220 40% 7%;
+    --card-foreground: 210 20% 96%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 217 65% 15%;
+    --popover: 220 40% 7%;
+    --popover-foreground: 210 20% 96%;
 
-    --primary: 217 65% 15%;          /* navy */
-    --primary-foreground: 40 30% 96%;
+    --primary: 210 100% 55%;           /* electric blue */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 40 25% 92%;         /* warm tan */
-    --secondary-foreground: 217 65% 15%;
+    --secondary: 220 35% 10%;
+    --secondary-foreground: 210 20% 96%;
 
-    --muted: 40 20% 90%;
-    --muted-foreground: 217 15% 35%;
+    --muted: 220 25% 14%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 14 60% 52%;            /* burnt coral accent */
-    --accent-foreground: 40 30% 96%;
+    --accent: 210 100% 55%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 40 15% 85%;
-    --input: 40 15% 88%;
-    --ring: 217 65% 15%;
+    --border: 214 40% 18%;
+    --input: 220 30% 12%;
+    --ring: 210 100% 55%;
 
-    --radius: 0.25rem;
+    --radius: 1.25rem;
 
-    /* Editorial helper tokens */
-    --ink: 217 65% 15%;
-    --ink-soft: 217 40% 30%;
-    --cream: 40 30% 96%;
-    --cream-warm: 40 35% 92%;
-    --coral: 14 60% 52%;
-    --tan: 32 40% 65%;
-    --ink-hairline: 217 30% 25%;
+    /* Helper tokens */
+    --ink: 220 45% 4%;
+    --ink-soft: 220 35% 10%;
+    --cream: 210 20% 96%;
+    --cream-warm: 220 45% 6%;
+    --coral: 210 100% 60%;             /* remap "coral" -> electric blue */
+    --tan: 210 80% 45%;
+    --ink-hairline: 214 40% 22%;
+    --blue-glow: 210 100% 60%;
+    --blue-deep: 214 100% 40%;
 
-    --shadow-editorial: 0 20px 45px -25px hsl(var(--ink) / 0.35);
-    --shadow-soft: 0 8px 24px -14px hsl(var(--ink) / 0.15);
+    --gradient-blue: linear-gradient(135deg, hsl(210 100% 62%), hsl(214 100% 40%));
+    --gradient-blue-soft: linear-gradient(135deg, hsl(210 100% 62% / 0.15), hsl(214 100% 40% / 0.05));
+    --shadow-editorial: 0 30px 60px -30px hsl(210 100% 50% / 0.35);
+    --shadow-soft: 0 12px 30px -18px hsl(210 100% 50% / 0.25);
+    --shadow-blue: 0 15px 40px -12px hsl(210 100% 55% / 0.45);
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
+  * { @apply border-border; }
   html { scroll-behavior: smooth; }
 
   body {
@@ -61,77 +63,115 @@
     font-family: 'Montserrat', 'Inter', sans-serif;
     font-feature-settings: 'ss01', 'kern';
     -webkit-font-smoothing: antialiased;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 20% 0%, hsl(214 100% 25% / 0.25), transparent 60%),
+      radial-gradient(ellipse 60% 40% at 90% 100%, hsl(210 100% 40% / 0.15), transparent 60%);
+    background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: -0.01em;
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.015em;
   }
 }
 
 @layer components {
+  /* Remap Playfair utility to bold uppercase sans (MedDev style) */
+  .font-playfair {
+    font-family: 'Montserrat', 'Inter', sans-serif !important;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
   /* Editorial eyebrow label */
   .eyebrow {
-    @apply inline-block text-xs font-semibold uppercase tracking-[0.22em] text-foreground/70;
+    @apply inline-block text-xs font-semibold uppercase tracking-[0.28em] text-primary;
   }
 
-  /* Location pill (like Hilton reference) */
+  /* Location / status pill — blue gradient */
   .location-pill {
-    @apply inline-flex items-center gap-1.5 rounded-none bg-black/90 px-3 py-2 text-xs font-medium text-white backdrop-blur;
+    @apply inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-xs font-semibold text-white backdrop-blur;
+    background: var(--gradient-blue);
+    box-shadow: var(--shadow-blue);
   }
 
-  /* Arched image top (like the smiling exec photo) */
+  /* Softer top rounding echo of MedDev hero corners */
   .arch-top {
-    border-top-left-radius: 9999px;
-    border-top-right-radius: 9999px;
+    border-radius: 2rem;
   }
 
-  /* Editorial card — clean white on cream */
+  /* Card — dark with thin blue-ish border, glow on hover */
   .editorial-card {
     background: hsl(var(--card));
     border: 1px solid hsl(var(--border));
+    border-radius: 1.25rem;
     box-shadow: var(--shadow-soft);
-    transition: transform .35s ease, box-shadow .35s ease;
+    transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
   }
   .editorial-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-editorial);
+    transform: translateY(-6px);
+    border-color: hsl(var(--primary) / 0.6);
+    box-shadow: var(--shadow-blue);
   }
 
-  /* Navy pill button */
+  /* Primary pill — electric blue gradient */
   .btn-ink {
-    @apply inline-flex items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:bg-foreground/90;
+    @apply inline-flex items-center gap-2 rounded-full px-7 py-3 text-sm font-bold uppercase tracking-wider text-white transition;
+    background: var(--gradient-blue);
+    box-shadow: var(--shadow-blue);
   }
+  .btn-ink:hover { filter: brightness(1.1); transform: translateY(-2px); }
+
+  /* Outlined pill — thin ring */
   .btn-outline-ink {
-    @apply inline-flex items-center gap-2 rounded-full border border-foreground px-6 py-3 text-sm font-semibold text-foreground transition hover:bg-foreground hover:text-background;
+    @apply inline-flex items-center gap-2 rounded-full border px-7 py-3 text-sm font-bold uppercase tracking-wider text-foreground transition;
+    border-color: hsl(var(--foreground) / 0.4);
+  }
+  .btn-outline-ink:hover {
+    border-color: hsl(var(--primary));
+    color: hsl(var(--primary));
   }
 
-  /* Deep navy block card (for the tenure-style panels) */
+  /* Deep ink block (used for stat cards) */
   .ink-block {
-    background: hsl(var(--ink));
-    color: hsl(var(--cream));
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--primary) / 0.35);
+    color: hsl(var(--foreground));
+    border-radius: 1.25rem;
+    backdrop-filter: blur(10px);
   }
 
-  /* Thin hairline divider */
-  .hairline {
-    height: 1px;
-    background: hsl(var(--foreground) / 0.15);
-  }
+  .hairline { height: 1px; background: hsl(var(--foreground) / 0.12); }
 
-  /* Legacy shim classes still used across the app (retheme, don't remove) */
+  /* Legacy compatibility shims */
   .lendex-pattern { position: relative; background: hsl(var(--background)); }
-  .card-gradient { background: hsl(var(--card)); border: 1px solid hsl(var(--border)); box-shadow: var(--shadow-soft); }
-  .card-hover { transition: transform .35s ease, box-shadow .35s ease; }
-  .card-hover:hover { transform: translateY(-4px); box-shadow: var(--shadow-editorial); }
-  .icon-gradient-1 { background: hsl(var(--ink)); }
-  .icon-gradient-2 { background: hsl(var(--coral)); }
-  .icon-gradient-3 { background: hsl(var(--tan)); }
-  .icon-gradient-4 { background: hsl(var(--ink) / 0.85); }
-  .icon-gradient-5 { background: hsl(var(--coral) / 0.85); }
-  .icon-gradient-6 { background: hsl(var(--ink-soft)); }
-  .gradient-emerald { background: hsl(var(--ink)); }
-  .gradient-glow { background: radial-gradient(circle, hsl(var(--coral)/0.3), transparent 70%); }
-  .text-gradient { color: hsl(var(--ink)); }
+  .card-gradient {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow-soft);
+  }
+  .card-hover { transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease; }
+  .card-hover:hover {
+    transform: translateY(-6px);
+    border-color: hsl(var(--primary) / 0.6);
+    box-shadow: var(--shadow-blue);
+  }
+  .icon-gradient-1,
+  .icon-gradient-2,
+  .icon-gradient-3,
+  .icon-gradient-4,
+  .icon-gradient-5,
+  .icon-gradient-6,
+  .gradient-emerald { background: var(--gradient-blue); color: white; }
+  .gradient-glow { background: radial-gradient(circle, hsl(var(--primary)/0.4), transparent 70%); }
+  .text-gradient {
+    background: var(--gradient-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 /* Motion */
@@ -141,6 +181,10 @@
 }
 @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
 @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
+@keyframes glowPulse {
+  0%,100% { box-shadow: 0 0 30px hsl(var(--primary) / 0.3); }
+  50%     { box-shadow: 0 0 60px hsl(var(--primary) / 0.55); }
+}
 
 .animate-fade-up  { animation: fadeInUp .8s ease-out both; }
 .animate-fade-in  { animation: fadeIn .8s ease-out both; }
@@ -149,7 +193,7 @@
 .animate-slide-right { animation: fadeInUp .7s ease-out both; }
 .animate-slide-up    { animation: fadeInUp .7s ease-out both; }
 .animate-fade-scale  { animation: fadeIn .5s ease-out both; }
-.animate-pulse-custom{ animation: fadeIn 1s ease-out both; }
+.animate-pulse-custom{ animation: glowPulse 3s ease-in-out infinite; }
 .animate-scale-in    { animation: fadeIn .3s ease-out both; }
 
 .delay-100{animation-delay:.1s}.delay-200{animation-delay:.2s}
@@ -158,5 +202,5 @@
 .delay-700{animation-delay:.7s}.delay-800{animation-delay:.8s}
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: hsl(var(--cream-warm)); }
-::-webkit-scrollbar-thumb { background: hsl(var(--ink)); border-radius: 4px; }
+::-webkit-scrollbar-track { background: hsl(var(--background)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--primary)); border-radius: 4px; }

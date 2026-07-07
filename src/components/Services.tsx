@@ -53,7 +53,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="bg-[hsl(var(--cream-warm))] py-24 lg:py-32">
+    <section id="services" className="bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="mb-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>

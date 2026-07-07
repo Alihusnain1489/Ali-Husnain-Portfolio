@@ -69,23 +69,13 @@ const Hero = () => {
 
             <motion.h1
               variants={item}
-              className="font-playfair text-[38px] leading-[1.03] tracking-tight text-foreground sm:text-6xl lg:text-[76px] xl:text-[84px]"
+              className="font-playfair uppercase text-[40px] leading-[0.98] tracking-tight text-foreground sm:text-6xl lg:text-[78px] xl:text-[88px]"
             >
-              Building fast, elegant<br />
-              web &amp;{" "}
-              <span className="relative italic text-[hsl(var(--coral))]">
-                AI-powered
-                <motion.span
-                  aria-hidden
-                  className="absolute -bottom-1 left-0 h-[3px] w-full origin-left bg-[hsl(var(--coral))]/60"
-                  initial={{ scaleX: 0 }}
-                  animate={{ scaleX: 1 }}
-                  transition={{ duration: 0.9, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
-                />
-              </span>
-              <br />
-              products
+              <span className="text-primary block">Revolutionizing</span>
+              Web &amp; <span className="text-gradient">AI-Powered</span><br />
+              Products
             </motion.h1>
+
 
             <motion.p variants={item} className="mt-6 sm:mt-8 max-w-lg text-sm sm:text-base leading-relaxed text-foreground/70">
               Full Stack &amp; AI Engineer working across Next.js, React and Python.

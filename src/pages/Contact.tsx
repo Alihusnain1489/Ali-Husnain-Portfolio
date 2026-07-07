@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <Contact />
     </div>

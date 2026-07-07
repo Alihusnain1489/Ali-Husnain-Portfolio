@@ -60,20 +60,18 @@ const Hero = () => {
               variants={item}
               className="font-playfair uppercase text-[32px] leading-[1.05] tracking-tight text-foreground sm:text-5xl sm:leading-[1.02] lg:text-[68px] lg:leading-[0.98]"
             >
-              <span className="text-primary block">Revolutionizing</span>
-              <span className="block sm:inline">
-                Web &amp; <span className="text-gradient">AI-Powered</span>
+              <span className="text-primary block">Building</span>
+              <span className="block">
+                Scalable <span className="text-gradient">Web</span>
               </span>
-              <span className="block">Products</span>
+              <span className="block">Applications</span>
             </motion.h1>
 
             <motion.p
               variants={item}
               className="mt-5 sm:mt-8 max-w-lg mx-auto lg:mx-0 text-sm sm:text-base leading-relaxed text-foreground/70"
             >
-              Full Stack &amp; AI Engineer working across Next.js, React and Python.
-              I ship performant SaaS platforms, e-commerce experiences and agentic AI
-              workflows for teams in the UK, Middle East and beyond.
+              Full Stack &amp; AI Engineer
             </motion.p>
 
             <motion.div

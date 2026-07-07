@@ -18,13 +18,8 @@ const About = () => {
               client work as a top freelancer on Fiverr.
             </p>
             <p>
-              My stack centers on Next.js, React, Python and modern cloud tooling. I
-              specialize in high-converting SaaS interfaces, e-commerce platforms and
-              agentic AI workflows using LangChain, LangGraph and RAG.
-            </p>
-            <p>
-              Before tech, I spent 3+ years as a Cash Officer at Bank Al Habib Limited —
-              which is where I learned the operational discipline that keeps my code shipping.
+              My stack centers on Next.js, React,  and modern cloud tooling. I
+              specialize in high-converting SaaS interfaces, e-commerce platforms .
             </p>
           </div>
         </div>

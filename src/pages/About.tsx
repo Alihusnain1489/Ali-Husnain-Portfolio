@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <About />
     </div>

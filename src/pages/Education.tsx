@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 
 const EducationPage = () => {
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-background">
       <Navbar />
       <Education />
     </div>

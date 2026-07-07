@@ -24,10 +24,7 @@ const Skills = () => {
       title: "Marketing / Ads",
       items: ["Meta Ads", "Google Ads", "Lead Generation", "Canva", "Video Editing"],
     },
-    {
-      title: "Business Platforms",
-      items: ["Fiverr", "Upwork", "Apollo.io", "LinkedIn Sales Navigator", "HubSpot CRM"],
-    },
+    
   ];
 
   return (

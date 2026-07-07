@@ -58,7 +58,7 @@ const Hero = () => {
           <div className="text-center lg:text-left">
             <motion.h1
               variants={item}
-              className="font-playfair uppercase text-[32px] leading-[1.05] tracking-tight text-foreground xs:text-[36px] sm:text-5xl sm:leading-[1.02] lg:text-[68px] lg:leading-[0.98]"
+              className="font-playfair uppercase text-[32px] leading-[1.05] tracking-tight text-foreground sm:text-5xl sm:leading-[1.02] lg:text-[68px] lg:leading-[0.98]"
             >
               <span className="text-primary block">Revolutionizing</span>
               <span className="block sm:inline">

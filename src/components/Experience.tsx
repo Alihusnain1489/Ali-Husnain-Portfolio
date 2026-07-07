@@ -39,11 +39,11 @@ const Experience = () => {
   return (
     <section
       id="experience"
-      className="flex h-screen flex-col justify-center py-12"
+      className="flex flex-col justify-center py-20 lg:h-screen lg:py-12"
       style={{ backgroundColor: "#0A0E17" }}
     >
-      <div className="mx-auto w-full max-w-6xl px-6 lg:px-12">
-        <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-12">
+        <div className="mb-8 flex flex-col gap-4 lg:mb-10 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p
               className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em]"
@@ -82,22 +82,37 @@ const Experience = () => {
           {experiences.map((e) => (
             <article
               key={e.n}
-              className="group flex items-center justify-between gap-6 py-4"
+              className="group flex flex-col gap-2 py-5 sm:flex-row sm:items-center sm:gap-6 sm:py-4"
               style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
             >
-              <span
-                className="hidden w-8 shrink-0 text-sm font-semibold sm:block"
-                style={{ color: "rgba(255,255,255,0.2)" }}
-              >
-                {e.n}
-              </span>
+              {/* On mobile this row shows year + current badge; at sm+ it flattens into the row via `contents` */}
+              <div className="flex items-center justify-between sm:contents">
+                <span
+                  className="hidden w-8 shrink-0 text-sm font-semibold sm:block"
+                  style={{ color: "rgba(255,255,255,0.2)" }}
+                >
+                  {e.n}
+                </span>
 
-              <span
-                className="w-36 shrink-0 text-xs uppercase tracking-[0.15em]"
-                style={{ color: "#5B9BFF" }}
-              >
-                {e.year}
-              </span>
+                <span
+                  className="text-xs font-semibold uppercase tracking-[0.15em] sm:w-36 sm:shrink-0 sm:font-normal"
+                  style={{ color: "#5B9BFF" }}
+                >
+                  {e.year}
+                </span>
+
+                {e.active && (
+                  <span
+                    className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider sm:hidden"
+                    style={{
+                      background: "linear-gradient(90deg,#2F6FED,#5B9BFF)",
+                      color: "#F5F7FA",
+                    }}
+                  >
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" /> Current
+                  </span>
+                )}
+              </div>
 
               <div className="flex-1">
                 <h3 className="text-base font-bold sm:text-lg" style={{ color: "#F5F7FA" }}>
@@ -108,22 +123,23 @@ const Experience = () => {
                 </p>
               </div>
 
-              {e.active && (
-                <span
-                  className="hidden shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider sm:inline-flex"
-                  style={{
-                    background: "linear-gradient(90deg,#2F6FED,#5B9BFF)",
-                    color: "#F5F7FA",
-                  }}
-                >
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" /> Current
-                </span>
-              )}
-
-              <ArrowDownRight
-                className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1"
-                style={{ color: "#5B9BFF" }}
-              />
+              <div className="hidden shrink-0 items-center gap-3 sm:flex">
+                {e.active && (
+                  <span
+                    className="inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider"
+                    style={{
+                      background: "linear-gradient(90deg,#2F6FED,#5B9BFF)",
+                      color: "#F5F7FA",
+                    }}
+                  >
+                    <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" /> Current
+                  </span>
+                )}
+                <ArrowDownRight
+                  className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1"
+                  style={{ color: "#5B9BFF" }}
+                />
+              </div>
             </article>
           ))}
         </div>

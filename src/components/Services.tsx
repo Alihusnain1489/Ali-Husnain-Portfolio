@@ -51,11 +51,11 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="flex h-screen flex-col justify-center py-12"
+      className="flex flex-col justify-center py-20 lg:h-screen lg:py-12"
       style={{ backgroundColor: "#0A0E17" }}
     >
-      <div className="mx-auto w-full max-w-6xl px-6 lg:px-12">
-        <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+      <div className="mx-auto w-full max-w-6xl px-5 sm:px-6 lg:px-12">
+        <div className="mb-8 flex flex-col gap-4 lg:mb-10 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p
               className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em]"
@@ -91,26 +91,16 @@ const Services = () => {
         </div>
 
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-          style={{
-            border: "1px solid rgba(255,255,255,0.08)",
-            borderRadius: "16px",
-            overflow: "hidden",
-          }}
+          className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl sm:grid-cols-2 lg:grid-cols-3"
+          style={{ backgroundColor: "rgba(255,255,255,0.08)" }}
         >
-          {services.map((s, i) => {
+          {services.map((s) => {
             const Icon = s.icon;
-            const isLastCol = (i + 1) % 3 === 0;
-            const isLastRow = i >= services.length - 3;
             return (
               <article
                 key={s.n}
                 className="group relative flex flex-col gap-4 p-6 transition-colors duration-300 hover:bg-white/[0.03]"
-                style={{
-                  borderRight: isLastCol ? "none" : "1px solid rgba(255,255,255,0.08)",
-                  borderBottom: isLastRow ? "none" : "1px solid rgba(255,255,255,0.08)",
-                  backgroundColor: "#121826",
-                }}
+                style={{ backgroundColor: "#121826" }}
               >
                 <div className="flex items-center justify-between">
                   <div
@@ -128,7 +118,7 @@ const Services = () => {
                   {s.title}
                 </h3>
 
-                <div className="mt-auto flex items-center justify-between pt-1">
+                <div className="mt-auto flex items-center justify-between gap-3 pt-1">
                   <span
                     className="rounded-full px-2.5 py-1 text-[10px] font-medium tracking-wide"
                     style={{

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { ArrowUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -31,7 +30,7 @@ const ScrollToTop = () => {
       {isVisible && (
         <Button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-full shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 animate-fade-in"
+          className="fixed bottom-24 right-5 z-50 p-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 text-white rounded-full shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 animate-fade-in sm:bottom-28 sm:right-6"
           size="icon"
         >
           <ArrowUp className="h-5 w-5" />

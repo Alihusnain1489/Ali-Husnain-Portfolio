@@ -1,103 +1,151 @@
-import { ArrowUpRight } from "lucide-react";
+import {
+  ArrowUpRight,
+  Code2,
+  Bot,
+  ShoppingBag,
+  Rocket,
+  TrendingUp,
+  Cloud,
+} from "lucide-react";
+
+const services = [
+  {
+    n: "01",
+    title: "Full stack web engineering",
+    icon: Code2,
+    tag: "Next.js · React · Node.js",
+  },
+  {
+    n: "02",
+    title: "Agentic AI & automation",
+    icon: Bot,
+    tag: "LangGraph · RAG · Python",
+  },
+  {
+    n: "03",
+    title: "E-commerce platforms",
+    icon: ShoppingBag,
+    tag: "Supabase · Stripe · Tailwind",
+  },
+  {
+    n: "04",
+    title: "SaaS landing & marketing sites",
+    icon: Rocket,
+    tag: "Framer Motion · SEO · CRO",
+  },
+  {
+    n: "05",
+    title: "Growth & lead generation",
+    icon: TrendingUp,
+    tag: "Meta Ads · Apollo · HubSpot",
+  },
+  {
+    n: "06",
+    title: "DevOps & cloud delivery",
+    icon: Cloud,
+    tag: "Docker · AWS · Vercel",
+  },
+];
 
 const Services = () => {
-  const services = [
-    {
-      title: "Full Stack Web Engineering",
-      description:
-        "Production Next.js and React applications with performant APIs, clean architecture, SEO and Core Web Vitals baked in.",
-      image:
-        "https://images.unsplash.com/photo-1522252234503-e356532cafd5?w=900&h=1100&fit=crop",
-      tag: "Next.js · React · Node.js",
-    },
-    {
-      title: "Agentic AI &amp; Automation",
-      description:
-        "LangChain, LangGraph and RAG systems that turn documents, APIs and CRMs into intelligent workflows and copilots.",
-      image:
-        "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=900&h=1100&fit=crop",
-      tag: "LangGraph · RAG · Python",
-    },
-    {
-      title: "E-commerce Platforms",
-      description:
-        "Custom storefronts, ordering flows and admin dashboards — from Fruity Dubai Delights to wholesale marketplaces.",
-      image:
-        "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&h=1100&fit=crop",
-      tag: "Supabase · Stripe · Tailwind",
-    },
-    {
-      title: "SaaS Landing &amp; Marketing Sites",
-      description:
-        "High-converting landing platforms optimized for performance, SEO and mobile — Manzio Clarity style.",
-      image:
-        "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=900&h=1100&fit=crop",
-      tag: "Framer Motion · SEO · CRO",
-    },
-    {
-      title: "Growth &amp; Lead Generation",
-      description:
-        "Meta &amp; Google Ads campaigns, Apollo.io outreach and HubSpot pipelines wired straight into your product.",
-      image:
-        "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=900&h=1100&fit=crop",
-      tag: "Meta Ads · Apollo · HubSpot",
-    },
-    {
-      title: "DevOps &amp; Cloud Delivery",
-      description:
-        "Dockerized services, GitHub Actions CI/CD and deployments to AWS, Vercel and Netlify with monitoring.",
-      image:
-        "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=900&h=1100&fit=crop",
-      tag: "Docker · AWS · Vercel",
-    },
-  ];
-
   return (
-    <section id="services" className="bg-background py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="mb-16 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+    <section
+      id="services"
+      className="flex h-screen flex-col justify-center py-12"
+      style={{ backgroundColor: "#0A0E17" }}
+    >
+      <div className="mx-auto w-full max-w-6xl px-6 lg:px-12">
+        <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="eyebrow mb-6">Services</p>
-            <h2 className="font-playfair text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl max-w-3xl">
-              What I build for clients and product teams
+            <p
+              className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em]"
+              style={{ color: "#5B9BFF" }}
+            >
+              <span
+                className="h-[2px] w-8"
+                style={{ background: "linear-gradient(90deg,#2F6FED,#5B9BFF)" }}
+              />
+              Services
+            </p>
+            <h2
+              className="max-w-xl text-3xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-4xl lg:text-5xl"
+              style={{ color: "#F5F7FA" }}
+            >
+              What I{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg,#2F6FED,#7BB0FF)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                build
+              </span>
             </h2>
           </div>
-          <p className="max-w-md text-foreground/70">
-            End-to-end delivery — from architecture and design to launch, growth
-            and iteration. Pick a lane below, or combine several.
+          <p className="max-w-xs text-sm leading-relaxed" style={{ color: "#9CA6B8" }}>
+            End-to-end delivery — from architecture to launch, growth and
+            iteration. Pick a lane, or combine several.
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((s, i) => (
-            <article
-              key={s.title}
-              className="group editorial-card overflow-hidden bg-card"
-              style={{ animationDelay: `${i * 80}ms` }}
-            >
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img
-                  src={s.image}
-                  alt=""
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <span className="location-pill absolute left-4 top-4" dangerouslySetInnerHTML={{ __html: s.tag }} />
-              </div>
-              <div className="p-6">
-                <h3
-                  className="font-playfair text-2xl text-foreground"
-                  dangerouslySetInnerHTML={{ __html: s.title }}
-                />
-                <p
-                  className="mt-3 text-sm leading-relaxed text-foreground/70"
-                  dangerouslySetInnerHTML={{ __html: s.description }}
-                />
-                <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-foreground">
-                  Explore <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+          style={{
+            border: "1px solid rgba(255,255,255,0.08)",
+            borderRadius: "16px",
+            overflow: "hidden",
+          }}
+        >
+          {services.map((s, i) => {
+            const Icon = s.icon;
+            const isLastCol = (i + 1) % 3 === 0;
+            const isLastRow = i >= services.length - 3;
+            return (
+              <article
+                key={s.n}
+                className="group relative flex flex-col gap-4 p-6 transition-colors duration-300 hover:bg-white/[0.03]"
+                style={{
+                  borderRight: isLastCol ? "none" : "1px solid rgba(255,255,255,0.08)",
+                  borderBottom: isLastRow ? "none" : "1px solid rgba(255,255,255,0.08)",
+                  backgroundColor: "#121826",
+                }}
+              >
+                <div className="flex items-center justify-between">
+                  <div
+                    className="flex h-10 w-10 items-center justify-center rounded-lg"
+                    style={{ background: "linear-gradient(135deg,#2F6FED,#5B9BFF)" }}
+                  >
+                    <Icon className="h-5 w-5" style={{ color: "#F5F7FA" }} strokeWidth={2} />
+                  </div>
+                  <span className="text-xs font-semibold" style={{ color: "rgba(255,255,255,0.2)" }}>
+                    {s.n}
+                  </span>
                 </div>
-              </div>
-            </article>
-          ))}
+
+                <h3 className="text-base font-bold leading-snug sm:text-lg" style={{ color: "#F5F7FA" }}>
+                  {s.title}
+                </h3>
+
+                <div className="mt-auto flex items-center justify-between pt-1">
+                  <span
+                    className="rounded-full px-2.5 py-1 text-[10px] font-medium tracking-wide"
+                    style={{
+                      backgroundColor: "rgba(91,155,255,0.12)",
+                      color: "#7BB0FF",
+                    }}
+                  >
+                    {s.tag}
+                  </span>
+                  <ArrowUpRight
+                    className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
+                    style={{ color: "#5B9BFF" }}
+                  />
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

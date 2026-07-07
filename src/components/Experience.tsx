@@ -1,123 +1,129 @@
 import { ArrowDownRight } from "lucide-react";
 
-const Experience = () => {
-  const experiences = [
-    {
-      n: "01",
-      year: "Mar 2026 – Present",
-      title: "Full Stack Engineer",
-      company: "LUXKODE",
-      location: "Aberdeen, UK · Remote",
-      bullets: [
-        "Building scalable, high-performance web apps and digital solutions.",
-        "Shipping full-stack features with React, Next.js and Python.",
-        "Delivering agentic AI and full-stack solutions across client projects.",
-      ],
-      active: true,
-    },
-    {
-      n: "02",
-      year: "Jan 2026 – Present",
-      title: "Full Stack Engineer (Freelance)",
-      company: "Fiverr",
-      location: "Remote",
-      bullets: [
-        "Custom web apps, e-commerce platforms and AI-powered automations.",
-        "End-to-end delivery with strong client communication and on-time shipping.",
-      ],
-      active: true,
-    },
-    {
-      n: "03",
-      year: "Sep 2025 – Dec 2025",
-      title: "Junior Frontend Developer",
-      company: "Nextal Solutions",
-      location: "Lahore, Pakistan",
-      bullets: [
-        "Built and maintained apps in Next.js, React, Tailwind CSS and Bootstrap.",
-        "Owned frontend–backend integration, API consumption and debugging.",
-      ],
-    },
-    {
-      n: "04",
-      year: "Mar 2025 – Jul 2025",
-      title: "Junior Frontend Developer",
-      company: "Freelance Company",
-      location: "Remote",
-      bullets: [
-        "Cybersecurity service booking platform with admin dashboard.",
-        "UI in React, Tailwind CSS, Bootstrap and Ant Design.",
-      ],
-    },
-    {
-      n: "05",
-      year: "Oct 2021 – Feb 2025",
-      title: "Cash Officer",
-      company: "Bank Al Habib Limited",
-      location: "Pakistan",
-      bullets: [
-        "Managed daily cash operations, deposits, withdrawals and balancing.",
-        "Ensured AML compliance and prepared daily cash reports.",
-      ],
-    },
-  ];
+const experiences = [
+  {
+    n: "01",
+    year: "Mar 2026 – Present",
+    title: "Full stack engineer",
+    company: "LuxKode · Aberdeen, UK",
+    active: true,
+  },
+  {
+    n: "02",
+    year: "Jan 2026 – Present",
+    title: "Full stack engineer (freelance)",
+    company: "Fiverr · Remote",
+    active: true,
+  },
+  {
+    n: "03",
+    year: "Sep 2025 – Dec 2025",
+    title: "Junior frontend developer",
+    company: "Nextal Solutions · Lahore",
+  },
+  {
+    n: "04",
+    year: "Mar 2025 – Jul 2025",
+    title: "Junior frontend developer",
+    company: "Freelance company · Remote",
+  },
+  {
+    n: "05",
+    year: "Oct 2021 – Feb 2025",
+    title: "Cash officer",
+    company: "Bank Al Habib Limited",
+  },
+];
 
+const Experience = () => {
   return (
-    <section id="experience" className="bg-background py-24 lg:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-12">
-        <div className="mb-16 grid gap-8 lg:grid-cols-2 lg:items-end">
+    <section
+      id="experience"
+      className="flex h-screen flex-col justify-center py-12"
+      style={{ backgroundColor: "#0A0E17" }}
+    >
+      <div className="mx-auto w-full max-w-6xl px-6 lg:px-12">
+        <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="eyebrow mb-6">Tenure</p>
-            <h2 className="font-playfair text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
-              5+ years across finance, freelance and full-stack engineering
+            <p
+              className="mb-4 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.25em]"
+              style={{ color: "#5B9BFF" }}
+            >
+              <span
+                className="h-[2px] w-8"
+                style={{ background: "linear-gradient(90deg,#2F6FED,#5B9BFF)" }}
+              />
+              Tenure
+            </p>
+            <h2
+              className="max-w-xl text-3xl font-extrabold uppercase leading-[1.05] tracking-tight sm:text-4xl lg:text-5xl"
+              style={{ color: "#F5F7FA" }}
+            >
+              5+ years across{" "}
+              <span
+                style={{
+                  background: "linear-gradient(90deg,#2F6FED,#7BB0FF)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
+                finance & engineering
+              </span>
             </h2>
           </div>
-          <p className="text-foreground/70 max-w-md lg:justify-self-end">
-            A career built on operational precision at a leading bank, then re-forged
-            through freelance and product engineering across the UK and remote teams.
+          <p className="max-w-xs text-sm leading-relaxed" style={{ color: "#9CA6B8" }}>
+            From operational precision at a leading bank to freelance and
+            product engineering across the UK and remote teams.
           </p>
         </div>
 
-        {/* Ink-block timeline — echoing the Hilton "8 years at Hilton" cards */}
-        <div className="grid gap-6 lg:grid-cols-2">
-          {experiences.map((e, i) => (
+        <div className="flex flex-col" style={{ borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+          {experiences.map((e) => (
             <article
               key={e.n}
-              className={`relative p-8 lg:p-10 ${
-                i % 2 === 0 ? "ink-block" : "bg-secondary text-foreground"
-              } ${i % 3 === 1 ? "lg:translate-y-8" : ""}`}
+              className="group flex items-center justify-between gap-6 py-4"
+              style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}
             >
-              <div className="flex items-start justify-between gap-6">
-                <div>
-                  <p className={`text-[10px] uppercase tracking-[0.22em] ${i % 2 === 0 ? "text-white/60" : "text-foreground/60"}`}>
-                    {e.year}
-                  </p>
-                  <h3 className="mt-3 font-playfair text-2xl leading-tight">{e.title}</h3>
-                  <p className={`mt-1 text-sm ${i % 2 === 0 ? "text-white/70" : "text-foreground/70"}`}>
-                    {e.company} · {e.location}
-                  </p>
-                </div>
-                <span className={`font-playfair text-2xl ${i % 2 === 0 ? "text-white/50" : "text-foreground/40"}`}>
-                  {e.n}
-                </span>
+              <span
+                className="hidden w-8 shrink-0 text-sm font-semibold sm:block"
+                style={{ color: "rgba(255,255,255,0.2)" }}
+              >
+                {e.n}
+              </span>
+
+              <span
+                className="w-36 shrink-0 text-xs uppercase tracking-[0.15em]"
+                style={{ color: "#5B9BFF" }}
+              >
+                {e.year}
+              </span>
+
+              <div className="flex-1">
+                <h3 className="text-base font-bold sm:text-lg" style={{ color: "#F5F7FA" }}>
+                  {e.title}
+                </h3>
+                <p className="text-sm" style={{ color: "#9CA6B8" }}>
+                  {e.company}
+                </p>
               </div>
 
-              <ul className={`mt-6 space-y-2 text-sm leading-relaxed ${i % 2 === 0 ? "text-white/80" : "text-foreground/75"}`}>
-                {e.bullets.map((b) => (
-                  <li key={b} className="flex gap-2">
-                    <span className="mt-2 inline-block h-1 w-3 flex-shrink-0 bg-current opacity-60" />
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-
               {e.active && (
-                <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-full bg-[hsl(var(--coral))] px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white">
-                  <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" /> Current
+                <span
+                  className="hidden shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider sm:inline-flex"
+                  style={{
+                    background: "linear-gradient(90deg,#2F6FED,#5B9BFF)",
+                    color: "#F5F7FA",
+                  }}
+                >
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-white" /> Current
                 </span>
               )}
 
-              <ArrowDownRight className={`mt-8 h-5 w-5 ${i % 2 === 0 ? "text-white/60" : "text-foreground/50"}`} />
+              <ArrowDownRight
+                className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:translate-y-1"
+                style={{ color: "#5B9BFF" }}
+              />
             </article>
           ))}
         </div>

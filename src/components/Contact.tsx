@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, ArrowUpRight, Github, Linkedin } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
@@ -40,82 +40,160 @@ const Contact = () => {
     <section id="contact" className="relative bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="grid gap-16 lg:grid-cols-[1fr_1.1fr]">
-          {/* Left — arched portrait + info */}
+          {/* Left — headline + info (no photo) */}
           <div>
-            <p className="eyebrow mb-6">Get in touch</p>
-            <h2 className="font-playfair text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl">
-              Let's build your next <span className="italic text-[hsl(var(--coral))]">product</span>
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-400 mb-6">
+              Get in touch
+            </p>
+            <h2 className="font-extrabold uppercase leading-[1.05] text-4xl sm:text-5xl lg:text-6xl">
+              <span className="text-white">Let's build your</span>
+              <br />
+              <span className="text-blue-500">next product</span>
             </h2>
-            <p className="mt-6 max-w-md text-foreground/70">
+            <p className="mt-6 max-w-md text-white/60 text-lg">
               Available for full-stack engineering, AI automation and freelance product work.
               I typically respond within a business day.
             </p>
 
-            <div className="mt-10 relative w-full max-w-sm">
-              <div className="arch-top overflow-hidden bg-secondary aspect-[3/4]">
-                <img
-                  src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
-                  alt="Ali Husnain"
-                  className="h-full w-full object-cover object-top"
-                />
-                <div className="absolute left-4 bottom-4">
-                  <span className="location-pill"><MapPin className="h-3.5 w-3.5" /> Lahore, Pakistan</span>
-                </div>
+            <div className="mt-10 space-y-4 text-sm">
+              <a
+                href="mailto:mr.alihusnain11@gmail.com"
+                className="flex items-center gap-3 text-white/80 hover:text-blue-400 transition"
+              >
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 border border-white/10">
+                  <Mail className="h-4 w-4" />
+                </span>
+                mr.alihusnain11@gmail.com
+              </a>
+              <a
+                href="tel:+923261052244"
+                className="flex items-center gap-3 text-white/80 hover:text-blue-400 transition"
+              >
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 border border-white/10">
+                  <Phone className="h-4 w-4" />
+                </span>
+                +92 326 1052244
+              </a>
+              <div className="flex items-center gap-3 text-white/60">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 border border-white/10">
+                  <MapPin className="h-4 w-4" />
+                </span>
+                Lahore, Pakistan · Remote worldwide
               </div>
             </div>
 
-            <div className="mt-10 space-y-4 text-sm">
-              <a href="mailto:mr.alihusnain11@gmail.com" className="flex items-center gap-3 text-foreground hover:text-[hsl(var(--coral))]">
-                <Mail className="h-4 w-4" /> mr.alihusnain11@gmail.com
+            <div className="mt-10 flex items-center gap-6 border-t border-white/10 pt-8">
+              <a
+                href="https://github.com/Alihusnain1489"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-sm text-white/70 hover:text-blue-400 transition"
+              >
+                <Github className="h-4 w-4" /> GitHub
               </a>
-              <a href="tel:+923261052244" className="flex items-center gap-3 text-foreground hover:text-[hsl(var(--coral))]">
-                <Phone className="h-4 w-4" /> +92 326 1052244
+              <a
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-2 text-sm text-white/70 hover:text-blue-400 transition"
+              >
+                <Linkedin className="h-4 w-4" /> LinkedIn
               </a>
-              <div className="flex items-center gap-3 text-foreground/70">
-                <MapPin className="h-4 w-4" /> Lahore, Pakistan · Remote worldwide
-              </div>
+              <a
+                href="mailto:mr.alihusnain11@gmail.com"
+                className="flex items-center gap-2 text-sm text-white/70 hover:text-blue-400 transition"
+              >
+                <Mail className="h-4 w-4" /> Email
+              </a>
             </div>
           </div>
 
-          {/* Right — form on ink block */}
-          <form onSubmit={handleSubmit} className="ink-block p-8 lg:p-12">
-            <p className="text-[10px] uppercase tracking-[0.22em] text-white/60">Send a message</p>
-            <h3 className="mt-3 font-playfair text-3xl text-white">Tell me about your project</h3>
-            <div className="hairline my-8 !bg-white/20" />
+          {/* Right — form card */}
+          <form
+            onSubmit={handleSubmit}
+            className="rounded-2xl border border-white/10 bg-white/[0.03] p-8 lg:p-12 backdrop-blur-sm"
+          >
+            <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-blue-400">
+              Send a message
+            </p>
+            <h3 className="mt-3 font-extrabold text-3xl text-white">
+              Tell me about your project
+            </h3>
+            <div className="my-8 h-px w-full bg-white/10" />
 
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label className="mb-2 block text-xs uppercase tracking-wider text-white/60">First name</label>
-                <Input name="firstName" value={formData.firstName} onChange={handleChange} required
-                  className="rounded-none border-0 border-b border-white/30 bg-transparent px-0 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:border-[hsl(var(--coral))]" />
+                <label className="mb-2 block text-xs uppercase tracking-wider text-white/50">
+                  First name
+                </label>
+                <Input
+                  name="firstName"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  required
+                  className="rounded-none border-0 border-b border-white/20 bg-transparent px-0 text-white placeholder:text-white/30 focus-visible:ring-0 focus-visible:border-blue-500"
+                />
               </div>
               <div>
-                <label className="mb-2 block text-xs uppercase tracking-wider text-white/60">Last name</label>
-                <Input name="lastName" value={formData.lastName} onChange={handleChange} required
-                  className="rounded-none border-0 border-b border-white/30 bg-transparent px-0 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:border-[hsl(var(--coral))]" />
+                <label className="mb-2 block text-xs uppercase tracking-wider text-white/50">
+                  Last name
+                </label>
+                <Input
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleChange}
+                  required
+                  className="rounded-none border-0 border-b border-white/20 bg-transparent px-0 text-white placeholder:text-white/30 focus-visible:ring-0 focus-visible:border-blue-500"
+                />
               </div>
             </div>
 
             <div className="mt-5">
-              <label className="mb-2 block text-xs uppercase tracking-wider text-white/60">Email</label>
-              <Input type="email" name="email" value={formData.email} onChange={handleChange} required
-                className="rounded-none border-0 border-b border-white/30 bg-transparent px-0 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:border-[hsl(var(--coral))]" />
+              <label className="mb-2 block text-xs uppercase tracking-wider text-white/50">
+                Email
+              </label>
+              <Input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="rounded-none border-0 border-b border-white/20 bg-transparent px-0 text-white placeholder:text-white/30 focus-visible:ring-0 focus-visible:border-blue-500"
+              />
             </div>
 
             <div className="mt-5">
-              <label className="mb-2 block text-xs uppercase tracking-wider text-white/60">Subject</label>
-              <Input name="subject" value={formData.subject} onChange={handleChange} required
-                className="rounded-none border-0 border-b border-white/30 bg-transparent px-0 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:border-[hsl(var(--coral))]" />
+              <label className="mb-2 block text-xs uppercase tracking-wider text-white/50">
+                Subject
+              </label>
+              <Input
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                className="rounded-none border-0 border-b border-white/20 bg-transparent px-0 text-white placeholder:text-white/30 focus-visible:ring-0 focus-visible:border-blue-500"
+              />
             </div>
 
             <div className="mt-5">
-              <label className="mb-2 block text-xs uppercase tracking-wider text-white/60">Message</label>
-              <Textarea name="message" value={formData.message} onChange={handleChange} required rows={5}
-                className="rounded-none border-0 border-b border-white/30 bg-transparent px-0 text-white placeholder:text-white/40 focus-visible:ring-0 focus-visible:border-[hsl(var(--coral))] resize-none" />
+              <label className="mb-2 block text-xs uppercase tracking-wider text-white/50">
+                Message
+              </label>
+              <Textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                rows={5}
+                className="rounded-none border-0 border-b border-white/20 bg-transparent px-0 text-white placeholder:text-white/30 focus-visible:ring-0 focus-visible:border-blue-500 resize-none"
+              />
             </div>
 
-            <button type="submit" disabled={isSubmitting}
-              className="mt-10 inline-flex items-center gap-2 rounded-full bg-[hsl(var(--coral))] px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-60">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="mt-10 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110 disabled:opacity-60"
+            >
               {isSubmitting ? "Sending..." : "Send message"} <ArrowUpRight className="h-4 w-4" />
             </button>
           </form>

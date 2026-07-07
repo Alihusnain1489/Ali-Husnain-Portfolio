@@ -56,20 +56,10 @@ const Hero = () => {
         >
           {/* Left */}
           <div>
-            <motion.div variants={item} className="mb-6 flex items-center gap-2 text-xs sm:text-sm text-foreground/60">
-              <a href="/" className="underline underline-offset-4 hover:text-foreground">Home</a>
-              <span>/</span>
-              <span>Full Stack &amp; AI Engineer</span>
-            </motion.div>
-
-            <motion.p variants={item} className="eyebrow mb-6 sm:mb-8 flex items-center gap-2">
-              <Sparkles className="h-3.5 w-3.5 text-[hsl(var(--coral))]" />
-              Ali Husnain — Portfolio
-            </motion.p>
 
             <motion.h1
               variants={item}
-              className="font-playfair uppercase text-[40px] leading-[0.98] tracking-tight text-foreground sm:text-6xl lg:text-[78px] xl:text-[88px]"
+              className="font-playfair uppercase text-[40px] leading-[0.98] tracking-tight text-foreground sm:text-6xl lg:text-[68px] xl:text-[68px]"
             >
               <span className="text-primary block">Revolutionizing</span>
               Web &amp; <span className="text-gradient">AI-Powered</span><br />
@@ -121,19 +111,17 @@ const Hero = () => {
           <motion.div variants={item} className="relative">
             <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-md">
               <motion.div
-                className="relative overflow-hidden arch-top bg-secondary aspect-[3/4] shadow-[var(--shadow-editorial)]"
+                className="relative overflow-hidden arch-top  aspect-[3/4] shadow-[var(--shadow-editorial)]"
                 initial={{ opacity: 0, scale: 0.95, y: 30 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               >
                 <img
-                  src="/lovable-uploads/b643cda2-a597-4516-8e97-273dcd1c9351.png"
+                  src="/cvvv.png"
                   alt="Ali Husnain — Full Stack & AI Engineer"
                   className="h-full w-full object-cover object-top"
                 />
-                <div className="absolute left-3 bottom-3 sm:left-4 sm:bottom-4 location-pill">
-                  <MapPin className="h-3.5 w-3.5" /> Lahore · Remote
-                </div>
+               
               </motion.div>
 
               <motion.div
@@ -142,14 +130,7 @@ const Hero = () => {
                 animate={{ opacity: 1, y: 0, rotate: 0 }}
                 transition={{ duration: 0.8, delay: 0.9 }}
               >
-                <motion.div
-                  className="ink-block px-4 py-3 sm:px-5 sm:py-4 shadow-[var(--shadow-editorial)]"
-                  animate={{ y: [0, -6, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                >
-                  <p className="text-[10px] uppercase tracking-[0.22em] text-white/70">Experience</p>
-                  <p className="mt-1 font-playfair text-xl sm:text-2xl">5+ years · finance &amp; tech</p>
-                </motion.div>
+               
               </motion.div>
 
               <motion.div
@@ -158,9 +139,7 @@ const Hero = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 1.1 }}
               >
-                <div className="rounded-full border border-border bg-card px-4 py-2 text-xs font-semibold text-foreground shadow-[var(--shadow-soft)]">
-                  ✦ Available for Q3
-                </div>
+                
               </motion.div>
             </div>
           </motion.div>

@@ -31,28 +31,35 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="bg-[hsl(var(--cream-warm))] py-24 lg:py-32">
+    <section id="skills" className="bg-background py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
         <div className="mb-16">
-          <p className="eyebrow mb-6">Capabilities</p>
-          <h2 className="font-playfair text-4xl leading-[1.05] text-foreground sm:text-5xl lg:text-6xl max-w-4xl">
-            A modern stack for shipping <span className="italic text-[hsl(var(--coral))]">product</span>, not just prototypes
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-400 mb-6">
+            Capabilities
+          </p>
+          <h2 className="font-extrabold uppercase leading-[1.05] text-4xl sm:text-5xl lg:text-6xl max-w-4xl">
+            <span className="text-white">A modern stack for shipping</span>{" "}
+            <span className="text-blue-500">product</span>
+            <span className="text-white">, not just prototypes</span>
           </h2>
         </div>
 
-        <div className="grid gap-px bg-border overflow-hidden border border-border md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-px bg-white/10 overflow-hidden rounded-2xl border border-white/10 md:grid-cols-2 lg:grid-cols-3">
           {groups.map((g, i) => (
-            <div key={g.title} className="bg-background p-8 lg:p-10">
+            <div
+              key={g.title}
+              className="bg-white/[0.03] p-8 lg:p-10 transition hover:bg-white/[0.05]"
+            >
               <div className="flex items-baseline justify-between">
-                <h3 className="font-playfair text-2xl text-foreground">{g.title}</h3>
-                <span className="text-xs text-foreground/40">0{i + 1}</span>
+                <h3 className="font-extrabold text-xl text-white">{g.title}</h3>
+                <span className="text-xs font-semibold text-blue-400">0{i + 1}</span>
               </div>
-              <div className="hairline my-5" />
+              <div className="my-5 h-px w-full bg-white/10" />
               <ul className="flex flex-wrap gap-2">
                 {g.items.map((it) => (
                   <li
                     key={it}
-                    className="rounded-full border border-border bg-secondary/60 px-3 py-1.5 text-xs font-medium text-foreground/80"
+                    className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/70 hover:border-blue-500/50 hover:text-blue-300 transition"
                   >
                     {it}
                   </li>
